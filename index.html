@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="pkd-ui-build" content="2026.10.20.3">
+<meta name="pkd-ui-build" content="2026.10.20.4">
 <meta name="description" content="Malaysian public health field reference: disease guidance, outbreak tools and POA.">
 <meta name="theme-color" content="#2563EB">
 <title>PKD Field Guide | CD-Made-Easy</title>
@@ -706,10 +706,10 @@ input::-webkit-calendar-picker-indicator{flex:none}
 .sim-view button{border:0;border-radius:7px;background:transparent;color:var(--muted);font:600 13px var(--font-body);min-height:44px;padding:8px 12px;cursor:pointer}
 .sim-view button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
 .sim-chart-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
-.sim-chart{min-width:0;border:1px solid var(--line);border-top:3px solid var(--sim-ai);border-radius:12px;padding:12px;background:var(--surface)}
-.sim-chart.ci{border-top-color:var(--sim-ci)}.sim-chart.bi{border-top-color:var(--sim-bi)}
-.sim-chart-head{display:flex;gap:10px;justify-content:space-between;align-items:start}
-.sim-chart-head h4{margin:0}.sim-chart-head strong{font-size:26px;font-variant-numeric:tabular-nums;line-height:1}
+.sim-chart{min-width:0;border:1px solid var(--line);border-top:3px solid var(--measure-ink,var(--accent));border-radius:12px;padding:12px;background:var(--surface)}
+
+.sim-chart-head{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:start}.sim-chart-head>div{flex:1 1 145px;min-width:0}
+.sim-chart-head h4{margin:0}.sim-chart-head strong{font-size:26px;font-variant-numeric:tabular-nums;line-height:1.15;color:var(--measure-ink,var(--accent));white-space:nowrap}
 .sim-chart-head span{font-size:12px;color:var(--muted);display:block;margin:5px 0 0}
 .sim-chart .sim-unit{font-size:12px;color:var(--muted);margin:8px 0}.sim-chart svg{width:100%;height:auto;display:block;overflow:visible}
 .sim-chart svg text{font:18px var(--font-body);fill:var(--muted)}
@@ -739,6 +739,46 @@ input::-webkit-calendar-picker-indicator{flex:none}
 @media(max-width:380px){.sim-panel,.sim-stage-head{padding:14px}.sim-facts{grid-template-columns:minmax(0,1fr)}.sim-facts>div{display:flex;gap:12px;align-items:center}.sim-facts span{margin:0}}
 @media print{.sim-entry,.sim-controls,.sim-footer-nav,.sim-progress,.sim-choice,.sim-heading>.btn,.sim-view{display:none!important}.sim-layout{display:block}.sim-panel{break-inside:avoid}.sim-table-wrap{overflow:visible}.sim-table{min-width:0}.sim-training{color:black}}
 
+/* Dengue reference infographics: no synthetic values presented as operational data. */
+.v-overview h3{margin-bottom:6px}.v-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px}
+.v-nav button{display:flex;align-items:center;gap:9px;min-width:0;min-height:52px;padding:10px 12px;text-align:left;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:650}
+.v-nav button>span:nth-child(2){min-width:0;flex:1}.v-nav button>.ic{width:16px;height:16px;color:var(--muted)}
+.v-nav button:hover{border-color:var(--category-ink);background:var(--category-bg)}
+.v-icon{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:9px;background:var(--category-bg,var(--accent-soft));color:var(--category-ink,var(--accent))}
+.v-icon .ic{width:19px;height:19px}.vector-panel>summary .num{background:var(--category-bg);color:var(--category-ink);padding:4px;border-radius:6px}
+.v-visual{padding-top:8px}.v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin:12px 0}
+.v-tile{min-width:0;padding:14px;border:1px solid var(--line);border-top:3px solid var(--category-ink,var(--accent));border-radius:13px;background:var(--surface)}
+.v-tile h4{display:flex;align-items:center;gap:9px;font-size:16px;line-height:1.35;margin:0 0 12px;min-width:0}
+.v-tile p{margin:8px 0 0}.v-bullets{padding-left:18px;margin:8px 0 0;font-size:14px}.vector-body .v-bullets li{margin-bottom:8px;line-height:1.5}.v-bullets li:last-child{margin-bottom:0}
+.v-note{font-size:14px;line-height:1.55;color:var(--muted);margin:12px 0}.v-note b{color:var(--ink)}
+.v-section-title{font-size:17px;margin:22px 0 8px;line-height:1.4}.v-index-head{display:flex;align-items:baseline;gap:8px;justify-content:space-between;flex-wrap:wrap}.v-index-head h4{margin:0}.v-unit{font-size:12px;color:var(--muted)}
+.v-formula{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;background:var(--surface-2);border-radius:9px;padding:12px 10px;margin:12px 0;color:var(--ink);font-size:13px;line-height:1.5}
+.v-fraction{display:grid;gap:5px;text-align:center;min-width:0;flex:1}.v-fraction>span:first-child{padding-bottom:5px;border-bottom:1px solid var(--control-border)}.v-formula>b{flex:none;font-size:13px}
+.v-target{font-size:13px;color:var(--category-ink,var(--accent));padding:7px 9px;border-radius:8px;background:var(--category-bg,var(--accent-soft));line-height:1.5}.v-action{font-size:14px;color:var(--muted);line-height:1.5}
+.v-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:14px 0}.v-process span{padding:10px 6px;border-radius:8px;background:var(--accent-soft);color:var(--accent);text-align:center;font-weight:650;font-size:13px;min-width:0}
+.v-example{padding:16px;margin:14px 0;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);min-width:0}.v-example figcaption{margin-bottom:14px;font-size:15px}.v-example figcaption span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.v-counts,.v-pools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.v-counts>div,.v-pools>div{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
+.v-counts strong,.v-pools strong{display:block;font-size:25px;line-height:1.25;color:var(--accent);font-variant-numeric:tabular-nums}.v-counts span,.v-pools span{display:block;font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}.v-pools b{display:block;font-size:13px;margin-bottom:5px}
+.v-waffle{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:16px 0;max-width:440px}.v-dot{display:grid;place-items:center;min-width:0;height:26px;border-radius:5px;font-weight:750;font-size:16px}
+.v-waffle .positive,.v-legend .positive{background:var(--cat-teal-ink);color:var(--surface);border:1px solid var(--cat-teal-ink)}
+.v-waffle .negative,.v-legend .negative{background:var(--surface);color:var(--muted);border:1px solid var(--control-border)}
+.v-waffle .missing,.v-legend .missing{background:var(--surface-2);color:var(--muted);border:1px dashed var(--control-border)}
+.v-legend{display:flex;flex-wrap:wrap;gap:8px 16px;padding:0;margin:10px 0;list-style:none;font-size:13px}.vector-body .v-legend li{display:flex;gap:6px;align-items:center;margin:0}.v-legend i{display:block;width:12px;height:12px;border-radius:3px;flex:none}
+.v-timeline{list-style:none;counter-reset:none;padding:0 0 0 14px;margin:16px 0;border-left:2px solid var(--accent)}.vector-body .v-timeline li{position:relative;padding:12px 14px;margin:0 0 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2)}
+.v-timeline li::before{content:"";position:absolute;left:-21px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--surface)}
+.v-timeline b{display:block;font-size:14px}.v-timeline span{display:block;margin-top:4px;color:var(--muted);font-size:14px}
+.v-bands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.v-bands>div{background:var(--category-bg);color:var(--category-ink);border:1px solid var(--category-ink);border-radius:10px;padding:12px;min-width:0}
+.v-bands strong{font-size:22px;display:block}.v-bands span{font-size:13px;display:block;line-height:1.4;margin-top:5px}
+.v-equation{padding:12px;background:var(--accent-soft);color:var(--accent);font-size:15px;border-radius:10px;text-align:center}.v-equation>strong{display:block;font-size:22px;margin-top:5px}
+.v-full{margin:16px 0 12px;border-top:1px solid var(--line)}.v-full>summary{cursor:pointer;padding:12px 0;font-size:14px;font-weight:650;min-height:44px}.v-full>ul{padding-left:20px;font-size:14px}
+.sim-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0 18px}
+.sim-groups button{min-width:0;min-height:54px;padding:9px 10px;text-align:left;border:1px solid var(--control-border);border-radius:10px;background:var(--surface);color:var(--muted);line-height:1.35}
+.sim-groups strong{font-size:13px;display:block}.sim-groups small{font-size:12px;display:block;margin-top:3px}.sim-groups button[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft);border:2px solid var(--accent);padding:8px 9px}
+.sim-groups button:last-child{grid-column:1/-1}.simulation .sim-readout{padding-left:18px;margin:10px 0 0;font-size:13px}.simulation .sim-readout li{margin-bottom:7px;line-height:1.5}.simulation .sim-readout li:last-child{margin-bottom:0}
+.simulation .sim-chart-detail{margin-top:10px}.simulation .sim-chart-detail summary{padding:10px 0;font-size:13px}.sim-feedback p{margin:0 0 8px}.sim-feedback .sim-readout b{display:inline}
+@media(max-width:480px){.v-bands{grid-template-columns:minmax(0,1fr)}.v-bands>div{display:flex;align-items:center;gap:12px}.v-bands strong{min-width:84px}.v-process{grid-template-columns:repeat(2,minmax(0,1fr))}.v-example{padding:12px}.v-counts strong{font-size:22px}.v-waffle{gap:4px}}
+@media print{.sim-groups{display:none}.v-tile,.v-example{break-inside:avoid}.v-full{display:block}.v-nav{display:none}}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}button:active:not(:disabled){transform:none}}
 @media print{header.top,nav.tabs-top,nav.tabs-bottom,.guide-menu,.guide-footer,.skip-link,.rail,.home-disease-label,.back,.toolbar,.secnav{display:none!important}.layout{display:block}body{background:white;color:black}.pane{container-type:normal}main{max-width:none;padding:0}.panel,.tool{box-shadow:none}details.acc{break-inside:avoid}}
 </style>
@@ -762,10 +802,10 @@ input::-webkit-calendar-picker-indicator{flex:none}
   <div class="menu-heading"><div><h2 id="menu-title">Field guide menu</h2><p>Help, sources and appearance.</p></div><button class="icon-button" id="menu-close" type="button" data-home-menu="close" aria-label="Close menu" autofocus><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
   <nav class="menu-nav" aria-label="Guide information"><button type="button" data-menu-section="about">About this guide</button><button type="button" data-source="all">Sources &amp; references</button><button type="button" data-go="sources">Guideline review information</button><button type="button" data-menu-section="help">How to use this guide</button></nav>
   <p class="menu-label" id="appearance-label">Appearance</p><div class="appearance-control" role="group" aria-labelledby="appearance-label"><button type="button" data-appearance="system" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>System</span></button><button type="button" data-appearance="light" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2m-17-7 1.5 1.5M17.5 17.5 19 19m0-14-1.5 1.5M6.5 17.5 5 19"/></svg><span>Light</span></button><button type="button" data-appearance="dark" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg><span>Dark</span></button></div>
-  <details class="menu-about" id="menu-about"><summary>About this guide</summary><p>A Malaysian field reference for PPKA, public health practitioners, Medical Officers, PPKP, PKP, PKA and district response teams.</p><p>CD-Made-Easy brings existing disease guidance, field calculations, POA, legal references and guideline reviews into one working reference.</p><p>POA entries are saved in this browser. Use the POA backup function to keep a copy or move records between devices.</p><p>UI build 2026.10.20.3. Source review date recorded in the existing guide: 20 Oct 2026. Dengue training module added on 20 Oct 2026; its sources and limitations are listed inside the simulation. Existing disease guidance is retained.</p></details>
+  <details class="menu-about" id="menu-about"><summary>About this guide</summary><p>A Malaysian field reference for PPKA, public health practitioners, Medical Officers, PPKP, PKP, PKA and district response teams.</p><p>CD-Made-Easy brings existing disease guidance, field calculations, POA, legal references and guideline reviews into one working reference.</p><p>POA entries are saved in this browser. Use the POA backup function to keep a copy or move records between devices.</p><p>UI build 2026.10.20.4. Source review date recorded in the existing guide: 20 Oct 2026. Dengue simulation and visual surveillance summaries refined on 20 Oct 2026. Synthetic observations are labelled; full original guidance, source caveats and calculators are retained.</p></details>
 <details class="menu-about" id="menu-help"><summary>How to use this guide</summary><ul><li>Use a quick action or choose a disease category.</li><li>Search English or Bahasa Malaysia names, abbreviations, actions, tools and source titles. On a keyboard, press Down or Enter to focus the first result; Escape clears search.</li><li>Switch between Grid and List. Enable BM names &amp; source notes for additional context.</li><li>Open a guide's sections for complete definitions, notification requirements, control guidance and citations.</li><li>Check calculator anchors and caveats. These tools do not issue orders or certify outbreak closure.</li><li>POA historical reference figures are labelled separately from locally entered records. Back up local records from the POA workspace.</li></ul></details>
 <details class="menu-about" id="menu-disclaimer"><summary>Disclaimer &amp; attribution</summary><p>This application is an independent working reference, not an official KKM publication or a substitute for professional judgement. Current KKM, JKN and PKD instructions take precedence.</p><p>Use the disease-specific source and current programme instructions. Confirm applicable guidance, legal powers and unresolved issues before acting.</p><p>Referenced guidelines, source documents, illustrations and third-party materials remain the property of their respective owners.</p><p>(c) 2026 Dr. Ismail bin Saudi. All rights reserved.</p></details>
-<p class="menu-version">UI build 2026.10.20.3</p>
+<p class="menu-version">UI build 2026.10.20.4</p>
 </dialog>
 
 
@@ -1368,6 +1408,7 @@ var HOME_ICONS = {
 function uiIcon(name){
   return HOME_ICONS[name]?'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+HOME_ICONS[name]+'</svg>':ic(name);
 }
+HOME_ICONS.chart='<path d="M4 3v17h17M8 15V9m5 6V5m5 10v-4"/>';
 HOME_ICONS.calculator='<rect x="4" y="2" width="16" height="20" rx="3"/><path d="M8 6h8M8 11h1m6 0h1M8 15h1m6 0h1M8 19h1m6 0h1"/>';
 state.homeGroup='';
 state.homeView=getPref('home-view','cards')==='list'?'list':'cards';
@@ -1435,7 +1476,7 @@ function normalSearch(value){
 function searchMatches(text,query){var tokens=normalSearch(query).split(/\s+/).filter(Boolean);return tokens.length>0&&tokens.every(function(t){return text.indexOf(t)>=0;});}
 var SEARCH_INDEX=[];
 function initSearchIndex(){
-  SEARCH_INDEX.push({group:"Investigation and response",title:"Simulasi wabak denggi / Dengue outbreak simulation",sub:"Training: registration, WTK, hotspot, AI / CI / BI and closure",text:normalSearch("simulasi simulation latihan dengue denggi wabak outbreak response registration pendaftaran declaration kawalan surveillance surveillance indices AI CI BI Breteau Aedes Index hotspot WTK tamat closure"),go:"simulation-dengue",icon:"route",tone:"teal"});
+  SEARCH_INDEX.push({group:"Investigation and response",title:"Simulasi wabak denggi / Dengue outbreak simulation",sub:"Training: WTK, hotspot, habitat indices, OI, sticky traps, adult surveillance and closure",text:normalSearch("simulasi simulation latihan dengue denggi wabak outbreak response registration pendaftaran declaration kawalan surveillance surveillance indices AI CI BI PI PCI HPI CLI CPI OI ovitrap STI SOI SOLI SOPI sticky adult BG MIR MgO Abbott coverage refusal Breteau Aedes Index hotspot WTK tamat closure"),go:"simulation-dengue",icon:"route",tone:"teal"});
   D.forEach(function(d){
     SEARCH_INDEX.push({group:'Disease guides',title:d.name,sub:d.bm,text:normalSearch(INDEX[d.id]),d:d.id,icon:homeGroup(d.group).icon,tone:homeGroup(d.group).tone});
     SECTIONS.forEach(function(s){
@@ -1616,14 +1657,29 @@ function accHTML(d){
     '<details class="acc" id="sec-sources"><summary><span class="num">10</span><span class="tt">Sources for this card</span><span class="meta">'+Object.keys(srcIds).length+' sources'+ic("chev","chev")+'</span></summary><ul class="srcs" style="padding:0 14px 14px">'+srcList+'</ul></details>'+
     '<div class="key" style="margin-top:8px">'+["my","law","my2","state","intl","generic","pending"].map(function(k){return '<span>'+sdot(k)+esc(stLabel(k))+'</span>';}).join("")+'</div>';
 }
+/* Visual summaries are a presentation layer. PKD_DATA and its full wording stay intact. */
+function vectorFormula(parts){return '<div class="v-formula"><span class="v-fraction"><span>'+esc(parts[0])+'</span><span>'+esc(parts[1])+'</span></span>'+(parts[2]?'<b>'+esc(parts[2])+'</b>':'')+'</div>';}
+function vectorBullets(items){return '<ul class="v-bullets">'+items.map(function(x){return '<li><b>'+esc(x[0])+'</b> '+esc(x[1])+'</li>';}).join('')+'</ul>';}
+function vectorTile(tone,icon,title,items){return '<article class="v-tile tone-'+tone+'"><h4><span class="v-icon">'+uiIcon(icon)+'</span>'+esc(title)+'</h4>'+vectorBullets(items)+'</article>';}
+function vectorFormulaTile(key,target){var m=SIM_METRICS[key];return '<article class="v-tile v-index tone-'+m.tone+'"><div class="v-index-head"><h4>'+esc(m.short)+'</h4><span class="v-unit">'+esc(m.unit)+'</span></div>'+vectorFormula(m.formula)+'<p class="v-target"><b>'+esc(target)+'</b></p><p class="v-action">'+esc(m.action)+'</p></article>';}
+function vectorTiming(){return '<div class="v-grid v-timing">'+vectorTile('blue','calendar','EI <4 hari',[['Tujuan:','QC selepas kawalan.'],['Sasaran:','sifar pembiakan/dewasa bagi indikator dinyatakan; semak mutu dan liputan.']])+vectorTile('teal','search','EI >4 hari',[['Tujuan:','pemetaan risiko semasa.'],['Tindakan:','gunakan sasaran rutin yang sesuai dengan kaedah dan SOP.']])+'</div><p class="v-note"><b>Tepat 4 hari:</b> sempadan tidak dinyatakan dalam jadual Perak; sahkan tafsiran program. Indeks sifar bukan syarat automatik tamat.</p>';}
+function vectorTrapExample(){return '<figure class="v-example"><figcaption><b>Contoh rekaan / ovitrap 7 hari</b><span>Denominator menentukan tafsiran.</span></figcaption><div class="v-counts"><div><strong>30</strong><span>dipasang</span></div><div><strong>24</strong><span>sah diperiksa</span></div><div><strong>6</strong><span>Aedes positif</span></div></div><div class="v-waffle" role="img" aria-label="30 perangkap rekaan: 6 positif, 18 negatif sah, 6 hilang atau tidak sah.">'+Array.from({length:30},function(_,i){return '<span class="v-dot '+(i<6?'positive':i<24?'negative':'missing')+'" aria-hidden="true">'+(i<6?'+':i<24?'-':'x')+'</span>';}).join('')+'</div><ul class="v-legend"><li><i class="positive" aria-hidden="true"></i>6 positif</li><li><i class="negative" aria-hidden="true"></i>18 negatif sah</li><li><i class="missing" aria-hidden="true"></i>6 tidak sah/hilang</li></ul><div class="v-counts"><div><strong>25%</strong><span>OI = 6/24 x 100</span></div><div><strong>5</strong><span>120 telur / 24 sah</span></div><div><strong>20</strong><span>120 telur / 6 positif</span></div></div><p class="v-note"><b>Jangan guna 30 sebagai denominator OI.</b> Enam perangkap hilang/tidak sah bukan negatif. OI tidak mengukur peratus penduduk berjangkit.</p></figure>';}
+function vectorVisualHTML(id){
+ if(id==='surveillance')return '<div class="v-grid">'+vectorTile('blue','people','Kes dan masa',[['Sahkan:','notifikasi, makmal, pendua dan lokasi pendedahan.'],['Plot onset:','corak masa penyakit.'],['Plot notifikasi/daftar:','beban kerja dan kelewatan.']])+vectorTile('rose','bioshield','Keterukan dan makmal',[['Semak:','kes teruk, kematian, hasil tertunggak.'],['DVSS:','hari sakit, ujian, tarikh sampel dan serotip.'],['Had:','positiviti sentinel bukan prevalens penduduk.']])+vectorTile('teal','mosquito','Vektor dan persekitaran',[['Gabungkan:','AI/CI/BI, pupa, OI, dewasa dan lokasi.'],['Cari punca:','air, sisa, struktur dan bekas produktif.'],['Semak bias:','rumah tutup/enggan dan perangkap hilang.']])+vectorTile('violet','clip','Keputusan PPKA',[['Tentukan:','risiko, keutamaan dan pelan.'],['Tetapkan:','PIC, tindakan, masa semakan dan bukti hasil.'],['Semak semula:','kes + vektor + liputan, bukan satu indeks.']])+'</div><div class="v-process" aria-label="Kitaran semakan"><span>01 Sahkan</span><span>02 Peta</span><span>03 Tindak</span><span>04 Semak</span></div><p class="v-note"><b>Asas yang sama:</b> lokaliti, definisi kes, populasi, tempoh dan cut-off pelaporan. Tiada laporan belum membuktikan tiada kes.</p><div class="toolbar"><button type="button" class="btn" data-tool="curve" data-for="dengue">'+uiIcon('chart')+'Plot lengkung onset</button><button type="button" class="btn" data-go="simulation-dengue">Lihat graf simulasi</button></div>';
+ if(id==='indices')return vectorTiming()+'<h4 class="v-section-title">Formula dalam satu pandangan</h4><p class="v-note">Sasaran rutin Perak Mac 2026, kecuali B8 KKM yang dilabel. Sasaran ini bukan ambang bebas transmisi.</p><div class="v-grid">'+[['ai','Rutin <1%'],['ci','Rutin <10%'],['bi','Rutin <5'],['pi','Rutin <1%'],['pci','Rutin <20%'],['pupa','B8 KKM: 0; unit HPI Perak perlu penjelasan'],['l4','Sumber menyebut 0%; graf bilangan sahaja'],['cpi','Sumber menyebut 0%; graf bilangan sahaja']].map(function(x){return vectorFormulaTile(x[0],x[1]);}).join('')+'</div><div class="v-grid">'+vectorTile('amber','home','Baca bersama liputan',[['Liputan:','diperiksa / layak dalam skop ditetapkan x 100.'],['Enggan:','enggan / layak didekati x 100; sasaran Perak <20%.'],['Bertindak:','susuli setiap jurang akses; rumah tutup bukan enggan.']])+vectorTile('rose','water','Utamakan bekas produktif',[['L4 / pupa:','peringkat lanjut; semak sumber yang terlepas.'],['Indoor / semi-indoor:','semak akses dan bekas air kegunaan harian.'],['Spesies:','catat Ae. aegypti / Ae. albopictus jika dikenal pasti.']])+'</div><p class="v-note"><b>Unit:</b> BI dan pupa/100 rumah boleh melebihi 100. PI di sini ialah premis. Denominator sifar = tiada indeks, bukan indeks sifar.</p><div class="foot">Asas B8: '+srcLink('dengueplan')+'</div>';
+ if(id==='traps')return vectorTrapExample()+'<div class="v-grid">'+vectorTile('teal','calendar','Ovitrap 7 hari',[['OI:','perangkap positif / sah x 100; Perak <10%.'],['Telur:','jumlah / perangkap sah; per positif ialah ukuran berbeza.'],['Respons:','petakan tapak positif dan gantikan perangkap tidak sah mengikut SOP.']])+vectorTile('violet','mosquito','Sticky trap: dewasa',[['STI:','perangkap positif / sah x 100.'],['SOI / SOLI:','Aedes / perangkap sah.'],['SOPI:','Aedes / perangkap positif; tiada positif = tidak berkenaan.']])+vectorTile('blue','clock','Ovitrap / sticky 48 jam',[['Tujuan:','QC selepas SRT; sasaran Perak 0%.'],['Asingkan:','set, tempoh dan siri graf daripada kajian 7 hari.'],['Positif:','audit sumber, akses, mutu semburan dan faktor lain.']])+vectorTile('rose','search','Dewasa dan usaha',[['BG:','Aedes / jumlah trap-hours berfungsi.'],['Aspirasi:','Aedes / jumlah person-minutes.'],['Padankan:','spesies, tapak, kaedah dan tempoh sebelum membandingkan.']])+'</div><p class="v-note"><b>Sticky rutin:</b> slaid menyebut STI <=5%, SOI <=0.1 dan SOPI <=1, tetapi sela masa tidak jelas. Jangan terus pindahkan sasaran itu kepada protokol 7 hari atau 48 jam.</p><p class="v-note"><b>Jaga perangkap:</b> petakan tapak, tetapkan pegawai/tarikh kutipan dan servis mengikut SOP supaya tidak menjadi sumber pembiakan.</p>';
+ if(id==='qc')return '<div class="v-grid">'+vectorTile('blue','home','Skop siasatan dan operasi',[['EI Perak:','50-100 m sekitar kes/tumpuan mengikut panduan.'],['Kawalan:','200 m bagi satu kes/fasa awal; 400 m WTK/hotspot mengikut pelan.'],['Berbeza tujuan:','radius EI tidak menggantikan radius operasi.']])+vectorTile('teal','clip','Audit sebelum mengulang',[['Sahkan:','premis diliputi, akses dan kawasan tertinggal.'],['Semak:','produk, bancuhan, kalibrasi, cuaca dan operator/PPE.'],['Betulkan:','punca kegagalan, kawalan sumber dan semakan semula.']])+'</div><h4 class="v-section-title">Garis masa QC / kaedah Perak KKB</h4><ol class="v-timeline"><li><b>1 jam sebelum MULA semburan</b><span>Letak sekurang-kurangnya 30 slaid MgO, tapak berpasangan.</span></li><li><b>30 minit selepas TAMAT semburan</b><span>Letak sekurang-kurangnya 30 ovitrap, indoor/outdoor mengikut SOP.</span></li><li><b>1 jam selepas TAMAT semburan</b><span>Kutip slaid MgO; semak titisan dan lokasi.</span></li><li><b>48 jam selepas perangkap DIPASANG</b><span>Kutip perangkap; keringkan paddle seperti kaedah sumber dan periksa.</span></li></ol><div class="v-grid">'+vectorTile('violet','mosquito','Hasil vektor',[['OI / STI 48 jam:','sasaran 0%.'],['Bioassay 24 jam:','sasaran mortaliti 100%, selepas kesahan/pembetulan disemak.'],['Tidak mencapai:','siasat dan betulkan; bukan diagnosis kerintangan.']])+vectorTile('amber','search','Hasil fizikal',[['MgO:','titisan di lokasi sampel; negatif perlu disiasat.'],['Had:','bukan bukti liputan atau dos seluruh lokaliti.'],['VMD:NMD:','julat dalam slaid memerlukan penjelasan; tiada keputusan automatik mesin.']])+'</div><p class="v-note"><b>Jangan samakan:</b> aktiviti dilaksana, vektor terkesan dan transmisi manusia menurun. Sasaran D6 bercanggah antara jadual sumber; sahkan arahan JKN.</p>';
+ if(id==='resistance')return '<div class="v-grid">'+vectorTile('rose','bioshield','Tiga soalan berlainan',[['QC semburan:','adakah penyampaian kawalan memadai?'],['IR:','adakah kerintangan terbukti melalui assay sah?'],['VDIM:','adakah antigen/RNA dikesan dalam sampel nyamuk?']])+vectorTile('teal','calendar','Hotspot >44 hari',[['Perak 2026:','kumpul telur semua lokaliti berkenaan untuk kerja IR.'],['Susulan:','ujian dalam 2 bulan selepas tamat mengikut program.'],['Sekarang:','siasat kegagalan semasa; jangan tunggu ujian terjadual.']])+'</div><h4 class="v-section-title">Mortaliti kawalan menentukan kesahan</h4><div class="v-bands"><div class="tone-blue"><strong>&lt;5%</strong><span>Tiada pembetulan Abbott</span></div><div class="tone-amber"><strong>5-20%</strong><span>Gunakan pembetulan Abbott</span></div><div class="tone-coral"><strong>&gt;20%</strong><span>Tidak sah; ulang assay</span></div></div><p class="v-note"><b>Protokol mesti sepadan:</b> umur/strain, spesies, produk, kepekatan, masa, kawalan dan replikasi. Field-cage, tube, bottle dan cone tidak boleh dianggap setara.</p><figure class="v-example"><figcaption><b>Contoh pengiraan MIR</b><span>Semua pool sah masuk denominator, termasuk negatif.</span></figcaption><div class="v-pools"><div><b>Pool 1 (+)</b><strong>15</strong><span>nyamuk</span></div><div><b>Pool 2 (-)</b><strong>18</strong><span>nyamuk</span></div><div><b>Pool 3 (+)</b><strong>20</strong><span>nyamuk</span></div></div><div class="v-equation">2 pool positif / <b>53 nyamuk</b> x 1,000 = <strong>37.74 per 1,000</strong></div><p class="v-note">Contoh pembetulan sedia ada: denominator 35 dalam slaid meninggalkan pool negatif. <b>MIR bukan peratus manusia berjangkit.</b> Positif antigen/RNA tidak membuktikan virus hidup; keputusan negatif tidak menolak peredaran virus.</p></figure>';
+ if(id==='community')return '<div class="v-grid">'+vectorTile('teal','home','Rumah dan komuniti',[['Tunjuk:','bekas produktif sebenar dan amalan air simpanan.'],['Setuju:','tindakan khusus dan pemeriksaan berulang.'],['Sahkan:','bekas sudah diurus; bukan bilangan risalah sahaja.']])+vectorTile('amber','clip','Pembinaan dan struktur',[['Libatkan:','pemaju, penyelia, pengurusan dan PBT.'],['Periksa:','void, longkang, tangki, sisa dan penginapan pekerja.'],['Tutup isu:','PIC, tarikh dan bukti pembetulan.']])+vectorTile('blue','school','Sekolah dan fasiliti',[['Lantik:','penyelaras dan peta bangunan/kawasan.'],['Kekalkan:','log pemeriksaan dan pembetulan.'],['Brief:','pelaporan demam dan laluan rujukan.']])+vectorTile('violet','chart','Nilai pada tiga peringkat',[['Penyampaian:','masa, premis dilawat/dirawat dan jurang akses.'],['Entomologi:','trend kaedah setara dan QC.'],['Kesihatan:','onset, kes teruk dan kematian.']])+'</div><div class="v-process"><span>PIC</span><span>Tindakan</span><span>Bukti hasil</span><span>Semakan</span></div><p class="v-note"><b>Indeks turun bukan bukti tunggal kes berkurang.</b> Semak musim, perjalanan wabak, pelaporan dan intervensi serentak. Bukti kajian serta hadnya kekal dalam rujukan penuh.</p>';
+ return '';
+}
 function vectorPanelsHTML(d){
-  if(d.id!=='dengue')return '';
-  var panels=PKD_DATA.vectorPanels||[];
-  var nav=panels.map(function(p){return '<button class="btn" type="button" data-open="vector-'+p.id+'">'+esc(p.title.split(':')[0])+'</button>';}).join('');
-  return '<section class="panel"><h3>Surveillance and kawalan wabak</h3><p class="sub">Field reference from supplied Malaysian guidance, with local targets and evidence limitations labelled.</p><div class="toolbar">'+nav+'</div></section>'+panels.map(function(p,i){
-    var table=p.rows?'<div class="sched-wrap"><table class="sched vector-table"><caption>'+esc(p.title)+'</caption><thead><tr>'+p.heads.map(function(h){return '<th scope="col">'+esc(h)+'</th>';}).join('')+'</tr></thead><tbody>'+p.rows.map(function(row){return '<tr>'+row.map(function(c,j){return j?'<td>'+esc(c)+'</td>':'<th scope="row">'+esc(c)+'</th>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>':'';
-    return '<details class="acc vector-panel" id="sec-vector-'+p.id+'"'+(state.openSec==='vector-'+p.id?' open':'')+'><summary><span class="num">V'+(i+1)+'</span><span class="tt">'+esc(p.title)+'</span><span class="meta">Field guide'+ic('chev','chev')+'</span></summary><div class="vector-body"><p class="sub">'+esc(p.summary)+'</p>'+table+'<ul>'+p.items.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul><div class="foot">'+p.src.map(srcLink).join(' / ')+' '+esc(p.ref)+'</div>'+(p.tool?'<div class="toolbar"><button class="btn" type="button" data-tool="'+p.tool+'" data-for="dengue">'+ic('clip')+'Open related calculator</button></div>':'')+'</div></details>';
-  }).join('');
+ if(d.id!=='dengue')return '';
+ var panels=PKD_DATA.vectorPanels||[],labels=['Kes & keputusan','Indeks habitat','Perangkap & dewasa','Kawalan & QC','IR / VDIM / MIR','Komuniti & hasil'],icons=['chart','water','mosquito','clip','bioshield','people'],tones=['blue','teal','violet','amber','rose','blue'];
+ return '<section class="panel v-overview" lang="ms"><h3>Surveillance and kawalan wabak</h3><p class="sub">Baca indikator. Kenal pasti jurang. Tentukan tindakan.</p><div class="v-nav">'+panels.map(function(p,i){return '<button type="button" class="tone-'+tones[i]+'" data-open="vector-'+p.id+'"><span class="v-icon">'+uiIcon(icons[i])+'</span><span>'+esc(labels[i])+'</span>'+uiIcon('chev')+'</button>';}).join('')+'</div><p class="v-note"><b>Rujukan, bukan dashboard kes sebenar.</b> Contoh bernombor dilabel rekaan. Arahan KKM/JKN/PKD semasa mengawal pelaksanaan.</p></section>'+panels.map(function(p,i){
+  var table=p.rows?'<div class="sched-wrap" tabindex="0" role="region" aria-label="Jadual formula penuh; tatal mendatar jika perlu"><table class="sched vector-table"><caption>'+esc(p.title)+'</caption><thead><tr>'+p.heads.map(function(h){return '<th scope="col">'+esc(h)+'</th>';}).join('')+'</tr></thead><tbody>'+p.rows.map(function(row){return '<tr>'+row.map(function(c,j){return j?'<td>'+esc(c)+'</td>':'<th scope="row">'+esc(c)+'</th>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>':'';
+  return '<details class="acc vector-panel tone-'+tones[i]+'" id="sec-vector-'+p.id+'"'+(state.openSec==='vector-'+p.id?' open':'')+'><summary><span class="num">V'+(i+1)+'</span><span class="tt">'+esc(p.title)+'</span><span class="meta">Field guide'+ic('chev','chev')+'</span></summary><div class="vector-body"><div class="v-visual" lang="ms">'+vectorVisualHTML(p.id)+'</div><details class="v-full"><summary>Rujukan penuh: definisi, kaedah dan caveat asal</summary><p class="sub">'+esc(p.summary)+'</p>'+table+'<ul>'+p.items.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul></details><div class="foot">'+p.src.map(srcLink).join(' / ')+' '+esc(p.ref)+'</div>'+(p.tool?'<div class="toolbar"><button class="btn" type="button" data-tool="'+p.tool+'" data-for="dengue">'+ic('clip')+'Open related calculator</button><button class="btn" type="button" data-go="simulation-dengue">Lihat graf simulasi</button></div>':'')+'</div></details>';
+ }).join('');
 }
 
 function diseaseHTML(d){
@@ -1875,7 +1931,9 @@ function sourcesHTML(){
 /* Dengue tabletop exercise. Synthetic observations are never written to POA,
    localStorage, a case register, eNotifikasi or eDengue. */
 var SIM_SOURCES={
-  definitions:{title:'iDengue (MYSA / BKP KKM): kawasan wabak aktif dan hotspot',url:'https://idengue.mysa.gov.my/denggi_d.html',note:'200 m; dua atau lebih kes dalam 14 hari notifikasi indeks; mula kluster pada notifikasi kes kedua; hotspot >30 hari.'},
+  srt:{title:'CEP JKN Perak: Kaedah Penilaian Keberkesanan Semburan Kabus / kajian dewasa',url:SRC.srt_perak.url,note:'Slaid dibekalkan: OI/STI 48 jam, sticky, BG, MgO dan bioassay. Sasaran rutin sticky mempunyai sela masa tidak jelas.'},
+  mir:{title:SRC.cdc_mir.title,url:SRC.cdc_mir.url,note:'MIR menggunakan semua nyamuk dalam pool sah, termasuk pool negatif. Nilai ialah anggaran minimum, bukan peratus kes manusia.'},
+  definitions:{title:'iDengue (MYSA / BKP KKM): kawasan wabak aktif dan hotspot',url:'https://idengue.mysa.gov.my/denggi_d.html',note:'200 m; dua atau lebih kes dalam 14 hari notifikasi indeks; mula wabak pada notifikasi kes kedua; hotspot >30 hari.'},
   pakat:{title:'KKM PAKAT 2021, edisi 2',url:SRC.pakat2021.url,note:'Dokumen yang dibekalkan: hlm. 10, 14, 22 dan 30. Fasa satu kes, WT, WTK, hotspot; mobilisasi komuniti dan indeks.'},
   national:{title:'KKM Pelan Strategik Denggi Kebangsaan 2022-2026',url:SRC.dengueplan.url,note:'Jadual 4, 7, 8 dan Annex 4-5: notifikasi, pendaftaran, DOCI, PTP, semburan, pemantauan dan >44 hari. Konflik D6 kekal ditandakan.'},
   perak:{title:'CEP JKN Perak: Manual Teknikal Interpretasi EI, Mac 2026',url:SRC.ei2026.url,note:'Dokumen yang dibekalkan, hlm. 1-5: konteks masa EI, sasaran indeks, produktiviti bekas, operasi dan susulan kerintangan. Sasaran setempat, bukan ambang bebas transmisi.'},
@@ -1899,87 +1957,349 @@ var SIM_SURVEYS=[
   {date:'2026-03-07',h:100,hp:0,c:200,cp:0,expected:100,context:'after',control:'2026-03-02T08:00',survey:'2026-03-07T08:00',note:'5 hari selepas kawalan; panel lengkap, tiada pembiakan dikesan. Nilai sifar tidak membuktikan tiada nyamuk dewasa atau tiada jangkitan.'}
 ];
 var SIM_STAGES=[
- {title:'Daftar dan siasat kes pertama',short:'01 / Pendaftaran kes',date:'2026-01-01',status:'Satu kes / belum memenuhi kriteria kluster',tone:'',survey:0,
-  scene:'Lokaliti Latihan A ialah kawasan rekaan. C01 mempunyai onset 30 Dis 2025, diagnosis 1 Jan 2026 pada 09:00, notifikasi 12:00 dan pendaftaran 14:00 MYT. NS1 positif. Belum ada kes kedua yang disahkan berkait.',
-  decision:'Sahkan maklumat, mulakan respons kes dan cari pautan epidemiologi. Jangan menunggu kes kedua untuk memulakan kawalan.',
-  actions:['Bezakan masa onset, diagnosis, notifikasi diterima dan pendaftaran. Semak definisi, keputusan makmal, pendua serta lokasi tinggal/kerja dan pergerakan relevan.','Hubungi fasiliti bagi status klinikal dan susulan. Pesakit bertanda amaran memerlukan penilaian/rujukan klinikal segera; siasatan lapangan tidak boleh melambatkannya.','Arahkan pasukan vektor dan pendidikan kesihatan, tetapkan PIC, semak liputan sebenar serta senarai premis belum dapat dimasuki.'],
-  field:['PPKP/PKP: pengesahan lokaliti, pemeriksaan, PTP dan rekod bekas positif mengikut lokasi/spesies. PKA: bantu pemetaan, temu janji akses dan pendidikan mengikut tugasan penyelia.','Rancang kawalan mengikut jadual satu kes dalam panduan asal. Jangan tunggu semua keputusan EI sebelum bertindak terhadap risiko yang dikenal pasti.'],
-  watch:'AI 8%, CI 12.5%, BI 20: pembiakan wujud dan sasaran rutin tidak dicapai. Cari bekas produktif, musnah/urus bekas dan susuli premis berisiko; angka ini tidak mengisytiharkan wabak dengan sendirinya.',
-  question:'AI 8% dengan satu kes disahkan. Apakah keputusan PPKA?',
-  options:['Isytihar hotspot kerana AI tinggi.','Daftar/siasat, mulakan kawalan kes dan cari kes berkait.','Tunggu kes kedua sebelum semua tindakan.'],correct:1,
-  reason:'Kriteria kluster menggunakan kes, masa dan tempat. Indeks membantu menetapkan tindakan vektor. Notifikasi kes disyaki tidak perlu menunggu pengesahan makmal.',refs:['cases','pakat','national','perak']},
- {title:'Sahkan dan aktifkan respons wabak',short:'02 / Pengisytiharan wabak',date:'2026-01-04',status:'Wabak baharu / fasa awal WT',tone:'',survey:1,
-  scene:'C02 dinotifikasi 4 Jan pada 12:00, 3 hari selepas C01, dengan lokasi 120 m dari indeks. Kedua-dua kes disahkan makmal dan disiasat sebagai satu lokaliti. Tarikh mula kluster latihan ialah 4 Jan, berdasarkan notifikasi kes kedua.',
-  decision:'Sahkan kriteria masa-tempat-kes, rekod status melalui proses PKD/JKN dan aktifkan pelan respons wabak. Fasa awal WT bukan bukti kawalan sudah berjaya.',
-  actions:['Semak pautan pendedahan, kemungkinan jangkitan di luar lokaliti, koordinat dan pendua. Dokumentasikan asas pengisytiharan serta pegawai yang mengesahkan.','Bina line list dan lengkung onset; gunakan tarikh notifikasi untuk status kluster. Lantik PIC epidemiologi, vektor, pendidikan kesihatan, makmal dan pelaporan.','Tetapkan semakan harian bagi kes baharu, akses premis, kualiti kawalan dan jurang sumber. Mobilisasi komuniti mengikut isu setempat.'],
-  field:['PPKP: kemas kini peta kes dan premis, semak bekas dalam/luar rumah, jalankan kawalan dan lapor liputan yang dicapai serta yang tertinggal.','Pelan contoh: PTP radius 200 m bermula dalam 24 jam dan 100% dalam 3 hari; semburan ruang sekurang-kurangnya 80% dalam 24 jam. Ikut anchor pendaftaran kes dalam jadual sumber dan arahan operasi semasa.'],
-  watch:'AI 10%, CI 15%, BI 24 menunjukkan masalah bekas berterusan. Gabungkan pemusnahan sumber, pengurusan bekas dan kawalan dewasa yang ditetapkan. Fogging sahaja tidak menghapuskan tempat pembiakan.',
-  question:'Tarikh manakah digunakan untuk mula kluster dalam contoh ini?',
-  options:['4 Jan: notifikasi kes kedua yang memenuhi kriteria.','30 Dis: onset kes pertama.','Tarikh AI melebihi 1%.'],correct:0,
-  reason:'iDengue menetapkan mula kluster pada notifikasi kes kedua. Jangan tukar anchor ini dengan onset, tarikh fogging atau tarikh pendaftaran DOCI.',refs:['definitions','pakat','national']},
- {title:'Audit kawalan yang nampak berjaya',short:'03 / QC dan jurang liputan',date:'2026-01-12',status:'Wabak masih aktif / data tidak lengkap',tone:'escalate',survey:2,
-  scene:'Empat kes latihan kini dinotifikasi. Semburan terakhir terganggu hujan dan sebahagian premis belum diliputi. EI dua hari selepas kawalan melaporkan sifar positif, tetapi hanya 40 daripada 100 rumah panel diperiksa.',
-  decision:'Jangan terima "AI sifar = selesai". Pisahkan hasil QC dalam sampel yang dapat diperiksa daripada liputan operasi seluruh lokaliti.',
-  actions:['Minta numerator, denominator, peta liputan, masa kawalan/EI, premis tutup dan enggan. Audit log semburan, keadaan cuaca, peralatan dan penyeliaan bersama pasukan entomologi.','Tetapkan mopping-up dengan akses luar waktu pejabat jika sesuai, libatkan wakil komuniti dan pihak pengurusan. Gunakan proses penguatkuasaan yang sah jika diperlukan.','Padankan kes baharu mengikut onset dan notifikasi. Kemunculan kes selepas operasi tidak dengan sendiri membuktikan kegagalan racun; semak tempoh pendedahan dan pelaksanaan dahulu.'],
-  field:['PPKP: susuli 40 rumah tutup dan 20 enggan dalam panel rekaan; catat hasil sebenar, bukan sekadar lawatan dirancang.','Pasukan pendidikan kesihatan mengikut struktur daerah: runding akses dan jelaskan tindakan pada bekas air. PKA membantu pelaksanaan yang ditugaskan.'],
-  watch:'AI 0%, CI 0%, BI 0 dalam 40 rumah hanya menggambarkan sampel itu. Dalam manual Perak, EI <4 hari ialah QC dengan sasaran sifar. Indeks sifar dan liputan 40% tidak mengesahkan lokaliti bebas risiko.',
-  question:'Apakah respons terbaik terhadap indeks sifar ini?',
-  options:['Tamatkan wabak kerana tiga indeks sifar.','Nyatakan semua rumah telah bebas Aedes.','Audit bias liputan dan lengkapkan pemeriksaan/kawalan.'],correct:2,
-  reason:'Denominator ialah rumah yang benar-benar diperiksa, bukan semua rumah sasaran. Kelompok yang tidak diperiksa mungkin mempunyai risiko berbeza.',refs:['perak','who','national']},
- {title:'Eskalasi kepada wabak tak terkawal',short:'04 / WTK',date:'2026-01-20',status:'Wabak tak terkawal (WTK)',tone:'critical',survey:3,
-  scene:'C06 dinotifikasi 20 Jan. Sebanyak 16 hari telah berlalu sejak mula wabak 4 Jan dan kes berkait terus muncul. Jumlah latihan ialah 6 kes. Panel 100 rumah diperiksa semula; pembiakan meningkat.',
-  decision:'Rekod WTK melalui program, eskalasi kepada kepimpinan PKD/JKN dan betulkan punca kegagalan operasi. Jangan hanya mengulang aktiviti tanpa audit.',
-  actions:['Semak semula taburan onset, kelompok kes, tempat kerja/sekolah dan lokasi pendedahan. Tentukan sama ada peluasan siasatan diperlukan.','Susun semula pasukan, logistik dan tindakan bersama PBT/pengurusan premis. Tetapkan PIC bagi bekalan air, sisa, akses rumah dan tapak binaan.','Bandingkan liputan yang dijanjikan dengan liputan disahkan. Minta penilaian entomologi dan kualiti semburan; siasat rintangan bersama pakar jika berasas, bukan berdasarkan kes semata-mata.'],
-  field:['Pelan sumber D6/D7 menggunakan radius 400 m untuk WTK/hotspot: mula dalam 24 jam, PTP 100% dan semburan sekurang-kurangnya 80% setiap 7 hari hingga tamat.','D6 mempunyai percanggahan antara Jadual 4 dan Jadual 8/Annex dalam dokumen sama. Sahkan sasaran mengawal dengan JKN; jangan anggap percanggahan telah diselesaikan oleh aplikasi.'],
-  watch:'AI 12%, CI 20%, BI 36 selepas 7 hari: pemetaan risiko, bukan QC 48 jam. Tumpukan bekas produktif dan premis utama, sambil membaiki liputan penuh kawasan operasi.',
-  question:'Mengapa status WTK perlu dinilai sekarang?',
-  options:['Kerana BI melebihi 5 sahaja.','Kes disahkan berkait terus dinotifikasi selepas 14 hari wabak.','Kerana tepat 14 hari telah berlalu sejak fogging.'],correct:1,
-  reason:'PAKAT mengaitkan WTK dengan kes disahkan yang dinotifikasi selepas 14 hari wabak. Usia wabak dan indeks entomologi menjawab soalan yang berbeza.',refs:['pakat','national','perak']},
- {title:'Urus hotspot dengan tindakan bersepadu',short:'05 / Hotspot >30 hari',date:'2026-02-04',status:'Hotspot / wabak berlarutan >30 hari',tone:'critical',survey:4,
-  scene:'31 hari telah berlalu sejak 4 Jan. C09 menambah jumlah kepada 9 kes latihan. Gangguan air menyebabkan simpanan air terbuka; sisa dan tapak binaan menyumbang bekas. Indeks meningkat walaupun beberapa pusingan fogging dilaporkan.',
-  decision:'Kekalkan status hotspot dan tangani punca sistem serta kualiti pelaksanaan. Beri keutamaan sumber kepada premis/bekas yang menyumbang pembiakan.',
-  actions:['Adakan semakan bersepadu dengan JKN, pasukan vektor/entomologi, PBT, komuniti dan pihak yang bertanggungjawab terhadap tapak serta bekalan air.','Tetapkan tindakan khusus: pengurusan air simpanan, kutipan sisa dan pembetulan struktur. Semak bukti tindakan siap, bukan bilangan mesyuarat atau bilangan semburan sahaja.','Gabungkan survelan kes, pemeriksaan habitat, spesies dan nyamuk dewasa. Bincang larvisid bagi bekas yang tidak dapat dimusnahkan mengikut produk/protokol dan pegawai terlatih.'],
-  field:['PPKP dan entomologi: bezakan bekas produktif daripada bekas yang sekadar banyak; lapor indoor/semi-indoor/outdoor serta denominators sebenar.','Rekod akses rumah, mutu PTP dan semburan. Pendidikan kesihatan perlu mengubah amalan khusus, contohnya penutup serta penjagaan bekas air yang digunakan setiap hari.'],
-  watch:'AI 18%, CI 25%, BI 50. Ketiga-tiga sasaran rutin tidak dicapai. BI ialah 50 bekas positif bagi 100 rumah, bukan 50% rumah dan bukan 50% risiko jangkitan.',
-  question:'Apakah keputusan utama pada tahap hotspot?',
-  options:['Selesaikan punca bekas dan jurang operasi secara bersepadu.','Ubah tarikh mula supaya tempoh wabak lebih pendek.','Ulang fogging sahaja dan abaikan akses rumah.'],correct:0,
-  reason:'Tempoh >30 hari menentukan hotspot. Indeks membantu mengenal pasti keperluan tindakan; membetulkan sumber dan liputan lebih bermakna daripada menukar label.',refs:['definitions','pakat','perak','national']},
- {title:'Hotspot berpanjangan dan kes teruk',short:'06 / Eskalasi >44 hari',date:'2026-02-18',status:'Hotspot >44 hari / eskalasi lanjut',tone:'critical',survey:5,
-  scene:'45 hari telah berlalu. C11 ialah kes rekaan yang memerlukan rawatan hospital bagi denggi teruk. Jumlah 11 kes. AI/CI/BI menurun sedikit tetapi masih tinggi; tiada asas menganggap transmisi sudah terhenti.',
-  decision:'Pastikan respons klinikal berjalan segera dan eskalasi operasi kepada JKN. Semak kapasiti, keselamatan pasukan, hasil tindakan serta strategi entomologi.',
-  actions:['Hubungi pasukan klinikal melalui saluran rasmi untuk status kes teruk dan keperluan program. Jangan menyamakan notifikasi denggi teruk dengan pengesahan kematian.','Minta entomologi menyelaraskan sticky ovitrap 7 hari untuk hotspot >44 hari (B9). Bezakan tujuan ini daripada semakan keberkesanan semburan 48 jam (A9).','Semak penemuan nyamuk dewasa, kegagalan peralatan/kaedah, liputan dan kemungkinan kerintangan. Dalam manual Perak, rancang pengumpulan telur serta ujian IR/susulan mengikut program; jangan menukar racun atau dos tanpa arahan teknikal.'],
-  field:['Contoh rutin 7 hari: 30 ovitrap dipasang, 24 sah diperiksa, 6 positif, 120 telur. OI = 25%; 6 perangkap hilang/tidak sah mesti dilaporkan.','OI ialah peratus perangkap sah yang positif, bukan peratus nyamuk berjangkit. Kekalkan jenis perangkap, tempoh pendedahan dan lokasi untuk perbandingan.'],
-  watch:'AI 15%, CI 22%, BI 44. Pengurangan kecil tidak membuktikan kesan intervensi. >44 hari ialah pencetus pemantauan tambahan; definisi hotspot kekal >30 hari.',
-  question:'Bagaimana menggunakan hasil ovitrap 6 positif daripada 24 sah?',
-  options:['Bahagi dengan 30 supaya OI menjadi 20%.','Anggap 25% penduduk akan dijangkiti.','Lapor OI 25%, kehilangan perangkap dan tindakan mengikut lokasi.'],correct:2,
-  reason:'Denominator ialah perangkap sah diperiksa. OI, AI, CI dan BI ialah indikator entomologi, bukan kadar serangan manusia. Kes teruk perlu laluan klinikal segera tanpa menunggu kajian perangkap.',refs:['national','perak','who']},
- {title:'Pemulihan belum bermakna tamat',short:'07 / Survelan selepas kawalan',date:'2026-02-23',status:'Hotspot / pemantauan berterusan',tone:'escalate',survey:6,
-  scene:'C12 terakhir dinotifikasi 21 Feb. Dua hari selepas operasi bersepadu, panel lengkap diperiksa: 2 rumah positif dan 4 bekas positif. Masalah akses bertambah baik, tetapi masih ada pembiakan dan notifikasi kes baru-baru ini.',
-  decision:'Betulkan baki pembiakan dan teruskan survelan. Jangan menamatkan wabak kerana sebahagian indeks turun di bawah sasaran rutin.',
-  actions:['Semak masa EI berbanding tamat kawalan. Ini QC dua hari: sasaran sifar dalam manual Perak, bukan perbandingan rutin semata-mata.','Arahkan pembetulan pada rumah/bekas positif, semak semula premis yang pernah gagal akses dan padankan dengan data dewasa serta kes.','Pastikan kes disyaki, makmal tertunggak, notifikasi lewat dan pendedahan luar lokaliti disemak. Tetapkan semakan seterusnya dengan PIC dan masa yang jelas.'],
-  field:['PPKP: rekod lokasi empat bekas dan bukti pembetulan; semak keadaan sebelum/selepas dan masa operasi sebenar.','Jadualkan survelan seterusnya bersama program. Penurunan indeks dalam panel tidak boleh diganti dengan pengesahan liputan semua premis radius operasi.'],
-  watch:'AI 2%, CI 2%, BI 4. CI <10 dan BI <5 memenuhi sasaran rutin, tetapi ketiga-tiganya gagal sasaran QC sifar pada <4 hari. Sesuaikan tafsiran kepada tujuan dan masa kajian.',
-  question:'CI 2% dan BI 4 pada dua hari selepas kawalan: tindakan?',
-  options:['Betulkan pembiakan baki dan teruskan pemantauan.','Isytihar tamat kerana CI dan BI di bawah sasaran rutin.','Abaikan masa EI kerana semua indeks boleh ditafsir sama.'],correct:0,
-  reason:'Keputusan QC sifar tidak boleh ditukar kepada ambang rutin untuk meluluskan operasi. Tepat 4 hari tidak diperincikan dalam manual; kes sempadan perlu pengesahan entomologi.',refs:['perak','who']},
- {title:'Semak kelayakan tamat wabak',short:'08 / Semakan tamat',date:'2026-03-07',status:'Calon semakan tamat / belum diisytihar',tone:'review',survey:7,
-  scene:'Pada 7 Mac, 14 hari kalendar telah berlalu sejak notifikasi terakhir 21 Feb. Panel lengkap kini sifar positif. Dalam cabang asas latihan, semakan daftar, fasiliti dan makmal tidak menemukan kes berkait baharu atau hasil tertunggak.',
-  decision:'Semak semua bukti dan syarat program sebelum pegawai berkuasa mengesahkan tamat. Aplikasi tidak menghantar atau mengubah status wabak sebenar.',
-  actions:['Sahkan anchor notifikasi terakhir, masa/cutoff dan tempoh tanpa kes mengikut SOP JKN/PKD yang sedang berkuat kuasa. Tarikh latihan +14 hari ialah jangkaan semakan, bukan pelepasan automatik.','Rekonsiliasi eNotifikasi/eDengue, line list, makmal dan fasiliti. Nilai kes lewat, kes tertunggak, pertindihan lokaliti dan bukti kawalan sumber.','Semak liputan/akses, hasil EI dan dewasa, tindakan agensi serta pelan survelan selepas tamat. Rekod pegawai, tarikh keputusan dan asas keputusan.'],
-  field:['Sediakan ringkasan kes mengikut onset/notifikasi, peta, operasi dan jurang yang telah ditutup. Jangan memadam isu yang masih belum selesai untuk mendapatkan status tamat.','Dalam latihan ini, anda boleh menguji kes lewat: kiraan masa perlu disemak semula; keputusan tamat tidak dibenarkan dalam cabang tersebut.'],
-  watch:'AI/CI/BI sifar menyokong semakan bersama bukti lain. Ia bukan bukti mutlak penghentian transmisi. DOCI 14 hari dari pendaftaran kes kedua ialah indikator prestasi yang berbeza.',
-  question:'Apakah yang membolehkan keputusan tamat dipertimbangkan?',
-  options:['Indeks sifar sahaja.','Tempoh dan bukti lengkap disahkan serta keputusan pegawai mengikut SOP.','Tarikh DOCI telah berlalu, tanpa semakan kes.'],correct:1,
-  reason:'Laporan MBSJ bersumber eDengue menunjukkan jangkaan tamat +14 hari dari notifikasi terakhir. Ini menyokong contoh tarikh, tetapi tidak menggantikan SOP/kuasa pengisytiharan setempat.',refs:['closure','national','perak']},
- {title:'Wabak tamat dan pembelajaran',short:'09 / Tamat dan debrief',date:'2026-03-08',status:'Debrief / keputusan latihan',tone:'review',survey:7,
-  scene:'Cabang latihan ini berakhir selepas semakan bukti dan pengesahan keputusan. Tiada data di halaman ini ialah rekod operasi sebenar. Semua 12 kes, tarikh, liputan, hasil makmal dan indeks ialah rekaan.',
-  decision:'Dokumentasikan pengisytiharan melalui proses rasmi, teruskan survelan dan tutup tindakan pembetulan yang belum selesai. Jangan hentikan pemerhatian hanya kerana status wabak berubah.',
-  actions:['Dalam operasi sebenar: pegawai yang diberi kuasa mengesahkan status, merekod tarikh tamat sebenar dan menyampaikan keputusan kepada pihak berkaitan melalui saluran program.','Sediakan laporan penutup dan after-action review: kelewatan, akses premis, punca bekas, mutu semburan, kes teruk, sumber dan hasil intervensi. Tetapkan PIC serta tarikh susulan mengikut arahan program, bukan tarikh automatik aplikasi.','Kekalkan pengesanan kes, pemantauan vektor dan tindakan air/sisa/struktur. Semak pencetus pembukaan siasatan semula jika ada notifikasi baharu.'],
-  field:['Untuk hotspot >44 hari di Perak, sahkan pelan IR dengan entomologi; manual menyatakan susulan ujian dalam 2 bulan selepas tamat. Keperluan, kapasiti dan sasaran setempat perlu disahkan.','Perubahan daripada kes tunggal ke WTK/hotspot ialah perubahan keputusan operasi, bukan hanya perubahan warna pada dashboard.'],
-  watch:'Pelajaran utama: ketepatan anchor, liputan sebenar, konteks EI dan keputusan program. Tiada pengiraan indeks boleh menggantikan pertimbangan epidemiologi serta pengesahan rasmi.',
-  question:'Selepas tamat, apakah tindakan yang masih diperlukan?',
-  options:['Hentikan semua survelan dan padam line list.','Anggap kawasan kebal terhadap wabak seterusnya.','Teruskan survelan, susulan tindakan dan review respons.'],correct:2,
-  reason:'Penutupan episod bukan penghapusan risiko denggi. Gunakan hasil review untuk membaiki pengesanan dan respons berikutnya.',refs:['perak','national','who']}
+  {
+    "title": "Daftar dan siasat kes pertama",
+    "short": "01 / Pendaftaran kes",
+    "date": "2026-01-01",
+    "status": "Satu kes / belum memenuhi kriteria wabak",
+    "tone": "",
+    "survey": 0,
+    "scene": "Lokaliti Latihan A ialah kawasan rekaan. C01 mempunyai onset 30 Dis 2025, diagnosis 1 Jan 2026 pada 09:00, notifikasi 12:00 dan pendaftaran 14:00 MYT. NS1 positif. Belum ada kes kedua yang disahkan berkait.",
+    "decision": "Sahkan maklumat, mulakan respons kes dan cari pautan epidemiologi. Jangan menunggu kes kedua untuk memulakan kawalan.",
+    "actions": [
+      "Bezakan masa onset, diagnosis, notifikasi diterima dan pendaftaran. Semak definisi, keputusan makmal, pendua serta lokasi tinggal/kerja dan pergerakan relevan.",
+      "Hubungi fasiliti bagi status klinikal dan susulan. Pesakit bertanda amaran memerlukan penilaian/rujukan klinikal segera; siasatan lapangan tidak boleh melambatkannya.",
+      "Arahkan pasukan vektor dan pendidikan kesihatan, tetapkan PIC, semak liputan sebenar serta senarai premis belum dapat dimasuki."
+    ],
+    "field": [
+      "PPKP/PKP: pengesahan lokaliti, pemeriksaan, PTP dan rekod bekas positif mengikut lokasi/spesies. PKA: bantu pemetaan, temu janji akses dan pendidikan mengikut tugasan penyelia.",
+      "Rancang kawalan mengikut jadual satu kes dalam panduan asal. Jangan tunggu semua keputusan EI sebelum bertindak terhadap risiko yang dikenal pasti."
+    ],
+    "watch": "AI 8%, CI 12.5%, BI 20: pembiakan wujud dan sasaran rutin tidak dicapai. Cari bekas produktif, musnah/urus bekas dan susuli premis berisiko; angka ini tidak mengisytiharkan wabak dengan sendirinya.",
+    "question": "Dengan satu kes disahkan dan pembiakan dikesan, pakej tindakan manakah PALING lengkap untuk syif ini?",
+    "options": [
+      "Sahkan notifikasi, jalankan semburan segera dan siasat rumah indeks; gunakan hasil EI lengkap esok untuk menetapkan skop PTP.",
+      "Sahkan daftar dan pendedahan, mulakan PTP serta kawalan dewasa mengikut SOP, cari kes berkait dan tetapkan semakan liputan hari ini.",
+      "Sahkan daftar, jalankan PTP di rumah indeks dan cari kes berkait; tentukan tindakan di premis sekitar selepas hasil siasatan kes kedua."
+    ],
+    "correct": 1,
+    "reason": "Kriteria wabak menggunakan kes, masa dan tempat. Indeks membantu menetapkan tindakan vektor. Notifikasi kes disyaki tidak perlu menunggu pengesahan makmal.",
+    "refs": [
+      "cases",
+      "pakat",
+      "national",
+      "perak"
+    ],
+    "feedback": [
+      "Semburan dan siasatan wajar, tetapi menunggu laporan EI lengkap boleh melambatkan PTP pada risiko yang sudah dikenal pasti.",
+      "Pelan ini menggabungkan pengesahan epidemiologi, respons segera dan semakan liputan; tidak menunggu kes kedua atau laporan EI lengkap.",
+      "PTP rumah indeks sahaja belum merangkumi skop respons kes dalam panduan. Tindakan sekitar tidak bergantung pada munculnya kes kedua."
+    ]
+  },
+  {
+    "title": "Sahkan dan aktifkan respons wabak",
+    "short": "02 / Pengisytiharan wabak",
+    "date": "2026-01-04",
+    "status": "Wabak baharu / fasa awal WT",
+    "tone": "",
+    "survey": 1,
+    "scene": "C02 dinotifikasi 4 Jan pada 12:00, 3 hari selepas C01, dengan lokasi 120 m dari indeks. Kedua-dua kes disahkan makmal dan disiasat sebagai satu lokaliti. Tarikh mula wabak latihan ialah 4 Jan, berdasarkan notifikasi kes kedua.",
+    "decision": "Sahkan kriteria masa-tempat-kes, rekod status melalui proses PKD/JKN dan aktifkan pelan respons wabak. Fasa awal WT bukan bukti kawalan sudah berjaya.",
+    "actions": [
+      "Semak pautan pendedahan, kemungkinan jangkitan di luar lokaliti, koordinat dan pendua. Dokumentasikan asas pengisytiharan serta pegawai yang mengesahkan.",
+      "Bina line list dan lengkung onset; gunakan tarikh notifikasi untuk status wabak. Lantik PIC epidemiologi, vektor, pendidikan kesihatan, makmal dan pelaporan.",
+      "Tetapkan semakan harian bagi kes baharu, akses premis, kualiti kawalan dan jurang sumber. Mobilisasi komuniti mengikut isu setempat."
+    ],
+    "field": [
+      "PPKP: kemas kini peta kes dan premis, semak bekas dalam/luar rumah, jalankan kawalan dan lapor liputan yang dicapai serta yang tertinggal.",
+      "Pelan contoh: PTP radius 200 m bermula dalam 24 jam dan 100% dalam 3 hari; semburan ruang sekurang-kurangnya 80% dalam 24 jam. Ikut anchor pendaftaran kes dalam jadual sumber dan arahan operasi semasa."
+    ],
+    "watch": "AI 10%, CI 15%, BI 24 menunjukkan masalah bekas berterusan. Gabungkan pemusnahan sumber, pengurusan bekas dan kawalan dewasa yang ditetapkan. Fogging sahaja tidak menghapuskan tempat pembiakan.",
+    "question": "Kedua-dua kes telah disahkan berkait. Rekod masa dan arahan manakah PALING tepat?",
+    "options": [
+      "Rekod mula wabak 4 Jan 12:00 (notifikasi C02), simpan onset berasingan dan gunakan pendaftaran C02 untuk pengiraan DOCI.",
+      "Rekod mula wabak 2 Jan (onset C02), simpan masa notifikasi berasingan dan gunakan pendaftaran C02 untuk pengiraan DOCI.",
+      "Rekod mula wabak 4 Jan 14:00 (pendaftaran C02), simpan onset berasingan dan gunakan tarikh sama untuk pengiraan DOCI."
+    ],
+    "correct": 0,
+    "reason": "iDengue menetapkan mula wabak pada notifikasi kes kedua. Jangan tukar anchor ini dengan onset, tarikh fogging atau tarikh pendaftaran DOCI.",
+    "refs": [
+      "definitions",
+      "pakat",
+      "national"
+    ],
+    "feedback": [
+      "Mula wabak menggunakan notifikasi kes kedua dalam definisi iDengue. Onset dan pendaftaran tetap direkod, tetapi menjawab soalan berlainan.",
+      "Onset C02 penting untuk lengkung epidemiologi, tetapi bukan anchor mula wabak yang digunakan dalam contoh ini.",
+      "Pendaftaran C02 relevan kepada DOCI, tetapi tidak menggantikan masa notifikasi kedua bagi mula wabak."
+    ]
+  },
+  {
+    "title": "Audit kawalan yang nampak berjaya",
+    "short": "03 / QC dan jurang liputan",
+    "date": "2026-01-12",
+    "status": "Wabak masih aktif / data tidak lengkap",
+    "tone": "escalate",
+    "survey": 2,
+    "scene": "Empat kes latihan kini dinotifikasi. Semburan terakhir terganggu hujan dan sebahagian premis belum diliputi. EI dua hari selepas kawalan melaporkan sifar positif, tetapi hanya 40 daripada 100 rumah panel diperiksa.",
+    "decision": "Jangan terima \"AI sifar = selesai\". Pisahkan hasil QC dalam sampel yang dapat diperiksa daripada liputan operasi seluruh lokaliti.",
+    "actions": [
+      "Minta numerator, denominator, peta liputan, masa kawalan/EI, premis tutup dan enggan. Audit log semburan, keadaan cuaca, peralatan dan penyeliaan bersama pasukan entomologi.",
+      "Tetapkan mopping-up dengan akses luar waktu pejabat jika sesuai, libatkan wakil komuniti dan pihak pengurusan. Gunakan proses penguatkuasaan yang sah jika diperlukan.",
+      "Padankan kes baharu mengikut onset dan notifikasi. Kemunculan kes selepas operasi tidak dengan sendiri membuktikan kegagalan racun; semak tempoh pendedahan dan pelaksanaan dahulu."
+    ],
+    "field": [
+      "PPKP: susuli 40 rumah tutup dan 20 enggan dalam panel rekaan; catat hasil sebenar, bukan sekadar lawatan dirancang.",
+      "Pasukan pendidikan kesihatan mengikut struktur daerah: runding akses dan jelaskan tindakan pada bekas air. PKA membantu pelaksanaan yang ditugaskan."
+    ],
+    "watch": "AI 0%, CI 0%, BI 0 dalam 40 rumah hanya menggambarkan sampel itu. Dalam manual Perak, EI <4 hari ialah QC dengan sasaran sifar. Indeks sifar dan liputan 40% tidak mengesahkan lokaliti bebas risiko.",
+    "question": "AI/CI/BI sifar hanya dalam 40/100 rumah; 40 tutup dan 20 enggan. Apakah arahan PALING sesuai sebelum mengesahkan hasil operasi?",
+    "options": [
+      "Kekalkan status wabak, terima QC larva sebagai memadai untuk lokaliti dan gunakan pusingan rutin seterusnya untuk premis yang belum masuk.",
+      "Kekalkan status wabak, dahulukan satu lagi pusingan semburan menyeluruh dan buat EI semula selepasnya sebelum menyusun akses rumah.",
+      "Kekalkan status wabak, lapor batas sampel 40%, audit mutu semburan dan susun akses serta mopping-up bagi premis tertinggal sekarang."
+    ],
+    "correct": 2,
+    "reason": "Denominator ialah rumah yang benar-benar diperiksa, bukan semua rumah sasaran. Kelompok yang tidak diperiksa mungkin mempunyai risiko berbeza.",
+    "refs": [
+      "perak",
+      "who",
+      "national"
+    ],
+    "feedback": [
+      "Hasil sifar boleh dilaporkan untuk 40 rumah sahaja. Menerimanya bagi seluruh lokaliti meninggalkan jurang liputan yang besar.",
+      "Ulangan semburan mungkin diperlukan selepas audit, tetapi belum menyelesaikan akses atau sumber pembiakan di premis tertinggal.",
+      "Arahan ini menangani bias sampel dan kegagalan pelaksanaan serentak, sambil mengekalkan respons wabak."
+    ]
+  },
+  {
+    "title": "Eskalasi kepada wabak tak terkawal",
+    "short": "04 / WTK",
+    "date": "2026-01-20",
+    "status": "Wabak tak terkawal (WTK)",
+    "tone": "critical",
+    "survey": 3,
+    "scene": "C06 dinotifikasi 20 Jan. Sebanyak 16 hari telah berlalu sejak mula wabak 4 Jan dan kes berkait terus muncul. Jumlah latihan ialah 6 kes. Panel 100 rumah diperiksa semula; pembiakan meningkat.",
+    "decision": "Rekod WTK melalui program, eskalasi kepada kepimpinan PKD/JKN dan betulkan punca kegagalan operasi. Jangan hanya mengulang aktiviti tanpa audit.",
+    "actions": [
+      "Semak semula taburan onset, kelompok kes, tempat kerja/sekolah dan lokasi pendedahan. Tentukan sama ada peluasan siasatan diperlukan.",
+      "Susun semula pasukan, logistik dan tindakan bersama PBT/pengurusan premis. Tetapkan PIC bagi bekalan air, sisa, akses rumah dan tapak binaan.",
+      "Bandingkan liputan yang dijanjikan dengan liputan disahkan. Minta penilaian entomologi dan kualiti semburan; siasat rintangan bersama pakar jika berasas, bukan berdasarkan kes semata-mata."
+    ],
+    "field": [
+      "Pelan sumber D6/D7 menggunakan radius 400 m untuk WTK/hotspot: mula dalam 24 jam, PTP 100% dan semburan sekurang-kurangnya 80% setiap 7 hari hingga tamat.",
+      "D6 mempunyai percanggahan antara Jadual 4 dan Jadual 8/Annex dalam dokumen sama. Sahkan sasaran mengawal dengan JKN; jangan anggap percanggahan telah diselesaikan oleh aplikasi."
+    ],
+    "watch": "AI 12%, CI 20%, BI 36 selepas 7 hari: pemetaan risiko, bukan QC 48 jam. Tumpukan bekas produktif dan premis utama, sambil membaiki liputan penuh kawasan operasi.",
+    "question": "Pada 20 Jan, kes berkait masih muncul 16 hari selepas mula wabak. Pakej arahan manakah PALING menepati fasa ini?",
+    "options": [
+      "Teruskan tindakan 200 m sebagai fasa awal, audit liputan sekarang dan semak kategori semula selepas satu lagi pusingan 7 hari.",
+      "Sahkan WTK, eskalasi PKD/JKN, gunakan skop 400 m mengikut arahan program dan audit jurang liputan serta kualiti setiap pusingan.",
+      "Sahkan WTK, kekalkan skop 200 m sekitar kes terakhir dan perluaskan kepada 400 m hanya selepas keputusan ujian kerintangan."
+    ],
+    "correct": 1,
+    "reason": "PAKAT mengaitkan WTK dengan kes disahkan yang dinotifikasi selepas 14 hari wabak. Usia wabak dan indeks entomologi menjawab soalan yang berbeza.",
+    "refs": [
+      "pakat",
+      "national",
+      "perak"
+    ],
+    "feedback": [
+      "Audit perlu, tetapi menangguhkan penilaian WTK mengabaikan kes berkait yang terus dinotifikasi selepas 14 hari wabak.",
+      "Tempoh dan kes berkait menyokong WTK. Skop 400 m serta audit mengikut sumber diteruskan; konflik sasaran D6 masih perlu pengesahan JKN.",
+      "Ujian kerintangan tidak menjadi prasyarat untuk skop operasi WTK. Siasatan kegagalan dan tindakan kawalan boleh berjalan serentak."
+    ]
+  },
+  {
+    "title": "Urus hotspot dengan tindakan bersepadu",
+    "short": "05 / Hotspot >30 hari",
+    "date": "2026-02-04",
+    "status": "Hotspot / wabak berlarutan >30 hari",
+    "tone": "critical",
+    "survey": 4,
+    "scene": "31 hari telah berlalu sejak 4 Jan. C09 menambah jumlah kepada 9 kes latihan. Gangguan air menyebabkan simpanan air terbuka; sisa dan tapak binaan menyumbang bekas. Indeks meningkat walaupun beberapa pusingan fogging dilaporkan.",
+    "decision": "Kekalkan status hotspot dan tangani punca sistem serta kualiti pelaksanaan. Beri keutamaan sumber kepada premis/bekas yang menyumbang pembiakan.",
+    "actions": [
+      "Adakan semakan bersepadu dengan JKN, pasukan vektor/entomologi, PBT, komuniti dan pihak yang bertanggungjawab terhadap tapak serta bekalan air.",
+      "Tetapkan tindakan khusus: pengurusan air simpanan, kutipan sisa dan pembetulan struktur. Semak bukti tindakan siap, bukan bilangan mesyuarat atau bilangan semburan sahaja.",
+      "Gabungkan survelan kes, pemeriksaan habitat, spesies dan nyamuk dewasa. Bincang larvisid bagi bekas yang tidak dapat dimusnahkan mengikut produk/protokol dan pegawai terlatih."
+    ],
+    "field": [
+      "PPKP dan entomologi: bezakan bekas produktif daripada bekas yang sekadar banyak; lapor indoor/semi-indoor/outdoor serta denominators sebenar.",
+      "Rekod akses rumah, mutu PTP dan semburan. Pendidikan kesihatan perlu mengubah amalan khusus, contohnya penutup serta penjagaan bekas air yang digunakan setiap hari."
+    ],
+    "watch": "AI 18%, CI 25%, BI 50. Ketiga-tiga sasaran rutin tidak dicapai. BI ialah 50 bekas positif bagi 100 rumah, bukan 50% rumah dan bukan 50% risiko jangkitan.",
+    "question": "Hotspot 31 hari: simpanan air terbuka dan sisa berterusan walaupun beberapa pusingan semburan. Keutamaan tambahan manakah PALING berasas?",
+    "options": [
+      "Kekalkan kawalan berjadual, tetapkan PIC pembaikan air/sisa dan bekas produktif, serta sahkan hasil dan akses sebelum semakan berikutnya.",
+      "Kekalkan kawalan berjadual, utamakan pertambahan pusingan semburan dan nilai hasil indeks dahulu sebelum mendapatkan komitmen agensi air/sisa.",
+      "Kekalkan kawalan berjadual, tambah liputan pendidikan umum dan nilai penyertaan penduduk dahulu sebelum menyasarkan bekas produktif."
+    ],
+    "correct": 0,
+    "reason": "Tempoh >30 hari menentukan hotspot. Indeks membantu mengenal pasti keperluan tindakan; membetulkan sumber dan liputan lebih bermakna daripada menukar label.",
+    "refs": [
+      "definitions",
+      "pakat",
+      "perak",
+      "national"
+    ],
+    "feedback": [
+      "Pelan ini mengekalkan tindakan vektor sambil membetulkan punca pembiakan yang telah dikenal pasti, dengan PIC dan bukti hasil.",
+      "Tambahan semburan mungkin dipertimbangkan program, tetapi tidak menggantikan pembetulan segera air/sisa serta bekas produktif.",
+      "Pendidikan penting, namun penyertaan umum sahaja tidak menunjukkan bekas berisiko telah diurus. Fokuskan amalan dan semak hasil."
+    ]
+  },
+  {
+    "title": "Hotspot berpanjangan dan kes teruk",
+    "short": "06 / Eskalasi >44 hari",
+    "date": "2026-02-18",
+    "status": "Hotspot >44 hari / eskalasi lanjut",
+    "tone": "critical",
+    "survey": 5,
+    "scene": "45 hari telah berlalu. C11 ialah kes rekaan yang memerlukan rawatan hospital bagi denggi teruk. Jumlah 11 kes. AI/CI/BI menurun sedikit tetapi masih tinggi; tiada asas menganggap transmisi sudah terhenti.",
+    "decision": "Pastikan respons klinikal berjalan segera dan eskalasi operasi kepada JKN. Semak kapasiti, keselamatan pasukan, hasil tindakan serta strategi entomologi.",
+    "actions": [
+      "Hubungi pasukan klinikal melalui saluran rasmi untuk status kes teruk dan keperluan program. Jangan menyamakan notifikasi denggi teruk dengan pengesahan kematian.",
+      "Minta entomologi menyelaraskan sticky ovitrap 7 hari untuk hotspot >44 hari (B9). Bezakan tujuan ini daripada semakan keberkesanan semburan 48 jam (A9).",
+      "Semak penemuan nyamuk dewasa, kegagalan peralatan/kaedah, liputan dan kemungkinan kerintangan. Dalam manual Perak, rancang pengumpulan telur serta ujian IR/susulan mengikut program; jangan menukar racun atau dos tanpa arahan teknikal."
+    ],
+    "field": [
+      "Contoh rutin 7 hari: 30 ovitrap dipasang, 24 sah diperiksa, 6 positif, 120 telur. OI = 25%; 6 perangkap hilang/tidak sah mesti dilaporkan.",
+      "OI ialah peratus perangkap sah yang positif, bukan peratus nyamuk berjangkit. Kekalkan jenis perangkap, tempoh pendedahan dan lokasi untuk perbandingan."
+    ],
+    "watch": "AI 15%, CI 22%, BI 44. Pengurangan kecil tidak membuktikan kesan intervensi. >44 hari ialah pencetus pemantauan tambahan; definisi hotspot kekal >30 hari.",
+    "question": "Respons klinikal C11 sudah berjalan. Ovitrap 7 hari: 30 dipasang, 24 sah, 6 positif, 120 telur. Pelaporan dan tindakan manakah PALING tepat?",
+    "options": [
+      "Lapor OI 25% dan 5 telur/perangkap sah; bandingkan dengan sasaran 48 jam sifar untuk memutuskan sama ada semburan terakhir berkesan.",
+      "Lapor OI 25% dan 20 telur/perangkap sebagai purata keseluruhan; lengkapkan enam perangkap tidak sah sebelum memetakan fokus tindakan.",
+      "Lapor OI 25%, 5 telur/perangkap sah dan 20/perangkap positif; catat enam tidak sah, guna konteks 7 hari dan susuli lokasi positif sekarang."
+    ],
+    "correct": 2,
+    "reason": "Denominator ialah perangkap sah diperiksa. OI, AI, CI dan BI ialah indikator entomologi, bukan kadar serangan manusia. Kes teruk perlu laluan klinikal segera tanpa menunggu kajian perangkap.",
+    "refs": [
+      "national",
+      "perak",
+      "who"
+    ],
+    "feedback": [
+      "Pengiraan betul, tetapi tempoh 7 hari tidak boleh dinilai sebagai ujian post-SRT 48 jam. Semak jenis dan tempoh perangkap dahulu.",
+      "20 ialah purata per perangkap POSITIF, bukan semua perangkap sah. Susulan lokasi positif tidak perlu menunggu semua perangkap diganti.",
+      "Kedua-dua purata dilabel dengan denominator betul; kehilangan perangkap kekal telus dan tindakan berpandukan lokasi serta konteks 7 hari."
+    ]
+  },
+  {
+    "title": "Pemulihan belum bermakna tamat",
+    "short": "07 / Survelan selepas kawalan",
+    "date": "2026-02-23",
+    "status": "Hotspot / pemantauan berterusan",
+    "tone": "escalate",
+    "survey": 6,
+    "scene": "C12 terakhir dinotifikasi 21 Feb. Dua hari selepas operasi bersepadu, panel lengkap diperiksa: 2 rumah positif dan 4 bekas positif. Masalah akses bertambah baik, tetapi masih ada pembiakan dan notifikasi kes baru-baru ini.",
+    "decision": "Betulkan baki pembiakan dan teruskan survelan. Jangan menamatkan wabak kerana sebahagian indeks turun di bawah sasaran rutin.",
+    "actions": [
+      "Semak masa EI berbanding tamat kawalan. Ini QC dua hari: sasaran sifar dalam manual Perak, bukan perbandingan rutin semata-mata.",
+      "Arahkan pembetulan pada rumah/bekas positif, semak semula premis yang pernah gagal akses dan padankan dengan data dewasa serta kes.",
+      "Pastikan kes disyaki, makmal tertunggak, notifikasi lewat dan pendedahan luar lokaliti disemak. Tetapkan semakan seterusnya dengan PIC dan masa yang jelas."
+    ],
+    "field": [
+      "PPKP: rekod lokasi empat bekas dan bukti pembetulan; semak keadaan sebelum/selepas dan masa operasi sebenar.",
+      "Jadualkan survelan seterusnya bersama program. Penurunan indeks dalam panel tidak boleh diganti dengan pengesahan liputan semua premis radius operasi."
+    ],
+    "watch": "AI 2%, CI 2%, BI 4. CI <10 dan BI <5 memenuhi sasaran rutin, tetapi ketiga-tiganya gagal sasaran QC sifar pada <4 hari. Sesuaikan tafsiran kepada tujuan dan masa kajian.",
+    "question": "EI dibuat 2 hari selepas kawalan: AI 2%, CI 2%, BI 4. Tafsiran dan arahan manakah PALING sesuai?",
+    "options": [
+      "Nilai sebagai QC dengan sasaran sifar, siasat tapak yang masih positif dan betulkan pelaksanaan; teruskan semakan kes dan liputan.",
+      "Nilai CI dan BI sebagai mencapai sasaran rutin, kekalkan tindakan di rumah AI positif dan tunggu pusingan rutin untuk menilai semula QC.",
+      "Nilai penurunan ketiga-tiga indeks sebagai bukti kawalan mencukupi, kekalkan survelan kes dan gunakan hasil ovitrap mingguan untuk semakan seterusnya."
+    ],
+    "correct": 0,
+    "reason": "Keputusan QC sifar tidak boleh ditukar kepada ambang rutin untuk meluluskan operasi. Tepat 4 hari tidak diperincikan dalam manual; kes sempadan perlu pengesahan entomologi.",
+    "refs": [
+      "perak",
+      "who"
+    ],
+    "feedback": [
+      "Konteks <4 hari memerlukan tafsiran QC. Penurunan belum memenuhi sasaran sifar; pembiakan positif memerlukan tindakan dan audit.",
+      "CI <10 dan BI <5 ialah sasaran rutin; menggunakan sempadan itu untuk QC dua hari boleh mengaburkan pembiakan yang masih ada.",
+      "Penurunan bukan pengesahan kawalan mencukupi. Ovitrap mingguan melengkapi maklumat tetapi tidak menggantikan tindakan pada penemuan QC."
+    ]
+  },
+  {
+    "title": "Semak kelayakan tamat wabak",
+    "short": "08 / Semakan tamat",
+    "date": "2026-03-07",
+    "status": "Calon semakan tamat / belum diisytihar",
+    "tone": "review",
+    "survey": 7,
+    "scene": "Pada 7 Mac, 14 hari kalendar telah berlalu sejak notifikasi terakhir 21 Feb. Panel lengkap kini sifar positif. Dalam cabang asas latihan, semakan daftar, fasiliti dan makmal tidak menemukan kes berkait baharu atau hasil tertunggak.",
+    "decision": "Semak semua bukti dan syarat program sebelum pegawai berkuasa mengesahkan tamat. Aplikasi tidak menghantar atau mengubah status wabak sebenar.",
+    "actions": [
+      "Sahkan anchor notifikasi terakhir, masa/cutoff dan tempoh tanpa kes mengikut SOP JKN/PKD yang sedang berkuat kuasa. Tarikh latihan +14 hari ialah jangkaan semakan, bukan pelepasan automatik.",
+      "Rekonsiliasi eNotifikasi/eDengue, line list, makmal dan fasiliti. Nilai kes lewat, kes tertunggak, pertindihan lokaliti dan bukti kawalan sumber.",
+      "Semak liputan/akses, hasil EI dan dewasa, tindakan agensi serta pelan survelan selepas tamat. Rekod pegawai, tarikh keputusan dan asas keputusan."
+    ],
+    "field": [
+      "Sediakan ringkasan kes mengikut onset/notifikasi, peta, operasi dan jurang yang telah ditutup. Jangan memadam isu yang masih belum selesai untuk mendapatkan status tamat.",
+      "Dalam latihan ini, anda boleh menguji kes lewat: kiraan masa perlu disemak semula; keputusan tamat tidak dibenarkan dalam cabang tersebut."
+    ],
+    "watch": "AI/CI/BI sifar menyokong semakan bersama bukti lain. Ia bukan bukti mutlak penghentian transmisi. DOCI 14 hari dari pendaftaran kes kedua ialah indikator prestasi yang berbeza.",
+    "question": "Pada 7 Mac, tiada notifikasi berkait selepas 21 Feb dan EI panel sifar. Apakah keputusan PALING selamat untuk dibawa kepada program?",
+    "options": [
+      "Rekod tamat berdasarkan tempoh 14 hari dan EI sifar; selesaikan padanan fasiliti serta makmal dalam laporan penutup selepas itu.",
+      "Bawa untuk semakan tamat selepas padanan daftar/fasiliti/makmal, semakan kawalan dan pelan susulan; sahkan SOP serta keputusan pegawai berkuasa.",
+      "Lanjutkan tempoh pemantauan secara tetap 14 hari lagi selepas EI sifar; padankan daftar dan makmal sementara menunggu tarikh baharu itu."
+    ],
+    "correct": 1,
+    "reason": "Laporan MBSJ bersumber eDengue menunjukkan jangkaan tamat +14 hari dari notifikasi terakhir. Ini menyokong contoh tarikh, tetapi tidak menggantikan SOP/kuasa pengisytiharan setempat.",
+    "refs": [
+      "closure",
+      "national",
+      "perak"
+    ],
+    "feedback": [
+      "Tarikh jangkaan dan EI sifar belum menyelesaikan laporan tertunggak atau syarat program. Rekonsiliasi perlu mendahului keputusan tamat.",
+      "Tarikh ialah pencetus semakan dalam contoh ini. Bukti, SOP semasa dan pegawai berkuasa menentukan pengisytiharan, bukan kalkulator sahaja.",
+      "Pemantauan mungkin perlu dilanjutkan mengikut penilaian, tetapi tambahan tetap 14 hari selepas EI bukan peraturan yang disahkan oleh sumber ini."
+    ]
+  },
+  {
+    "title": "Wabak tamat dan pembelajaran",
+    "short": "09 / Tamat dan debrief",
+    "date": "2026-03-08",
+    "status": "Debrief / keputusan latihan",
+    "tone": "review",
+    "survey": 7,
+    "scene": "Cabang latihan ini berakhir selepas semakan bukti dan pengesahan keputusan. Tiada data di halaman ini ialah rekod operasi sebenar. Semua 12 kes, tarikh, liputan, hasil makmal dan indeks ialah rekaan.",
+    "decision": "Dokumentasikan pengisytiharan melalui proses rasmi, teruskan survelan dan tutup tindakan pembetulan yang belum selesai. Jangan hentikan pemerhatian hanya kerana status wabak berubah.",
+    "actions": [
+      "Dalam operasi sebenar: pegawai yang diberi kuasa mengesahkan status, merekod tarikh tamat sebenar dan menyampaikan keputusan kepada pihak berkaitan melalui saluran program.",
+      "Sediakan laporan penutup dan after-action review: kelewatan, akses premis, punca bekas, mutu semburan, kes teruk, sumber dan hasil intervensi. Tetapkan PIC serta tarikh susulan mengikut arahan program, bukan tarikh automatik aplikasi.",
+      "Kekalkan pengesanan kes, pemantauan vektor dan tindakan air/sisa/struktur. Semak pencetus pembukaan siasatan semula jika ada notifikasi baharu."
+    ],
+    "field": [
+      "Untuk hotspot >44 hari di Perak, sahkan pelan IR dengan entomologi; manual menyatakan susulan ujian dalam 2 bulan selepas tamat. Keperluan, kapasiti dan sasaran setempat perlu disahkan.",
+      "Perubahan daripada kes tunggal ke WTK/hotspot ialah perubahan keputusan operasi, bukan hanya perubahan warna pada dashboard."
+    ],
+    "watch": "Pelajaran utama: ketepatan anchor, liputan sebenar, konteks EI dan keputusan program. Tiada pengiraan indeks boleh menggantikan pertimbangan epidemiologi serta pengesahan rasmi.",
+    "question": "Selepas pengesahan tamat, pelan susulan manakah PALING lengkap bagi hotspot berpanjangan ini?",
+    "options": [
+      "Sediakan laporan penutup, kembali kepada survelan rutin dan biarkan agensi menyelesaikan baki isu tanpa jadual semakan bersama.",
+      "Sediakan laporan penutup, ulang aktiviti pada intensiti hotspot sehingga semua indeks sifar dan nilai keperluan review selepas itu.",
+      "Sediakan laporan dan review, teruskan survelan berasaskan risiko, tetapkan PIC bagi baki isu dan sahkan pelan susulan IR dengan entomologi."
+    ],
+    "correct": 2,
+    "reason": "Penutupan episod bukan penghapusan risiko denggi. Gunakan hasil review untuk membaiki pengesanan dan respons berikutnya.",
+    "refs": [
+      "perak",
+      "national",
+      "who"
+    ],
+    "feedback": [
+      "Kembali kepada rutin mungkin sesuai selepas penilaian, tetapi isu yang belum selesai masih memerlukan PIC, masa semakan dan bukti penutupan.",
+      "Intensiti pascatamat perlu ditentukan program dan risiko. Mensyaratkan semua indeks sifar secara umum mencampurkan tujuan serta protokol berbeza.",
+      "Pelan ini menutup jurang tindakan, mengekalkan pengesanan dan menyemak keperluan IR setempat tanpa mereka tempoh operasi universal."
+    ]
+  }
 ];
 var SIM_CLOSURE_CHECKS=[
  'Saya telah menyemak contoh anchor, tempoh tanpa kes dan keperluan pengesahan SOP setempat.',
@@ -1988,7 +2308,7 @@ var SIM_CLOSURE_CHECKS=[
  'Pelan survelan selepas tamat, laporan penutup dan tindakan susulan mempunyai PIC dalam senario latihan.',
  'Saya memahami pengesahan di sini ialah keputusan LATIHAN; keputusan sebenar memerlukan pegawai berkuasa dan saluran rasmi.'
 ];
-var simState={step:0,answers:{},view:'graph',checks:{},late:false,closed:false};
+var simState={step:0,answers:{},view:'graph',group:'larva',checks:{},late:false,closed:false};
 function simDays(a,b){return Math.round((Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/86400000);}
 function simDate(d){var p=d.split('-');return p[2]+' '+['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogos','Sep','Okt','Nov','Dis'][Number(p[1])-1]+' '+p[0];}
 function simVisibleCases(step){return SIM_CASES.filter(function(c){return c.date<=SIM_STAGES[step].date;});}
@@ -1998,34 +2318,138 @@ function simList(items){return '<ul>'+items.map(function(t){return '<li>'+esc(t)
 function simulationEntryHTML(){return '<button type="button" class="sim-entry" lang="ms" data-go="simulation-dengue"><span class="quick-icon">'+uiIcon('mosquito')+'</span><span class="sim-entry-copy"><strong>Simulasi wabak denggi</strong><small>Latihan PPKA: kes pertama hingga tamat wabak</small></span>'+uiIcon('chev')+'</button>';}
 function simProgress(){return '<ol class="sim-progress" aria-label="Langkah '+(simState.step+1)+' daripada '+SIM_STAGES.length+'">'+SIM_STAGES.map(function(s,i){return '<li class="'+(i<simState.step?'passed':i===simState.step?'current':'')+'" aria-label="'+esc(s.short)+'"'+(i===simState.step?' aria-current="step"':'')+'></li>';}).join('')+'</ol>';}
 function simControls(){return '<div class="sim-controls"><label for="sim-step">Pilih langkah latihan<select id="sim-step" data-sim-step="1">'+SIM_STAGES.map(function(s,i){return '<option value="'+i+'"'+(simState.step===i?' selected':'')+'>'+esc(s.short)+'</option>';}).join('')+'</select></label><button class="btn" type="button" data-sim="prev"'+(simState.step===0?' disabled':'')+' aria-label="Langkah sebelumnya">'+ic('back')+'Kembali</button><button class="btn primary" type="button" data-sim="next"'+(simState.step===8?' disabled':'')+'>Seterusnya'+ic('chev')+'</button></div>';}
-function simMetricCard(key,index){
-  var r=simMetric(index,key),s=SIM_SURVEYS[index],num=key==='ai'?s.hp:s.cp,den=key==='ci'?s.c:s.h;
-  var names={ai:'Aedes Index (AI)',ci:'Container Index (CI)',bi:'Breteau Index (BI)'},unit=key==='bi'?'bekas positif per 100 rumah':'%',color='var(--sim-'+key+')';
-  var max={ai:20,ci:30,bi:60}[key],barW=22,chart='';
-  [0,max/2,max].forEach(function(v){var y=138-v/max*104;chart+='<line class="sim-axis" x1="35" x2="350" y1="'+y+'" y2="'+y+'"/><text x="29" y="'+(y+4)+'" text-anchor="end">'+v+'</text>';});
-  var target=r.target===0?'QC = 0':('Sasaran <'+r.target+(key==='bi'?'':'%')),ty=138-r.target/max*104;
-  chart+='<line class="sim-target" x1="35" x2="350" y1="'+ty+'" y2="'+ty+'"/>';
-  SIM_SURVEYS.slice(0,index+1).forEach(function(row,i){var value=simMetric(i,key).value,x=46+i*38,y=138-value/max*104,partial=row.h<row.expected;
-    chart+='<rect x="'+x+'" y="'+y+'" width="'+barW+'" height="'+Math.max(2,138-y)+'" rx="3" fill="'+(partial?'none':color)+'" stroke="'+color+'" stroke-width="'+(i===index?2:1)+'"'+(partial?' stroke-dasharray="3 2"':'')+' opacity="'+(i===index?1:.85)+'"><title>Langkah '+(i+1)+', '+simDate(row.date)+': '+value.toFixed(1)+(key==='bi'?' per 100 rumah':'%')+(partial?'; sampel tidak lengkap':'')+'</title></rect><text x="'+(x+barW/2)+'" y="158" text-anchor="middle">'+(i+1)+'</text>';
-  });
-  var status=r.met?'Mencapai sasaran konteks ini':'Belum mencapai sasaran konteks ini';
-  if(s.h<s.expected)status='Sampel tidak lengkap: jangan simpulkan seluruh lokaliti';
-  return '<article class="sim-chart '+key+'"><div class="sim-chart-head"><div><h4>'+names[key]+'</h4><span>'+num+' / '+den+' x 100</span></div><strong style="color:'+color+'">'+r.value.toFixed(1)+(key==='bi'?'':'%')+'</strong></div><p class="sim-unit">'+(key==='bi'?unit:'Peratus '+(key==='ai'?'rumah':'bekas')+' positif')+'</p><svg viewBox="0 0 360 176" role="img" aria-label="'+esc(names[key]+'; data rekaan hingga langkah '+(index+1)+'. Paksi mendatar: langkah, paksi menegak: '+unit+'. Nilai semasa '+r.value.toFixed(1)+'. Data lengkap dalam paparan Data.')+'"><title>'+names[key]+' / latihan</title>'+chart+'</svg><p class="sim-interpretation"><b>'+esc(target)+'</b> (garis putus). '+esc(status)+'.</p></article>';
+/* All observations below are fictional teaching data. Null means not measured,
+   never zero. Separate trap sets and protocols must not share a trend series. */
+var SIM_OBSERVATIONS=[
+ {premises:110,premisesPositive:10,allContainers:200,potential:70,pupae:48,l4:10,pc:6,refused:0,closed:0},
+ {premises:110,premisesPositive:13,allContainers:200,potential:85,pupae:64,l4:12,pc:8,refused:0,closed:0},
+ {premises:44,premisesPositive:0,allContainers:80,potential:25,pupae:0,l4:0,pc:0,refused:20,closed:40,
+  ovi48:[30,24,3,18],sticky48:[30,24,2,3],mgo:[24,30],bio:[100,80,100,10]},
+ {premises:110,premisesPositive:16,allContainers:220,potential:100,pupae:96,l4:20,pc:12,refused:0,closed:0,
+  ovi:[30,27,9,270],sticky:[30,28,8,14],bg:[180,120],asp:[90,60]},
+ {premises:110,premisesPositive:24,allContainers:240,potential:120,pupae:150,l4:30,pc:18,refused:0,closed:0,
+  ovi:[30,30,15,600],sticky:[30,30,15,36],bg:[360,120],asp:[180,60]},
+ {premises:110,premisesPositive:20,allContainers:240,potential:100,pupae:120,l4:24,pc:14,refused:0,closed:0,
+  ovi:[30,24,6,120],sticky:[30,24,8,16],bg:[288,120],asp:[150,60],mir:'15,1\n18,0\n20,1'},
+ {premises:110,premisesPositive:3,allContainers:240,potential:35,pupae:6,l4:2,pc:2,refused:0,closed:0,
+  ovi48:[30,30,1,6],sticky48:[30,30,1,1],mgo:[30,30],bio:[100,100,100,2],bg:[24,120],asp:[6,60]},
+ {premises:110,premisesPositive:0,allContainers:240,potential:12,pupae:0,l4:0,pc:0,refused:0,closed:0,
+  ovi:[30,30,1,6],sticky:[30,30,1,1],bg:[12,120],asp:[3,60]}
+];
+var SIM_GROUPS=[
+ {id:'larva',title:'AI / CI / BI',sub:'Indeks asas',keys:['ai','ci','bi'],refs:['perak','pakat','who']},
+ {id:'traps',title:'OI / Perangkap',sub:'Ovitrap dan sticky 7 hari',keys:['oi','eggs','sti','soi','sopi'],refs:['perak','srt','national']},
+ {id:'habitat',title:'Habitat lanjut',sub:'Premis, bekas dan pupa',keys:['pi','pci','pupa','l4','cpi'],refs:['perak','national','who']},
+ {id:'adults',title:'Dewasa / VDIM',sub:'Usaha tangkapan dan MIR',keys:['bg','asp','mir'],refs:['perak','srt','mir','who']},
+ {id:'qc',title:'Liputan / QC',sub:'Akses dan penilaian kawalan',keys:['coverage','refusal','oi48','sti48','mgo','bio'],refs:['perak','srt','national']}
+];
+var SIM_METRICS={
+ ai:{name:'Aedes / House Index',short:'AI / HI',unit:'%',tone:'blue',max:20,formula:['Rumah positif','Rumah diperiksa','x 100'],action:'Petakan rumah positif; urus bekas dan semak akses indoor.'},
+ ci:{name:'Container Index',short:'CI',unit:'%',tone:'teal',max:30,formula:['Bekas air positif','Bekas air diperiksa','x 100'],action:'Kenal pasti jenis bekas positif dan kekalkan denominator yang setara.'},
+ bi:{name:'Breteau Index',short:'BI',unit:'bekas positif / 100 rumah',tone:'violet',max:60,formula:['Bekas positif','Rumah diperiksa','x 100'],action:'Utamakan premis dengan banyak bekas produktif. BI bukan peratus.'},
+ pi:{name:'Premises Index',short:'PI premis',unit:'%',tone:'rose',max:30,formula:['Rumah + premis lain positif','Semua premis diperiksa','x 100'],action:'Lihat rumah dan premis bukan rumah; PI premis bukan indeks pupa.'},
+ pci:{name:'Potential Container Index',short:'PCI',unit:'%',tone:'amber',max:60,formula:['Bekas air belum membiak','Semua bekas diperiksa','x 100'],action:'Urus bekas berpotensi sebelum menjadi positif; semak bekalan air/sisa.'},
+ pupa:{name:'Pupa per 100 rumah',short:'Pupa / HPI',unit:'pupa / 100 rumah',tone:'rose',max:160,formula:['Pupa dikira','Rumah diperiksa','x 100'],action:'Cari bekas produktif. B8 KKM menyatakan 0; label HPI <1% Perak mempunyai isu unit, bukan pengganti kiraan pupa.'},
+ l4:{name:'Bekas dengan larva L4',short:'CLI L4: kehadiran',unit:'bekas dengan L4',tone:'amber',max:40,formula:['Kira bekas dengan larva instar 4','Rekod kehadiran; tiada % automatik',''],action:'Urus bekas berperingkat lanjut. Denominator CLI L4 belum jelas dalam manual; graf ini bilangan, bukan indeks %.'},
+ cpi:{name:'Bekas dengan pupa',short:'CPI: kehadiran',unit:'bekas dengan pupa',tone:'rose',max:20,formula:['Kira bekas dengan pupa','Rekod kehadiran; tiada % automatik',''],action:'Utamakan sumber yang hampir menghasilkan dewasa. Graf bilangan sahaja; denominator CPI perlu SOP.'},
+ oi:{name:'Ovitrap Index / 7 hari',short:'OI 7 hari',unit:'%',tone:'teal',max:60,formula:['Ovitrap Aedes positif','Ovitrap sah diperiksa','x 100'],action:'Susuli lokasi positif dan perangkap tidak sah. OI bukan risiko jangkitan penduduk.'},
+ eggs:{name:'Purata telur / 7 hari',short:'Telur / perangkap sah',unit:'telur / perangkap sah',tone:'violet',max:25,formula:['Jumlah telur Aedes','Ovitrap sah diperiksa',''],action:'Bandingkan tapak, kaedah dan tempoh yang sama; jangan keliru purata semua perangkap dengan purata perangkap positif.'},
+ sti:{name:'Sticky Trap Index / 7 hari',short:'STI 7 hari',unit:'%',tone:'blue',max:60,formula:['Sticky trap Aedes positif','Sticky trap sah diperiksa','x 100'],action:'Semak lokasi dewasa positif dan bekas terlindung. Sasaran STI dalam slaid tidak mempunyai sela masa yang jelas.'},
+ soi:{name:'Sticky Ovitrap Index / 7 hari',short:'SOI / SOLI',unit:'Aedes / perangkap sah',tone:'rose',max:1.5,formula:['Aedes dewasa ditangkap','Sticky trap sah diperiksa',''],action:'Ketumpatan per semua perangkap sah. Jangan pindahkan sasaran berlainan protokol ke siri 7 hari ini.'},
+ sopi:{name:'Sticky Ovitrap Premis Index',short:'SOPI / 7 hari',unit:'Aedes / perangkap positif',tone:'amber',max:3,formula:['Aedes dewasa ditangkap','Sticky trap positif',''],action:'Label sumber menggunakan perkataan Premis tetapi denominator ialah perangkap positif. Tiada positif = tidak berkenaan.'},
+ bg:{name:'Ketumpatan BG trap',short:'BG',unit:'Aedes / trap-hour',tone:'blue',max:4,formula:['Aedes ditangkap','Jumlah jam perangkap berfungsi',''],action:'Semak spesies, tapak dan masa operasi. Jangan bandingkan terus dengan tangkapan per person-minute.'},
+ asp:{name:'Aspirasi rehat',short:'Aspirasi',unit:'Aedes / person-minute',tone:'teal',max:4,formula:['Aedes dikutip melalui aspirasi','Jumlah minit pengumpul',''],action:'Fokus tempat rehat dan akses indoor. Usaha sah, kaedah dan spesies mesti sepadan.'},
+ mir:{name:'Minimum Infection Rate',short:'MIR',unit:'per 1,000 nyamuk diuji',tone:'rose',max:50,formula:['Pool positif','Nyamuk dalam SEMUA pool sah','x 1,000'],action:'Semak semua pool termasuk negatif. Positif RNA/antigen bukan bukti virus hidup atau kadar serangan manusia.'},
+ coverage:{name:'Liputan panel rumah',short:'Liputan',unit:'%',tone:'blue',max:100,formula:['Rumah panel diperiksa','Rumah panel yang layak','x 100'],action:'Selesaikan rumah tertinggal. Ini panel latihan, bukan liputan semua premis radius operasi.'},
+ refusal:{name:'Rumah enggan',short:'Enggan',unit:'%',tone:'amber',max:100,formula:['Rumah enggan diperiksa','Rumah layak didekati','x 100'],action:'Runding akses dan tindakan sah; rumah tutup direkod berasingan daripada rumah enggan.'},
+ oi48:{name:'Ovitrap selepas SRT / 48 jam',short:'OI QC 48 jam',unit:'%',tone:'teal',max:20,formula:['Ovitrap Aedes positif','Ovitrap sah diperiksa','x 100'],action:'Positif memerlukan audit sumber, akses dan pelaksanaan; jangan gabungkan dengan OI 7 hari.'},
+ sti48:{name:'Sticky selepas SRT / 48 jam',short:'STI QC 48 jam',unit:'%',tone:'violet',max:20,formula:['Sticky trap Aedes positif','Sticky trap sah diperiksa','x 100'],action:'Susuli lokasi positif dan mutu penyampaian. Tangkap dewasa, bukan telur.'},
+ mgo:{name:'Slaid dengan titisan',short:'MgO / lokasi sampel',unit:'% slaid sah dengan titisan',tone:'blue',max:100,formula:['Slaid sah dengan titisan','Semua slaid sah diperiksa','x 100'],action:'Peratus deskriptif latihan, bukan liputan semburan atau dos racun. Semak lokasi tanpa titisan dan mutu semburan.'},
+ bio:{name:'Mortaliti bioassay / 24 jam',short:'Bioassay / Abbott',unit:'%',tone:'rose',max:100,formula:['Mortaliti terdedah % - kawalan %','100 - mortaliti kawalan %','x 100 jika perlu'],action:'Semak kesahan assay dan pembetulan kawalan. Ini QC semburan, bukan klasifikasi rintang/rentan.'}
+};
+function simTrapResult(index,kind){var a=SIM_OBSERVATIONS[index][kind];if(!a)return null;var post=kind.indexOf('48')>=0;return PKDCore.traps({kind:kind.indexOf('sticky')===0?'sticky':'ovi',context:post?'post48':'routine',deployed:a[0],valid:a[1],positive:a[2],count:a[3],hours:post?48:168});}
+function simMeasure(index,key){
+ var s=SIM_SURVEYS[index],o=SIM_OBSERVATIONS[index],m=SIM_METRICS[key],r=null;
+ if(!s||!m)return null;
+ var out={value:null,unit:m.unit,raw:'Belum diukur pada pusingan ini.',context:'Tiada pengukuran',rule:'Tiada bacaan bukan sifar.',target:null,met:null,partial:false,date:s.date};
+ function use(x){out.value=x.value;out.target=x.target===undefined?null:x.target;out.met=x.met===undefined?null:x.met;out.rule=x.rule||'Tiada sasaran automatik';out.context=x.context||'';}
+ var countMap={ai:[s.hp,s.h],ci:[s.cp,s.c],bi:[s.cp,s.h],pi:[o.premisesPositive,o.premises],pci:[o.potential,o.allContainers],pupa:[o.pupae,s.h],coverage:[s.h,s.expected],refusal:[o.refused,s.expected]};
+ if(countMap[key]){
+  var pair=countMap[key],timing=key==='coverage'||key==='refusal'?'routine':s.context;
+  use(PKDCore.aedes({metric:key,n:pair[0],d:pair[1],context:timing,control:s.control||'',survey:s.survey||''}));
+  out.raw=pair[0]+' / '+pair[1]+' x 100';out.partial=s.h<s.expected&&key!=='coverage'&&key!=='refusal';
+  out.context=timing==='routine'?'Rutin / pemetaan risiko':simDays(s.control.slice(0,10),s.date)+' hari selepas kawalan';
+  if(out.target!==null)out.rule=(out.target===0?'QC = 0':'Sasaran rutin <'+out.target)+(m.unit==='%'?'%':'');
+  if(key==='pupa'&&out.target===null)out.rule='B8 KKM: 0 pupa /100 rumah; unit HPI Perak perlu penjelasan.';
+  if(key==='coverage'){out.context='Panel latihan 100 rumah';out.rule='100 rumah ialah reka bentuk latihan, bukan saiz sampel wajib.';out.raw+='; '+o.closed+' tutup; '+o.refused+' enggan';}
+  if(key==='refusal'){out.context='100 rumah layak didekati; rumah tutup berasingan';out.rule='Perak: <20%; setiap enggan tetap perlu susulan.';}
+  return out;
+ }
+ if(key==='l4'||key==='cpi'){out.value=key==='l4'?o.l4:o.pc;out.raw=out.value+' bekas dikenal pasti; '+s.c+' bekas air diperiksa';out.context='Pemerhatian kehadiran; bukan indeks peratus';out.rule='Manual menyatakan 0%; denominator belum jelas. Papar bilangan sahaja.';out.partial=s.h<s.expected;return out;}
+ var trapMap={oi:['ovi','index'],eggs:['ovi','density'],sti:['sticky','index'],soi:['sticky','density'],sopi:['sticky','positiveDensity'],oi48:['ovi48','index'],sti48:['sticky48','index']};
+ if(trapMap[key]){
+  var entry=trapMap[key],t=simTrapResult(index,entry[0]);if(!t)return out;
+  out.value=t[entry[1]];out.context=(t.hours===48?'QC selepas SRT / 48 jam':'Survelan / 7 hari')+'; kutipan '+simDate(s.date);
+  out.raw=t.deployed+' dipasang; '+t.valid+' sah; '+t.positive+' positif; '+t.count+(entry[0].indexOf('sticky')===0?' Aedes dewasa':' telur')+'; '+t.missing+' hilang/tidak sah';
+  out.partial=t.missing>0;out.rule='Tiada sasaran automatik untuk ukuran/protokol ini.';
+  if(key==='oi'){out.target=10;out.met=t.met;out.rule='OI 7 hari Perak: <10%';}
+  if(key==='oi48'||key==='sti48'){out.target=0;out.met=t.met;out.rule='QC 48 jam Perak: = 0%';}
+  if(key==='sopi'&&t.positive===0){out.context='Tidak berkenaan: tiada perangkap positif';out.rule='Jangan bahagi dengan sifar.';}
+  return out;
+ }
+ if(key==='bg'||key==='asp'){
+  var v=o[key];if(!v)return out;r=PKDCore.adults({method:key==='bg'?'bg':'aspirator',count:v[0],effort:v[1]});use(r);out.raw=v[0]+' Aedes / '+v[1]+(key==='bg'?' trap-hours':' person-minutes');
+  var qc=s.context==='after'&&simDays(s.control.slice(0,10),s.date)<4;
+  out.context=(key==='bg'?'5 BG x 24 jam berfungsi; set tapak latihan':'Aspirasi rehat; 60 minit-pengumpul sah')+(qc?'; dalam tetingkap QC':'');
+  out.target=qc?0:2;out.met=qc?r.value===0:key==='bg'?r.value<=2:r.value<2;
+  out.rule=qc?'EI <4 hari: sasaran dewasa = 0 (Perak)':key==='bg'?'Rujukan slaid Perak: <=2 Aedes/trap-hour; sahkan protokol':'Perak rutin: <2 Aedes/person-minute';return out;
+ }
+ if(key==='mir'){
+  if(!o.mir)return out;r=PKDCore.mir({rows:o.mir});out.value=r.value;out.raw=r.positive+' pool positif / '+r.total+' nyamuk dalam '+r.pools+' pool sah x 1,000; pool 15(+), 18(-), 20(+)';out.context='VDIM tambahan; koleksi berasingan, satu pusingan';out.rule='Tiada ambang tindakan automatik atau inferens trend daripada satu titik.';return out;
+ }
+ if(key==='mgo'){
+  if(!o.mgo)return out;out.value=100*o.mgo[0]/o.mgo[1];out.raw=o.mgo[0]+' slaid bertitisan / '+o.mgo[1]+' slaid sah (30 dipasang) x 100';out.context='Slaid berpasangan dengan lokasi QC 48 jam';out.rule='Cari titisan di lokasi sampel; bukan ukuran liputan seluruh lokaliti.';return out;
+ }
+ if(key==='bio'){
+  if(!o.bio)return out;var b=o.bio;r=PKDCore.mortality({total:b[0],dead:b[1],controls:b[2],controlDead:b[3]});out.value=r.corrected;
+  out.raw='Terdedah '+b[1]+'/'+b[0]+' mati ('+r.raw.toFixed(1)+'%); kawalan '+b[3]+'/'+b[2]+' ('+r.control.toFixed(1)+'%)';
+  out.context='Field-cage 24 jam; protokol/kesahan diandaikan untuk latihan';out.rule=r.control>=5?'Abbott digunakan (kawalan 5-20%). Sasaran QC tempatan 100%.':'Kawalan <5%: tanpa pembetulan. Sasaran QC tempatan 100%.';out.target=r.valid?100:null;out.met=r.valid?out.value===100:null;if(!r.valid){out.context='Tidak sah: semak mortaliti kawalan / assay';out.rule=r.note;}return out;
+ }
+ return out;
 }
-function simDataTable(index){return '<div class="sim-table-wrap" tabindex="0" role="region" aria-label="Data indeks rekaan; tatal mendatar jika perlu"><table class="sim-table"><caption>Data latihan, bukan data survelan sebenar</caption><thead><tr><th scope="col">Langkah / tarikh</th><th scope="col">Rumah + / diperiksa</th><th scope="col">Bekas + / diperiksa</th><th scope="col">AI %</th><th scope="col">CI %</th><th scope="col">BI /100 rumah</th><th scope="col">Konteks</th></tr></thead><tbody>'+SIM_SURVEYS.slice(0,index+1).map(function(s,i){return '<tr><th scope="row">'+(i+1)+' / '+simDate(s.date)+'</th><td class="num">'+s.hp+' / '+s.h+'</td><td class="num">'+s.cp+' / '+s.c+'</td>'+['ai','ci','bi'].map(function(k){return '<td class="num">'+simMetric(i,k).value.toFixed(1)+'</td>';}).join('')+'<td>'+esc(s.note)+'</td></tr>';}).join('')+'</tbody></table></div>';}
-function simChartsHTML(index){var s=SIM_SURVEYS[index];return '<section class="sim-panel"><div class="sim-chart-toolbar"><h3>AI / CI / BI</h3><div class="sim-view" role="group" aria-label="Paparan indeks"><button type="button" data-sim="view" data-value="graph" aria-pressed="'+(simState.view==='graph')+'">Graf</button><button type="button" data-sim="view" data-value="data" aria-pressed="'+(simState.view==='data')+'">Data</button></div></div><p class="sim-training">Data rekaan / '+simDate(s.date)+'</p><div id="sim-graph-view"'+(simState.view==='graph'?'':' hidden')+'><div class="sim-chart-grid">'+['ai','ci','bi'].map(function(k){return simMetricCard(k,index);}).join('')+'</div><p class="sim-caption">Paksi X = langkah 1-8, jarak langkah bukan sela masa sama. Skala Y berbeza bagi setiap indeks. Warna mengenal pasti indeks, bukan tahap wabak. Bar berbingkai putus = sampel tidak lengkap. Garis sasaran ialah untuk konteks kajian SEMASA; bukan ambang penularan atau sasaran semua bar sejarah.</p></div><div id="sim-data-view"'+(simState.view==='data'?'':' hidden')+'>'+simDataTable(index)+'</div><div class="sim-callout'+(s.h<s.expected?' warn':'')+'">'+esc(s.note)+'<br><b>Liputan panel:</b> '+s.h+' / '+s.expected+' rumah ('+(s.h/s.expected*100).toFixed(0)+'%). Panel latihan bukan keseluruhan premis radius kawalan.</div><details><summary>Formula, sasaran dan tindakan</summary>'+simList(['AI = rumah positif / rumah diperiksa x 100. CI = bekas air positif / bekas air diperiksa x 100. BI = bekas positif / rumah diperiksa x 100; BI boleh melebihi 100 dan bukan peratus.','Acuan rutin PAKAT 2021 / Perak 2026: AI <1%, CI <10%, BI <5. Tepat pada sempadan tidak memenuhi sasaran kurang daripada. Tiada sasaran ini membuktikan bebas transmisi.','Manual Perak: EI <4 hari selepas kawalan digunakan untuk QC, sasaran sifar. EI >4 hari menilai risiko semasa. Tepat 4 hari tidak dinyatakan; sahkan dengan entomologi.','Indeks tinggi: petakan premis/bekas produktif, semak akses dan kualiti operasi, musnah/urus sumber, larvisid jika sesuai mengikut protokol dan nilai semula. Indeks rendah: semak liputan, masa, spesies, dewasa dan trend kes sebelum mengurangkan respons.'])+'<div class="toolbar"><button class="btn" type="button" data-tool="aedes" data-for="dengue">Buka kalkulator indeks</button><button class="btn" type="button" data-tool="traps" data-for="dengue">Buka kalkulator ovitrap</button></div>'+simRefs(['pakat','perak','who'])+'</details></section>';}
-function simFeedbackHTML(){var i=simState.step,s=SIM_STAGES[i],answer=simState.answers[i];if(answer===undefined)return '';var correct=answer===s.correct;return '<div class="'+(correct?'':'needs-review')+'"><strong>'+(correct?'Keputusan sesuai dalam senario ini':'Semak semula keputusan ini')+'</strong>'+esc(s.reason)+(correct?'':' Jawapan yang disokong: '+esc(s.options[s.correct]))+'</div>';}
-function simQuestionHTML(s){return '<section class="sim-panel"><span class="sim-role">KEPUTUSAN ANDA SEBAGAI PPKA</span><fieldset class="sim-question"><legend>'+esc(s.question)+'</legend><div class="sim-choices">'+s.options.map(function(o,i){return '<button class="sim-choice" type="button" data-sim="answer" data-value="'+i+'" aria-pressed="'+(simState.answers[simState.step]===i)+'"><span class="sim-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(o)+'</span></button>';}).join('')+'</div></fieldset><div class="sim-feedback" id="sim-feedback" role="status" aria-live="polite">'+simFeedbackHTML()+'</div></section>';}
+function simFmt(v){return v===null?'--':Number(v.toFixed(2)).toString();}
+function simGraphGroup(){return SIM_GROUPS.find(function(g){return g.id===simState.group;})||SIM_GROUPS[0];}
+function simMetricCard(key,index){
+ var m=SIM_METRICS[key],r=simMeasure(index,key),color='var(--cat-'+m.tone+'-ink)',series=SIM_SURVEYS.slice(0,index+1).map(function(_,i){return simMeasure(i,key);});
+ var max=Math.max(m.max,Math.ceil(Math.max.apply(null,series.map(function(x){return x.value===null?0:x.value;})))),chart='';
+ [0,max/2,max].forEach(function(v){var y=138-v/max*104;chart+='<line class="sim-axis" x1="40" x2="350" y1="'+y+'" y2="'+y+'"/><text x="34" y="'+(y+5)+'" text-anchor="end">'+simFmt(v)+'</text>';});
+ if(r.target!==null&&r.target<=max){var ty=138-r.target/max*104;chart+='<line class="sim-target" x1="40" x2="350" y1="'+ty+'" y2="'+ty+'"/>';}
+ series.forEach(function(v,i){var x=48+i*38,y=v.value===null?138:138-v.value/max*104;
+  if(v.value!==null)chart+='<rect x="'+x+'" y="'+y+'" width="22" height="'+Math.max(2,138-y)+'" rx="3" fill="'+(v.partial?'none':color)+'" stroke="'+color+'" stroke-width="2"'+(v.partial?' stroke-dasharray="3 2"':'')+'><title>Pusingan '+(i+1)+', '+simDate(v.date)+': '+simFmt(v.value)+' '+m.unit+(v.partial?'; data tidak lengkap':'')+'</title></rect>';
+  else chart+='<text x="'+(x+11)+'" y="128" text-anchor="middle">--</text>';
+  chart+='<text x="'+(x+11)+'" y="160" text-anchor="middle">'+(i+1)+'</text>';
+ });
+ var last=series.slice().reverse().find(function(x){return x.value!==null;}),missing=r.value===null;
+ var na=r.context.indexOf('Tidak berkenaan')===0,invalid=r.context.indexOf('Tidak sah:')===0;
+ var verdict=na?'Tidak berkenaan: tiada perangkap positif':invalid?'Tiada hasil assay sah':missing?'Belum diukur pada pusingan ini':r.partial?'Liputan / perangkap tidak lengkap':r.met===null?'Tafsir bersama konteks dan kaedah':r.met?'Mencapai sasaran konteks ini':'Belum mencapai sasaran konteks ini';
+ return '<article class="sim-chart '+key+'" style="--measure-ink:'+color+'"><div class="sim-chart-head"><div><h4>'+esc(m.short)+'</h4><span>'+esc(m.name)+'</span></div><strong>'+(na?'N/A':simFmt(r.value))+(m.unit==='%'&&!missing?'%':'')+'</strong></div><p class="sim-unit">'+esc(m.unit)+'</p><svg viewBox="0 0 360 180" role="img" aria-label="'+esc(m.name+'; data rekaan. Paksi X pusingan 1-8, Y '+m.unit+'. '+verdict+'. Nilai '+simFmt(r.value)+'. Jadual lengkap tersedia dalam paparan Data.')+'"><title>'+esc(m.short)+' / data rekaan</title>'+chart+'</svg><ul class="sim-readout"><li><b>'+esc(verdict)+'</b>'+(missing&&!na&&!invalid&&last?' / terakhir '+simDate(last.date)+': '+simFmt(last.value)+' '+esc(m.unit):'')+'</li>'+(!missing||na||invalid?'<li>'+esc(r.raw)+'</li><li><b>'+esc(r.rule)+'</b></li>':'')+'<li>'+esc(m.action)+'</li></ul><details class="sim-chart-detail"><summary>Formula dan konteks</summary>'+vectorFormula(m.formula)+'<p class="sim-caption">'+esc(r.context)+'</p></details></article>';
+}
+function simDataTable(index){var group=simGraphGroup();return '<div class="sim-table-wrap" tabindex="0" role="region" aria-label="Data rekaan mengikut ukuran dan tarikh; tatal mendatar jika perlu"><table class="sim-table"><caption>'+esc(group.title)+' / data latihan sahaja</caption><thead><tr><th scope="col">Pusingan / tarikh</th><th scope="col">Ukuran</th><th scope="col">Nilai / unit</th><th scope="col">Kiraan asal</th><th scope="col">Konteks / sasaran</th></tr></thead><tbody>'+SIM_SURVEYS.slice(0,index+1).map(function(s,i){return group.keys.map(function(k){var r=simMeasure(i,k),m=SIM_METRICS[k];return '<tr><th scope="row">'+(i+1)+' / '+simDate(s.date)+'</th><td>'+esc(m.short)+'</td><td>'+simFmt(r.value)+' '+esc(m.unit)+'</td><td>'+esc(r.raw)+'</td><td>'+esc(r.context)+'; '+esc(r.rule)+'</td></tr>';}).join('');}).join('')+'</tbody></table></div>';}
+function simGraphContents(index){var s=SIM_SURVEYS[index],g=simGraphGroup();return '<div class="sim-chart-toolbar"><h3 id="sim-chart-title">Survelan dalam simulasi</h3><div class="sim-view" role="group" aria-label="Paparan indeks"><button type="button" data-sim="view" data-value="graph" aria-pressed="'+(simState.view==='graph')+'">Graf</button><button type="button" data-sim="view" data-value="data" aria-pressed="'+(simState.view==='data')+'">Data</button></div></div><p class="sim-training"><b>DATA REKAAN</b> / Pusingan '+(index+1)+' / '+simDate(s.date)+'</p><div class="sim-groups" role="group" aria-label="Pilih kumpulan ukuran">'+SIM_GROUPS.map(function(x){return '<button type="button" id="sim-group-'+x.id+'" data-sim="group" data-value="'+x.id+'" aria-controls="sim-measures" aria-pressed="'+(g.id===x.id)+'"><strong>'+esc(x.title)+'</strong><small>'+x.keys.length+' graf</small></button>';}).join('')+'</div><div id="sim-measures"><h4>'+esc(g.sub)+'</h4><p class="sim-caption">Pilih kumpulan di atas. Pusingan tanpa pengukuran ditanda --; bukan sifar. Angka ini latihan, bukan statistik lokaliti sebenar.</p><div id="sim-graph-view"'+(simState.view==='graph'?'':' hidden')+'><div class="sim-chart-grid">'+g.keys.map(function(k){return simMetricCard(k,index);}).join('')+'</div><p class="sim-caption">X = pusingan 1-8 (langkah 9 menggunakan pusingan 8), bukan sela masa sama. Y dan unit berbeza mengikut graf. Warna = jenis ukuran; bingkai putus = sampel/perangkap tidak lengkap. Garis sasaran, jika ada, untuk konteks bacaan SEMASA sahaja.</p></div><div id="sim-data-view"'+(simState.view==='data'?'':' hidden')+'>'+simDataTable(index)+'</div></div><div class="sim-callout'+(s.h<s.expected?' warn':'')+'"><b>Liputan panel '+s.h+'/'+s.expected+' rumah ('+Math.round(s.h/s.expected*100)+'%)</b><ul class="sim-readout"><li>'+esc(s.note)+'</li><li>AI/CI/BI/PCI dan pupa: panel rumah. PI: rumah +10 premis lain (+4 dalam pusingan terhad). Panel ini bukan semua premis radius kawalan.</li></ul></div><details><summary>Kaedah, had perbandingan dan sumber</summary><ul class="sim-readout"><li><b>7 hari berbanding 48 jam:</b> set dan siri berasingan. Tempoh 7 hari boleh merangkumi aktiviti kawalan; ia bukan ujian keberkesanan 48 jam.</li><li><b>Perangkap:</b> tapak tetap bagi setiap protokol rekaan, Aedes dikenal pasti. Kehilangan perangkap dilaporkan; bukan dianggap negatif.</li><li><b>Pusingan terpilih:</b> tarikh kutipan tidak membentuk jadual mingguan lengkap. Tiada bacaan baharu tidak bermaksud bacaan terakhir masih sah untuk hari ini.</li><li><b>PI / HPI / CLI L4 / CPI:</b> PI di sini indeks premis; pupa ialah kiraan per 100 rumah. CLI L4/CPI dipaparkan sebagai bilangan bekas kerana denominator peratus belum jelas.</li><li><b>MIR dan bioassay:</b> penyiasatan tambahan oleh entomologi; bukan syarat wajib setiap kes. Nilai tunggal MIR tidak menunjukkan trend. QC mortaliti tidak mengklasifikasikan kerintangan.</li><li><b>Sifar atau indeks rendah:</b> semak kes, liputan, tempoh dan kaedah. Tiada ukuran ini mengisytiharkan tamat wabak.</li></ul>'+simRefs(g.refs)+'<div class="toolbar"><button class="btn" type="button" data-tool="aedes" data-for="dengue">Kalkulator indeks</button><button class="btn" type="button" data-tool="traps" data-for="dengue">Kalkulator perangkap</button></div></details>';}
+function simChartsHTML(index){return '<section class="sim-panel" id="sim-charts" aria-labelledby="sim-chart-title">'+simGraphContents(index)+'</section>';}
+
+function simFeedbackHTML(){var i=simState.step,s=SIM_STAGES[i],answer=simState.answers[i];if(answer===undefined)return '';var correct=answer===s.correct;return '<div class="'+(correct?'':'needs-review')+'"><strong>'+(correct?'Keputusan sesuai dalam senario ini':'Semak semula keputusan ini')+'</strong><p>'+esc(s.feedback[answer])+'</p>'+(correct?'':'<p><b>Paling sesuai: '+String.fromCharCode(65+s.correct)+'.</b> '+esc(s.options[s.correct])+'</p>')+'<details><summary>Bandingkan rasional semua pilihan</summary><ul class="sim-readout">'+s.feedback.map(function(t,j){return '<li><b>'+String.fromCharCode(65+j)+'.</b> '+esc(t)+'</li>';}).join('')+'</ul><p>'+esc(s.reason)+'</p></details></div>';}
+function simQuestionHTML(s){return '<section class="sim-panel"><span class="sim-role">KEPUTUSAN ANDA SEBAGAI PPKA</span><p class="sim-training">Pilih satu pakej tindakan terbaik berdasarkan bukti, masa dan skop senario.</p><fieldset class="sim-question"><legend>'+esc(s.question)+'</legend><div class="sim-choices">'+s.options.map(function(o,i){return '<button class="sim-choice" type="button" data-sim="answer" data-value="'+i+'" aria-pressed="'+(simState.answers[simState.step]===i)+'"><span class="sim-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(o)+'</span></button>';}).join('')+'</div></fieldset><div class="sim-feedback" id="sim-feedback" role="status" aria-live="polite">'+simFeedbackHTML()+'</div></section>';}
 function simCasesHTML(){var cases=simVisibleCases(simState.step);return '<details><summary>Daftar kes latihan / '+cases.length+' kes rekaan</summary><p class="sim-training">Semua kes diandaikan disahkan dan berkait setelah siasatan. Jarak sahaja tidak membuktikan lokasi jangkitan. Masa dalam MYT; tiada nama atau alamat pesakit.</p><ol class="sim-case-list">'+cases.map(function(c){return '<li><strong>'+c.id+(c.severe?' / denggi teruk dalam senario':'')+'</strong><span>Onset '+simDate(c.onset)+' / '+c.distance+' m dari indeks / '+c.lab+'</span><span class="sim-case-clock">'+simDate(c.date)+': diagnosis 09:00; notifikasi 12:00; daftar 14:00.</span></li>';}).join('')+'</ol><p class="sim-caption">Line list sebenar perlu mengikut format dan akses yang dibenarkan program. Modul ini tidak mendaftar kes sebenar.</p></details>';}
 function simClosureReady(){return !simState.late&&SIM_CLOSURE_CHECKS.every(function(_,i){return simState.checks[i]===true;});}
 function simClosureHTML(){return '<section class="sim-panel"><h3>Semakan tamat / latihan sahaja</h3><p class="sim-training">21 Feb +14 hari = 7 Mac 2026: tarikh jangkaan untuk semakan dalam contoh ini. SOP, masa tepat dan pegawai pengesah perlu disahkan bagi operasi sebenar.</p><label class="sim-check"><input type="checkbox" data-sim-late="1"'+(simState.late?' checked':'')+'>Uji cabaran: kes berkait tambahan dinotifikasi pada 6 Mac (rekaan).</label><div class="sim-callout warn" id="sim-late-note"'+(simState.late?'':' hidden')+'>Kes tambahan menghalang keputusan tamat pada 7 Mac. Semak dan siasat semula, teruskan kawalan; jangkaan latihan berganjak kepada 20 Mac jika tiada lagi kes dan syarat program dipenuhi.</div>'+SIM_CLOSURE_CHECKS.map(function(t,i){return '<label class="sim-check"><input type="checkbox" data-sim-check="'+i+'"'+(simState.checks[i]?' checked':'')+'>'+esc(t)+'</label>';}).join('')+'<div class="toolbar"><button class="btn primary" type="button" data-sim="close">Sahkan keputusan latihan</button></div><div class="sim-closure-result" id="sim-closure-result" role="status" aria-live="polite">'+(simState.closed?'Semakan latihan lengkap. Teruskan ke langkah 9 untuk debrief.':'Lengkapkan semakan untuk mengesahkan keputusan latihan.')+'</div>'+simRefs(['closure'])+'</section>';}
-function simDebriefHTML(){return '<section class="sim-panel"><h3>'+(simState.closed?'Tamat dalam simulasi / 8 Mac 2026':'Keputusan tamat belum disahkan dalam latihan')+'</h3><p>'+(simState.closed?'Pengisytiharan oleh pegawai program diandaikan telah disahkan dalam cabang latihan ini. Tiada status operasi sebenar telah diubah.':'Buka langkah 8 untuk melengkapkan semakan. Melompat ke debrief tidak bermakna wabak telah tamat.')+'</p><div class="sim-summary"><div><strong>Anchor yang berbeza</strong><p>Diagnosis: notifikasi. Notifikasi kedua: mula kluster. Pendaftaran kedua: DOCI. Notifikasi terakhir: jangkaan semakan tamat dalam contoh ini.</p></div><div><strong>Indeks dan kualiti data</strong><p>AI/CI/BI mesti disertakan denominator, masa, liputan, kaedah dan tempat. Sifar dalam sampel kecil bukan jaminan keselamatan.</p></div><div><strong>Respons PPKA</strong><p>Keputusan disertai PIC, tindakan khusus, masa semakan dan bukti hasil. Pembetulan punca air/sisa/struktur serta akses rumah kekal penting.</p></div></div><div class="toolbar"><button type="button" class="btn" data-sim="jump" data-value="7">Semak langkah 8</button><button type="button" class="btn" data-go="dengue">Panduan denggi penuh</button></div></section>';}
+function simDebriefHTML(){return '<section class="sim-panel"><h3>'+(simState.closed?'Tamat dalam simulasi / 8 Mac 2026':'Keputusan tamat belum disahkan dalam latihan')+'</h3><p>'+(simState.closed?'Pengisytiharan oleh pegawai program diandaikan telah disahkan dalam cabang latihan ini. Tiada status operasi sebenar telah diubah.':'Buka langkah 8 untuk melengkapkan semakan. Melompat ke debrief tidak bermakna wabak telah tamat.')+'</p><div class="sim-summary"><div><strong>Anchor yang berbeza</strong><p>Diagnosis: notifikasi. Notifikasi kedua: mula wabak. Pendaftaran kedua: DOCI. Notifikasi terakhir: jangkaan semakan tamat dalam contoh ini.</p></div><div><strong>Indeks dan kualiti data</strong><p>Indeks habitat, OI/sticky, dewasa, MIR dan QC mesti disertakan denominator, masa, liputan, kaedah dan tempat. Sifar dalam sampel kecil bukan jaminan keselamatan.</p></div><div><strong>Respons PPKA</strong><p>Keputusan disertai PIC, tindakan khusus, masa semakan dan bukti hasil. Pembetulan punca air/sisa/struktur serta akses rumah kekal penting.</p></div></div><div class="toolbar"><button type="button" class="btn" data-sim="jump" data-value="7">Semak langkah 8</button><button type="button" class="btn" data-go="dengue">Panduan denggi penuh</button></div></section>';}
 function simulationHTML(){
   var s=SIM_STAGES[simState.step],cases=simVisibleCases(simState.step),elapsed=simDays('2026-01-04',s.date),index=s.survey;
-  return '<div class="simulation" lang="ms"><button type="button" class="back" data-go="dengue">'+uiIcon('back')+'Panduan denggi</button><div class="sim-heading"><div><span class="sim-kicker">LATIHAN PPKA / DATA REKAAN</span><h2 id="sim-title" tabindex="-1">Simulasi wabak denggi</h2><p class="sim-training">Dari kes pertama hingga tamat wabak. Pilih keputusan, lihat tafsiran indeks dan semak tindakan pasukan. Ini latihan tabletop, bukan sistem notifikasi atau ramalan wabak.</p></div><button type="button" class="btn" data-sim="reset">Mula semula</button></div>'+simControls()+simProgress()+'<section class="sim-stage" id="sim-stage" tabindex="-1" aria-labelledby="sim-stage-title"><div class="sim-stage-head '+s.tone+'"><span class="sim-status">'+esc(s.status)+'</span><p class="sim-date">Langkah '+(simState.step+1)+' / 9 | '+simDate(s.date)+'</p><h3 id="sim-stage-title">'+esc(s.title)+'</h3><p>'+esc(s.scene)+'</p><div class="sim-facts"><div><strong>'+cases.length+'</strong><span>kes rekaan setakat langkah ini</span></div><div><strong>'+(elapsed<0?'--':elapsed)+'</strong><span>hari berlalu sejak mula kluster</span></div><div><strong>'+(simState.step===0?'200 m':simState.step<3?'200 m':'400 m')+'</strong><span>skop kawalan contoh; sahkan SOP</span></div></div></div><div class="sim-layout"><div>'+simQuestionHTML(s)+'<section class="sim-panel"><span class="sim-role">PELAN CONTOH PPKA</span><h3>Keputusan dan tindakan</h3><div class="sim-callout">'+esc(s.decision)+'</div>'+simList(s.actions)+'<details><summary>Pelaksanaan pasukan lapangan</summary>'+simList(s.field)+'</details><details><summary>Rasional, sumber dan asas tindakan</summary><p class="sim-training">Senario dan pembahagian tugas ialah contoh pendidikan. Kriteria dan sasaran dirujuk kepada sumber; arahan KKM/JKN/PKD semasa mengawal pelaksanaan sebenar.</p>'+simRefs(s.refs)+'</details>'+simCasesHTML()+'</section>'+(simState.step===7?simClosureHTML():'')+(simState.step===8?simDebriefHTML():'')+'</div><div><section class="sim-panel"><span class="sim-role">BACA DATA, TENTUKAN RESPONS</span><h3>Tafsiran pada langkah ini</h3><p>'+esc(s.watch)+'</p>'+(simState.step===5?'<div class="sim-callout"><strong>Ovitrap 7 hari / rekaan</strong><br>6 positif / 24 sah x 100 = 25% OI.<br>120 telur / 24 sah = 5 telur/perangkap sah.<br>30 dipasang; 6 hilang/tidak sah. Asingkan daripada sticky-trap dewasa dan QC 48 jam.</div>':'')+'</section>'+simChartsHTML(index)+'</div></div></section><div class="sim-footer-nav"><button type="button" class="btn" data-sim="prev"'+(simState.step===0?' disabled':'')+'>Langkah sebelumnya</button><button type="button" class="btn primary" data-sim="next"'+(simState.step===8?' disabled':'')+'>Langkah seterusnya</button></div><section class="sim-panel"><details><summary>Asas simulasi, konflik sumber dan had penggunaan</summary>'+simList(['Semua kes, keputusan makmal, liputan, tarikh dan indeks latihan ialah rekaan. Perkembangan senario ditetapkan untuk pembelajaran; pilihan jawapan tidak meramal perubahan kes atau kesan racun.','Panel 100 rumah yang sama ialah reka bentuk latihan, bukan saiz sampel wajib atau semua premis radius 200/400 m. Langkah 3 hanya meliputi 40 rumah. Perubahan denominator, konteks QC dan sela masa menghadkan perbandingan.','PAKAT menggunakan WT bagi fasa awal kluster; laporan MBSJ menggunakan WT bagi tiada kes selepas hari ke-14. Di sini label "wabak baharu / fasa awal WT" tidak mendakwa kejayaan kawalan. Sahkan kategori sistem semasa dengan program.','Konflik D6: Jadual 4 menyebut liputan PTP sekurang-kurangnya 80% dalam 24 jam; Jadual 8/Annex menyebut 100% setiap 7 hari bagi WTK/hotspot. Panduan asal dan isu review dikekalkan.','Hotspot >30 hari (iDengue/PAKAT) berbeza daripada pencetus pemantauan >44 hari. Sasaran Perak tidak diangkat menjadi arahan kebangsaan universal.','Jangkaan tamat +14 hari daripada notifikasi terakhir ditunjukkan sebagai amalan pelaporan dalam laporan MBSJ bersumber eDengue. SOP pengisytiharan tamat lengkap tidak dapat disahkan daripada sumber awam yang dibaca; pegawai dan SOP JKN/PKD semasa mesti mengesahkan tempoh, anchor, cutoff dan syarat.','Progres latihan disimpan dalam memori sesi sahaja dan kosong selepas refresh. Tiada rekod POA, localStorage, kalkulator asal atau notifikasi rasmi diubah.'])+simRefs(Object.keys(SIM_SOURCES))+'<p class="sim-caption">Semakan sumber modul: 20 Oct 2026. PTP = pemusnahan tempat pembiakan; SRT/SRULV = semburan ruang; EI = siasatan entomologi; IR = kerintangan racun serangga. Rujukan asal dan amaran penyakit kekal dalam panduan denggi.</p></details><div class="toolbar"><button type="button" class="btn" data-tool="dengue" data-for="dengue">Kalkulator tarikh denggi</button><button type="button" class="btn" data-go="dengue">Panduan penuh</button><button type="button" class="btn" data-go="sources">Review sumber</button></div></section></div>';
+  return '<div class="simulation" lang="ms"><button type="button" class="back" data-go="dengue">'+uiIcon('back')+'Panduan denggi</button><div class="sim-heading"><div><span class="sim-kicker">LATIHAN PPKA / DATA REKAAN</span><h2 id="sim-title" tabindex="-1">Simulasi wabak denggi</h2><p class="sim-training">Dari kes pertama hingga tamat wabak. Pilih keputusan, lihat tafsiran indeks dan semak tindakan pasukan. Ini latihan tabletop, bukan sistem notifikasi atau ramalan wabak.</p></div><button type="button" class="btn" data-sim="reset">Mula semula</button></div>'+simControls()+simProgress()+'<section class="sim-stage" id="sim-stage" tabindex="-1" aria-labelledby="sim-stage-title"><div class="sim-stage-head '+s.tone+'"><span class="sim-status">'+esc(s.status)+'</span><p class="sim-date">Langkah '+(simState.step+1)+' / 9 | '+simDate(s.date)+'</p><h3 id="sim-stage-title">'+esc(s.title)+'</h3><p>'+esc(s.scene)+'</p><div class="sim-facts"><div><strong>'+cases.length+'</strong><span>kes rekaan setakat langkah ini</span></div><div><strong>'+(elapsed<0?'--':elapsed)+'</strong><span>hari berlalu sejak mula wabak</span></div><div><strong>'+(simState.step===0?'200 m':simState.step<3?'200 m':'400 m')+'</strong><span>skop kawalan contoh; sahkan SOP</span></div></div></div><div class="sim-layout"><div>'+simQuestionHTML(s)+'<section class="sim-panel"><span class="sim-role">PELAN CONTOH PPKA</span><h3>Keputusan dan tindakan</h3><div class="sim-callout">'+esc(s.decision)+'</div>'+simList(s.actions)+'<details><summary>Pelaksanaan pasukan lapangan</summary>'+simList(s.field)+'</details><details><summary>Rasional, sumber dan asas tindakan</summary><p class="sim-training">Senario dan pembahagian tugas ialah contoh pendidikan. Kriteria dan sasaran dirujuk kepada sumber; arahan KKM/JKN/PKD semasa mengawal pelaksanaan sebenar.</p>'+simRefs(s.refs)+'</details>'+simCasesHTML()+'</section>'+(simState.step===7?simClosureHTML():'')+(simState.step===8?simDebriefHTML():'')+'</div><div><section class="sim-panel"><span class="sim-role">BACA DATA, TENTUKAN RESPONS</span><h3>Tafsiran pada langkah ini</h3><p>'+esc(s.watch)+'</p>'+(simState.step===5?'<div class="sim-callout"><strong>Ovitrap 7 hari / rekaan</strong><br>6 positif / 24 sah x 100 = 25% OI.<br>120 telur / 24 sah = 5 telur/perangkap sah.<br>30 dipasang; 6 hilang/tidak sah. Asingkan daripada sticky-trap dewasa dan QC 48 jam.</div>':'')+'</section>'+simChartsHTML(index)+'</div></div></section><div class="sim-footer-nav"><button type="button" class="btn" data-sim="prev"'+(simState.step===0?' disabled':'')+'>Langkah sebelumnya</button><button type="button" class="btn primary" data-sim="next"'+(simState.step===8?' disabled':'')+'>Langkah seterusnya</button></div><section class="sim-panel"><details><summary>Asas simulasi, konflik sumber dan had penggunaan</summary>'+simList(['Semua kes, keputusan makmal, liputan, tarikh dan indeks latihan ialah rekaan. Perkembangan senario ditetapkan untuk pembelajaran; pilihan jawapan tidak meramal perubahan kes atau kesan racun.','Panel 100 rumah yang sama ialah reka bentuk latihan, bukan saiz sampel wajib atau semua premis radius 200/400 m. Langkah 3 hanya meliputi 40 rumah. Perubahan denominator, konteks QC dan sela masa menghadkan perbandingan.','PAKAT menggunakan WT bagi fasa awal wabak; laporan MBSJ menggunakan WT bagi tiada kes selepas hari ke-14. Di sini label "wabak baharu / fasa awal WT" tidak mendakwa kejayaan kawalan. Sahkan kategori sistem semasa dengan program.','Konflik D6: Jadual 4 menyebut liputan PTP sekurang-kurangnya 80% dalam 24 jam; Jadual 8/Annex menyebut 100% setiap 7 hari bagi WTK/hotspot. Panduan asal dan isu review dikekalkan.','Hotspot >30 hari (iDengue/PAKAT) berbeza daripada pencetus pemantauan >44 hari. Sasaran Perak tidak diangkat menjadi arahan kebangsaan universal.','Jangkaan tamat +14 hari daripada notifikasi terakhir ditunjukkan sebagai amalan pelaporan dalam laporan MBSJ bersumber eDengue. SOP pengisytiharan tamat lengkap tidak dapat disahkan daripada sumber awam yang dibaca; pegawai dan SOP JKN/PKD semasa mesti mengesahkan tempoh, anchor, cutoff dan syarat.','Progres latihan disimpan dalam memori sesi sahaja dan kosong selepas refresh. Tiada rekod POA, localStorage, kalkulator asal atau notifikasi rasmi diubah.'])+simRefs(Object.keys(SIM_SOURCES))+'<p class="sim-caption">Semakan sumber modul: 20 Oct 2026. PTP = pemusnahan tempat pembiakan; SRT/SRULV = semburan ruang; EI = siasatan entomologi; IR = kerintangan racun serangga. Rujukan asal dan amaran penyakit kekal dalam panduan denggi.</p></details><div class="toolbar"><button type="button" class="btn" data-tool="dengue" data-for="dengue">Kalkulator tarikh denggi</button><button type="button" class="btn" data-go="dengue">Panduan penuh</button><button type="button" class="btn" data-go="sources">Review sumber</button></div></section></div>';
 }
 function simSelect(n){if(!Number.isInteger(n)||n<0||n>=SIM_STAGES.length)return;simState.step=n;main.innerHTML=simulationHTML();var el=document.getElementById('sim-stage');if(el){el.focus({preventScroll:true});el.scrollIntoView({block:'start'});}}
-function simReset(){simState.step=0;simState.answers={};simState.view='graph';simState.checks={};simState.late=false;simState.closed=false;simSelect(0);}
+function simReset(){simState.step=0;simState.answers={};simState.view='graph';simState.group='larva';simState.checks={};simState.late=false;simState.closed=false;simSelect(0);}
 function simClosureUpdate(){simState.closed=false;var note=document.getElementById('sim-late-note');if(note)note.hidden=!simState.late;var result=document.getElementById('sim-closure-result');if(result)result.textContent=simState.late?'Keputusan tamat disekat dalam cabang kes lewat. Siasat dan nilai semula.':'Semakan diubah. Sahkan semula keputusan latihan apabila lengkap.';}
 function initSimulationUI(){
  document.addEventListener('click',function(e){
@@ -2033,12 +2457,13 @@ function initSimulationUI(){
   var action=b.dataset.sim;
   if(action==='prev'){simSelect(simState.step-1);return;}if(action==='next'){simSelect(simState.step+1);return;}if(action==='jump'){simSelect(Number(b.dataset.value));return;}if(action==='reset'){simReset();return;}
   if(action==='answer'){var n=Number(b.dataset.value),s=SIM_STAGES[simState.step];if(!Number.isInteger(n)||n<0||n>=s.options.length)return;simState.answers[simState.step]=n;document.querySelectorAll('[data-sim="answer"]').forEach(function(x){x.setAttribute('aria-pressed',String(Number(x.dataset.value)===n));});document.getElementById('sim-feedback').innerHTML=simFeedbackHTML();return;}
+  if(action==='group'){var group=b.dataset.value;if(!SIM_GROUPS.some(function(g){return g.id===group;}))return;simState.group=group;document.getElementById('sim-charts').innerHTML=simGraphContents(SIM_STAGES[simState.step].survey);var groupButton=document.getElementById('sim-group-'+group);if(groupButton)groupButton.focus({preventScroll:true});return;}
   if(action==='view'){var v=b.dataset.value;if(v!=='graph'&&v!=='data')return;simState.view=v;document.getElementById('sim-graph-view').hidden=v!=='graph';document.getElementById('sim-data-view').hidden=v!=='data';document.querySelectorAll('[data-sim="view"]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.value===v));});return;}
   if(action==='close'){var ready=simClosureReady();simState.closed=ready;var result=document.getElementById('sim-closure-result');result.textContent=ready?'Keputusan latihan disahkan: cabang ini layak dibawa kepada pengisytiharan tamat oleh pegawai program. Teruskan ke langkah 9. Tiada status sebenar diubah.':simState.late?'Belum boleh tamat: ada kes berkait tambahan. Teruskan siasatan, kawalan dan semakan tempoh.':'Semakan belum lengkap. Baca dan lengkapkan semua lima perkara sebelum mengesahkan keputusan latihan.';return;}
  });
  document.addEventListener('change',function(e){var t=e.target;if(t.dataset.simStep){simSelect(Number(t.value));return;}if(t.dataset.simCheck!==undefined){var i=Number(t.dataset.simCheck);if(Number.isInteger(i)&&i>=0&&i<SIM_CLOSURE_CHECKS.length){simState.checks[i]=!!t.checked;simClosureUpdate();}return;}if(t.dataset.simLate){simState.late=!!t.checked;simClosureUpdate();}});
 }
-var Simulation={state:simState,stages:SIM_STAGES,surveys:SIM_SURVEYS,cases:SIM_CASES,sources:SIM_SOURCES,closureChecks:SIM_CLOSURE_CHECKS,days:simDays,metric:simMetric,visibleCases:simVisibleCases,select:simSelect,reset:simReset,closureReady:simClosureReady,html:simulationHTML};
+var Simulation={state:simState,stages:SIM_STAGES,surveys:SIM_SURVEYS,cases:SIM_CASES,sources:SIM_SOURCES,observations:SIM_OBSERVATIONS,groups:SIM_GROUPS,measures:SIM_METRICS,measure:simMeasure,trapResult:simTrapResult,chart:simMetricCard,closureChecks:SIM_CLOSURE_CHECKS,days:simDays,metric:simMetric,visibleCases:simVisibleCases,select:simSelect,reset:simReset,closureReady:simClosureReady,html:simulationHTML};
 
 /* ---------- Main render ---------- */
 function render(){
