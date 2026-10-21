@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="pkd-ui-build" content="2026.10.21.2">
+<meta name="pkd-ui-build" content="2026.10.21.3">
 <meta name="description" content="Malaysian public health field reference: disease guidance, outbreak tools and POA.">
 <meta name="theme-color" content="#143E63">
 <meta name="referrer" content="no-referrer">
@@ -833,7 +833,7 @@ input::-webkit-calendar-picker-indicator{flex:none}
 .calc-risk-track i{display:block;height:100%;background:var(--accent);border-radius:6px}
 .calc-risk-bars>div:nth-child(2) .calc-risk-track i{background:#0d9488}
 
-/* Responsive field workspace, build 2026.10.21.2 */
+/* Responsive field workspace, build 2026.10.21.3 */
 :root{--control-border:#9AAABD;--shadow-card:0 3px 14px rgba(15,35,55,.045)}
 body{font-size:16px;background-color:var(--bg)}
 header.top{box-shadow:0 2px 15px rgba(15,35,55,.025)}
@@ -1083,6 +1083,119 @@ header.top{box-shadow:0 2px 15px rgba(15,35,55,.025)}
 @media print{.exposure-explore,.exposure-live-badge{display:none}.exposure-visual{break-inside:avoid}.exposure-mobile{display:none}.exposure-desktop{display:block}.exposure-visual{color:#172c3c;background:white}}
 @container(max-width:620px){.exposure-desktop{display:none}.exposure-mobile{display:block}.exposure-date-cards{grid-template-columns:1fr 1fr}.exposure-date-card.onset{grid-column:1/-1}.exposure-explore{grid-template-columns:1fr}}
 
+/* Compact shared footer and task-based disease guides. */
+main,.guide-footer{overflow-anchor:none}
+.community-wrap.compact-community{margin:12px auto 0;padding:10px 0;border-top:1px solid var(--line)}
+.community-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;min-width:0}
+.feedback-link{display:inline-flex;gap:7px;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--accent-soft);color:var(--accent);border-radius:9px;font-size:13px;font-weight:700;padding:8px 12px;min-height:44px;cursor:pointer}
+.feedback-link .ic{width:18px;height:18px}
+.hits-inline{display:flex;align-items:center;gap:18px;margin-left:auto;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.hits-inline span{display:flex;align-items:baseline;gap:6px;white-space:nowrap}
+.hits-inline strong{color:var(--ink);font-size:16px;line-height:1.3}
+.hits-details{position:relative;text-align:left;font-size:12px;margin:0;color:var(--muted)}
+.hits-details summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;list-style:none;font-weight:500;padding:4px 0}
+.hits-details summary::-webkit-details-marker{display:none}
+.hits-details summary>.ic{width:14px;height:14px;transition:transform .15s}
+.hits-details[open] summary>.ic{transform:rotate(90deg)}
+.hits-details .hits-state{font-size:10px;padding:3px 6px;white-space:nowrap}
+.hits-details #hits-note{max-width:38ch;line-height:1.5;margin:0 0 10px;font-size:12px}
+.guide-footer-inner{padding-top:10px!important;border-top:1px solid var(--line)}
+.guide-footer .copyright,.guide-footer .footer-affiliation{font-size:12px}
+.guide-footer .footer-links button{min-height:40px;padding:7px 9px;font-size:12px}
+.guide-workspace{max-width:1160px;margin:0 auto;min-width:0;--guide-ink:var(--category-ink);--guide-tint:var(--category-bg)}
+.guide-breadcrumb{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.guide-breadcrumb .back{min-height:44px;margin:0;font-size:13px;color:var(--guide-ink);max-width:50%;text-align:left}
+.guide-disease-picker{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);min-width:0}
+.guide-disease-picker select{min-height:44px;max-width:265px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:8px 32px 8px 12px;font:inherit;font-size:14px;min-width:0;width:100%}
+.guide-heading{display:flex;align-items:center;gap:16px;background:var(--guide-tint);color:var(--guide-ink);padding:20px 24px;border:1px solid var(--line);border-radius:16px;margin:0 0 16px}
+.guide-disease-icon{flex:none;width:48px;height:48px;display:grid;place-items:center;background:var(--surface);border-radius:12px;color:var(--guide-ink)}
+.guide-disease-icon .ic{width:28px;height:28px}
+.guide-eyebrow{display:block;font-size:10px;font-weight:750;letter-spacing:.12em;margin-bottom:5px}
+.guide-heading h2{font-size:30px;font-weight:750;line-height:1.15;letter-spacing:-.035em;margin:0;color:inherit}
+.guide-heading p{font-size:14px;margin:5px 0 0;color:inherit;line-height:1.45}
+.guide-category-label{font-size:12px;font-weight:650;margin-left:auto;max-width:30%;text-align:right}
+.guide-review-note{margin:14px 0 0;font-size:13px;line-height:1.55;background:var(--pending-bg);color:var(--pending);border:1px solid var(--line);border-radius:10px;padding:0 14px}
+.guide-review-note>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:650;gap:8px}
+.guide-review-note>summary:after{content:'+';margin-left:auto;font-size:18px}
+.guide-review-note[open]>summary:after{content:'-'}
+.guide-review-note p{margin:0 0 14px}
+.guide-navigation{position:sticky;top:var(--header-height);z-index:20;margin:0 0 20px;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.guide-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.guide-tabs button{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:1;white-space:nowrap;min-height:44px;padding:10px 12px;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;font-size:13px;font-weight:650;cursor:pointer}
+.guide-tabs button .ic{width:17px;height:17px}
+.guide-tabs button[aria-selected="true"]{background:var(--guide-ink);color:var(--surface);border-color:var(--guide-ink);box-shadow:0 2px 6px rgba(15,35,55,.08)}
+.guide-tabs button:hover:not([aria-selected="true"]){background:var(--guide-tint);color:var(--guide-ink)}
+.guide-mobile-navigation{display:none}
+.guide-pane{min-width:0;scroll-margin-top:calc(var(--header-height) + 76px)}
+.guide-pane[hidden]{display:none!important}
+.guide-panel-heading{margin:0 0 18px}
+.guide-panel-heading h3{font-size:23px;line-height:1.25;margin:0 0 6px;letter-spacing:-.025em}
+.guide-panel-heading p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.guide-pane .glance{gap:12px;margin-bottom:18px}
+.guide-pane .gl{padding:16px;min-height:100px;border-radius:12px;background:var(--surface);border-left:3px solid var(--guide-ink)}
+.guide-pane .gl .ic{color:var(--guide-ink)}
+.guide-pane .gl .k{font-size:10px;line-height:1.5;letter-spacing:.055em}
+.guide-pane .gl .v{font-size:16px;line-height:1.45;margin-top:5px}
+.guide-start-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.guide-start-links button{display:flex;align-items:center;gap:10px;text-align:left;min-height:62px;border:1px solid var(--line);border-radius:12px;background:var(--guide-tint);color:var(--guide-ink);font:inherit;font-size:14px;font-weight:650;padding:12px;cursor:pointer}
+.guide-start-links button .ic{flex:none;width:20px;height:20px}
+.guide-start-links button .ic:last-child{margin-left:auto;width:16px}
+.guide-response-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.guide-response-grid>div{min-width:0}
+.guide-pane .panel{padding:18px;border-radius:14px;min-width:0}
+.guide-pane .panel>h3{font-size:19px}
+.guide-pane .ctrl{grid-template-columns:1fr}
+.guide-pane .ctrl .ct{font-size:14px;line-height:1.55;padding:12px}
+.guide-timing-action{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--guide-tint);color:var(--guide-ink);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}
+.guide-timing-action p{font-size:13px;margin:4px 0 0;line-height:1.5}
+.guide-timing-action strong{font-size:16px}
+.guide-timing-action .btn{flex:none;min-height:44px}
+.guide-subselect{display:flex;align-items:center;gap:18px;padding:14px 16px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;margin:0 0 16px}
+.guide-subselect label{font-size:13px;font-weight:650;min-width:140px}
+.guide-subselect select{font:inherit;font-size:15px;min-height:44px;width:100%;padding:10px 34px 10px 12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:9px;min-width:0}
+.guide-reference-content>.dsub,.guide-reference-content>.dsub+p,.guide-reference-content>.secnav,.guide-vector-content>.v-overview{display:none}
+.guide-reference-content>.key{padding:12px 0;gap:6px 14px;line-height:1.4;font-size:11px}
+.guide-reference-content details.acc[hidden],.guide-vector-content details.acc[hidden]{display:none!important}
+.guide-reference-content details.acc>summary,.guide-vector-content details.acc>summary{padding:16px}
+.guide-pane details.acc>summary .num{display:none}
+.guide-pane details.acc>summary{grid-template-columns:minmax(0,1fr) auto}
+.guide-pane details.acc>summary .tt{font-size:18px}
+.guide-reference-content .facts{padding:0 18px 18px}
+.guide-reference-content .facts .fact{padding:15px 0}
+.guide-reference-content .facts .fact p{font-size:14px;line-height:1.65}
+.guide-reference-content .facts .fact .note{font-size:13px}
+.guide-tool-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guide-tool-list .btn{display:flex;justify-content:flex-start;align-items:center;gap:10px;white-space:normal;text-align:left;min-height:70px;padding:18px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:12px;font-size:15px;line-height:1.4}
+.guide-tool-list .btn .ic{flex:none;color:var(--guide-ink);width:22px;height:22px}
+.guide-tool-list .btn:hover{background:var(--guide-tint);border-color:var(--guide-ink)}
+.guide-session-note{font-size:13px;color:var(--muted);margin:0 0 16px}
+.guide-check-progress{display:flex;align-items:center;gap:20px;margin-bottom:16px;font-size:13px;color:var(--guide-ink);font-weight:650}
+.guide-check-progress progress{flex:1;height:8px;max-width:260px;accent-color:var(--guide-ink)}
+.guide-checklist .pkd-extension .guide-check{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:15px 16px;margin:8px 0;font-size:14px;line-height:1.55;cursor:pointer}
+.guide-check input{margin:3px 0 0;flex:none;accent-color:var(--guide-ink)}
+.guide-check small{display:block;color:var(--muted);font-size:11px;font-weight:650;margin-bottom:4px}
+.guide-step-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:24px;padding:16px 0 0}
+.guide-step-navigation .btn{font-size:13px;min-height:44px;background:var(--surface);padding:10px 12px;min-width:0;white-space:normal;text-align:left;line-height:1.4}
+.guide-step-navigation .btn:last-child{text-align:right}
+.guide-step-navigation .btn .ic{flex:none;width:16px}
+.guide-step-navigation>span{font-size:11px;color:var(--muted);white-space:nowrap}
+.guide-step-navigation button:disabled{opacity:.4;cursor:default}
+@media(max-width:760px){
+ .guide-breadcrumb{gap:12px;align-items:center;margin-bottom:10px}.guide-disease-picker{display:block;max-width:52%;flex:1}.guide-disease-picker>span{display:block;font-size:10px;margin:0 0 4px}.guide-disease-picker select{font-size:16px;max-width:100%;padding-left:8px}.guide-breadcrumb .back{font-size:12px}
+ .guide-heading{padding:16px;gap:12px;margin-bottom:8px}.guide-heading h2{font-size:26px}.guide-heading p{font-size:13px}.guide-disease-icon{width:40px;height:44px}.guide-disease-icon .ic{width:24px;height:24px}.guide-category-label{display:none}.guide-eyebrow{font-size:9px}
+ .guide-tabs{display:none}.guide-mobile-navigation{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;align-items:center}.guide-mobile-navigation>span{font-size:12px;font-weight:650;color:var(--muted)}.guide-mobile-navigation small{display:block;font-size:10px;font-weight:500;margin-top:3px}.guide-mobile-navigation select{min-height:46px;width:100%;padding:8px 30px 8px 10px;font:inherit;font-size:16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:9px;min-width:0}
+ .guide-navigation{padding:8px 0;margin-bottom:18px}.guide-panel-heading h3{font-size:21px}.guide-panel-heading p{font-size:13px}.guide-panel-heading{margin-bottom:14px}
+ .guide-pane .glance{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.guide-pane .gl{padding:12px 10px;min-height:100px;grid-template-columns:minmax(0,1fr)}.guide-pane .gl>.ic{display:none}.guide-pane .gl .v{font-size:14px}.guide-pane .gl .k{font-size:9px}
+ .guide-start-links{grid-template-columns:1fr;gap:8px;margin-top:14px}.guide-start-links button{min-height:48px;padding:11px 12px;font-size:13px}
+ .guide-response-grid{grid-template-columns:1fr;gap:10px}.guide-pane .panel{padding:14px}.guide-timing-action{display:block;padding:16px}.guide-timing-action .btn{margin-top:12px}.guide-subselect{display:block;padding:12px}.guide-subselect label{display:block;margin-bottom:8px;font-size:12px}.guide-subselect select{font-size:16px}
+ .guide-pane details.acc>summary{grid-template-columns:minmax(0,1fr);gap:6px}.guide-pane details.acc>summary .meta{grid-column:1;font-size:11px}.guide-pane details.acc>summary .tt{font-size:17px}.guide-reference-content .facts{padding:0 12px 12px}.guide-reference-content .facts .fact{grid-template-columns:1fr;gap:8px}.guide-reference-content .facts .fact p{font-size:14px}.guide-tool-list{grid-template-columns:1fr;gap:9px}.guide-tool-list .btn{min-height:62px;padding:15px;font-size:14px}
+ .guide-check-progress{gap:12px;font-size:12px}.guide-check-progress progress{max-width:120px}.guide-checklist .pkd-extension .guide-check{padding:12px;font-size:14px}.guide-step-navigation .btn{font-size:11px;padding:8px;gap:4px}.guide-step-navigation{margin-top:18px;padding-top:12px}.guide-step-navigation>span{font-size:10px}
+}
+@media(max-width:660px){.community-line{gap:0 12px}.feedback-link{font-size:12px;padding:7px 10px}.hits-inline{font-size:10px;gap:12px}.hits-inline strong{font-size:15px}.hits-details{flex:0 0 100%}.hits-details summary{justify-content:flex-end;min-height:36px;font-size:10px}.hits-details #hits-note{max-width:none;margin:0 0 6px}.compact-community{padding-bottom:4px!important}.guide-footer-inner{padding-top:10px!important}.guide-footer .copyright{font-size:11px}.guide-footer .footer-affiliation{font-size:11px}.guide-footer .footer-links{gap:5px}.guide-footer .footer-links button{font-size:11px}}
+@media(max-width:359px){.hits-inline{gap:10px}.hits-inline span{display:block}.hits-inline strong{margin-left:4px}.guide-heading h2{font-size:23px}.guide-heading{padding:14px}.guide-start-links button{font-size:12px}.guide-step-navigation .btn{max-width:44%}}
+@media(orientation:landscape) and (max-height:500px){.guide-navigation{position:static}}
+@media print{.guide-breadcrumb,.guide-navigation,.guide-step-navigation,.guide-start-links,.guide-timing-action,.guide-subselect,.guide-tool-list,.guide-check-progress{display:none!important}.guide-pane[hidden],.guide-reference-content details.acc[hidden],.guide-vector-content details.acc[hidden]{display:block!important}.guide-pane{margin-top:24px}.guide-heading{background:white;color:black}.guide-response-grid{display:block}.guide-pane details{break-inside:auto}}
+
 </style>
 </head>
 <body><a class="skip-link" href="#main" data-home="skip">Skip to content</a>
@@ -1096,13 +1209,14 @@ header.top{box-shadow:0 2px 15px rgba(15,35,55,.025)}
 
 <p id="search-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 <main class="gutter" id="main" tabindex="-1"></main>
-<footer class="guide-footer gutter"><section class="community-wrap" aria-label="Feedback and website usage" id="community">
- <div class="community-grid">
-  <div class="community-card feedback-invite"><span class="community-symbol" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15a3 3 0 0 1-3 3H8l-5 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3Z"/><path d="M7 8h9M7 12h6"/></svg></span><div><h2>Help improve this guide</h2><p>Something unclear, difficult to use or missing? Share a suggestion or report an issue.</p><button class="btn" type="button" data-feedback="open">Give feedback</button></div></div>
-  <div class="community-card" aria-labelledby="hits-title"><div class="hits-heading"><h2 id="hits-title">Website hits</h2><span class="hits-state" id="hits-state">Not connected</span></div><div class="site-hit-grid" aria-live="polite" aria-atomic="true"><div><strong id="hits-today">--</strong><span>Today (MYT)</span></div><div><strong id="hits-overall">--</strong><span>Overall</span></div></div><p id="hits-note">Shared website counts will appear once the counter service is connected.</p></div>
+<footer class="guide-footer gutter"><section class="community-wrap compact-community" aria-label="Feedback and website usage" id="community">
+ <div class="community-line">
+  <button class="feedback-link" type="button" data-feedback="open"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 15a3 3 0 0 1-3 3H8l-5 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3Z"/><path d="M7 8h9M7 12h6"/></svg>Feedback</button>
+  <div class="hits-inline" role="group" aria-label="Website hits" aria-live="polite" aria-atomic="true"><span>Today (MYT) <strong id="hits-today">--</strong></span><span>Overall <strong id="hits-overall">--</strong></span></div>
+  <details class="hits-details"><summary>Counter info <span class="hits-state" id="hits-state">Not connected</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary><p id="hits-note">Shared website counts will appear once the counter service is connected.</p></details>
  </div>
 </section>
-<div class="guide-footer-inner"><p class="copyright">(c) 2026 <strong>Dr. Ismail Saudi.</strong> All rights reserved.</p><p class="footer-affiliation"><span>Disease Control Sector</span><span>PKD Muallim, Perak</span></p><div class="footer-links"><button type="button" data-home-menu="open" data-menu-section="about">About</button><button type="button" data-source="all">Sources</button><button type="button" data-home-menu="open" data-menu-section="disclaimer">Disclaimer</button><button type="button" data-feedback="open">Feedback</button></div></div></footer>
+<div class="guide-footer-inner"><p class="copyright">(c) 2026 <strong>Dr. Ismail Saudi.</strong> All rights reserved.</p><p class="footer-affiliation"><span>Disease Control Sector</span><span>PKD Muallim, Perak</span></p><div class="footer-links"><button type="button" data-home-menu="open" data-menu-section="about">About</button><button type="button" data-source="all">Sources</button><button type="button" data-home-menu="open" data-menu-section="disclaimer">Disclaimer</button></div></div></footer>
 
 
 <nav class="tabs-bottom" aria-label="Main sections"><button class="tabbtn" data-tab="diseases" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg><span>Home</span></button><button class="tabbtn" data-tab="tools" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Tools</span></button><button class="tabbtn" data-tab="poa" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/></svg><span>POA</span></button><button class="tabbtn" data-tab="law" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7 2.5 13a2.6 2.6 0 0 0 5 0zM19 7l-2.5 6a2.6 2.6 0 0 0 5 0z"/></svg><span>Law</span></button><button class="tabbtn" data-tab="sources" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></svg><span>Review</span></button></nav>
@@ -1110,10 +1224,10 @@ header.top{box-shadow:0 2px 15px rgba(15,35,55,.025)}
   <div class="menu-heading"><div><h2 id="menu-title">Field guide menu</h2><p>Help, sources and appearance.</p></div><button class="icon-button" id="menu-close" type="button" data-home-menu="close" aria-label="Close menu" autofocus><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
   <nav class="menu-nav" aria-label="Guide information"><button type="button" data-menu-section="about">About this guide</button><button type="button" data-source="all">Sources &amp; references</button><button type="button" data-go="sources">Guideline review information</button><button type="button" data-menu-section="help">How to use this guide</button><button type="button" data-feedback="open">Give feedback</button></nav>
   <p class="menu-label" id="appearance-label">Appearance</p><div class="appearance-control" role="group" aria-labelledby="appearance-label"><button type="button" data-appearance="system" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>System</span></button><button type="button" data-appearance="light" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2m-17-7 1.5 1.5M17.5 17.5 19 19m0-14-1.5 1.5M6.5 17.5 5 19"/></svg><span>Light</span></button><button type="button" data-appearance="dark" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.5A9 9 0 0 1 10.5 3.2 9 9 0 1 0 20.8 13.5Z"/></svg><span>Dark</span></button></div>
-  <details class="menu-about" id="menu-about"><summary>About this guide</summary><p>A Malaysian field reference for PPKA, public health practitioners, Medical Officers, PPKP, PKP, PKA and district response teams.</p><p>CD-Made-Easy brings existing disease guidance, field calculations, POA, legal references and guideline reviews into one working reference.</p><p>POA entries are saved in this browser. Use the POA backup function to keep a copy or move records between devices.</p><p>UI build 2026.10.21.2. Source review date recorded in the existing guide: 20 Oct 2026. Dengue simulation and visual surveillance summaries refined on 20 Oct 2026. Synthetic observations are labelled; full original guidance, source caveats and calculators are retained. This public feedback release groups calculators by disease, adds responsive navigation and feedback, removes private document links and embedded achievement notes, and retains a POA workspace with no supplied records or activities. The background is decorative, not surveillance data.</p></details>
+  <details class="menu-about" id="menu-about"><summary>About this guide</summary><p>A Malaysian field reference for PPKA, public health practitioners, Medical Officers, PPKP, PKP, PKA and district response teams.</p><p>CD-Made-Easy brings existing disease guidance, field calculations, POA, legal references and guideline reviews into one working reference.</p><p>POA entries are saved in this browser. Use the POA backup function to keep a copy or move records between devices.</p><p>UI build 2026.10.21.3. Source review date recorded in the existing guide: 20 Oct 2026. Dengue simulation and visual surveillance summaries refined on 20 Oct 2026. Synthetic observations are labelled; full original guidance, source caveats and calculators are retained. This public feedback release groups calculators by disease, adds responsive navigation and feedback, removes private document links and embedded achievement notes, and retains a POA workspace with no supplied records or activities. The background is decorative, not surveillance data.</p></details>
 <details class="menu-about" id="menu-help"><summary>How to use this guide</summary><ul><li>Use a quick action or choose a disease category.</li><li>Search English or Bahasa Malaysia names, abbreviations, actions, tools and source titles. On a keyboard, press Down or Enter to focus the first result; Escape clears search.</li><li>Switch between Grid and List. Enable BM names &amp; source notes for additional context.</li><li>Open a guide's sections for complete definitions, notification requirements, control guidance and citations.</li><li>In Tools, choose a disease, select a calculator and enter the required inputs.</li><li>Check calculator anchors and caveats. These tools do not issue orders or certify outbreak closure.</li><li>POA starts without supplied achievement records. Entries remain in your browser. Back up local records from the POA workspace.</li></ul></details>
 <details class="menu-about" id="menu-disclaimer"><summary>Disclaimer &amp; attribution</summary><p>This application is an independent working reference, not an official KKM publication or a substitute for professional judgement. Current KKM, JKN and PKD instructions take precedence.</p><p>Use the disease-specific source and current programme instructions. Confirm applicable guidance, legal powers and unresolved issues before acting.</p><p>Referenced guidelines, source documents, illustrations and third-party materials remain the property of their respective owners.</p><p>(c) 2026 Dr. Ismail Saudi. All rights reserved.</p><p>Disease Control Sector<br>PKD Muallim, Perak</p></details>
-<p class="menu-version">UI build 2026.10.21.2</p>
+<p class="menu-version">UI build 2026.10.21.3</p>
 </dialog>
 
 
@@ -2021,7 +2135,7 @@ function route(){
   var h=(location.hash||'').replace(/^#/,'');
   if(h==='tools'||h==='law'||h==='sources'||h==='poa'){setTab(h);}
   else if(h==='simulation-dengue'){resetHome();setTab('diseases');state.pendingFocus='sim-title';}
-  else if(byId(h)){setTab('diseases');state.disease=h;state.homeTask='';}
+  else if(byId(h)){setTab('diseases');if(state.disease!==h)state.openSec=null;state.disease=h;state.homeTask='';}
   else if(h.indexOf('task-')===0&&TASKS[h.slice(5)]){resetHome();setTab('diseases');state.homeTask=h.slice(5);}
   else if(/^category-[0-5]$/.test(h)){resetHome();setTab('diseases');state.homeGroup=HOME_GROUPS[Number(h.slice(9))].name;}
   else{setTab('diseases');if(!state.q)resetHome();state.disease=null;}
@@ -2121,8 +2235,8 @@ function renderDiseases(){
   var d=state.disease?byId(state.disease):null;
   if(!d){main.innerHTML=homeHTML();return;}
   var group=homeGroup(d.group);
-  main.innerHTML='<div class="layout show-detail"><aside class="rail" aria-label="Disease list">'+listHTML()+'</aside><div class="pane"><div class="home-disease-label tone-'+group.tone+'"><span>'+uiIcon(group.icon)+'</span>'+esc(group.label)+'</div>'+diseaseHTML(d)+'</div></div>';
-  drawCharts();
+  main.innerHTML='<div class="guide-workspace tone-'+group.tone+'">'+diseaseHTML(d)+'</div>';
+  showGuidePanel(guideView.panel,false,false);
 }
 function resetHome(){state.homeGroup='';state.homeTask='';state.disease=null;state.openSec=null;state.q='';qEl.value='';clearBtn.hidden=true;}
 /* Search uses the original disease index plus existing sections, vector panels,
@@ -2172,15 +2286,27 @@ function openHomeMenu(section){
 }
 function homeFocusTitle(){var el=document.getElementById(state.homeTask?'task-title':'browse-title');if(el)el.focus({preventScroll:true});}
 function navigateGuide(id,section){resetHome();state.disease=id;state.openSec=section;state.pendingTarget={section:section};go(id);}
+var navigationSequence=0;
+if('scrollRestoration' in history)history.scrollRestoration='manual';
 function afterRender(){
-  if(state.pendingFocus){var title=document.getElementById(state.pendingFocus);state.pendingFocus='';if(title)title.focus({preventScroll:true});}
-  var target=state.pendingTarget;state.pendingTarget=null;if(!target)return;
-  var el;
-  if(target.section)el=document.getElementById('sec-'+target.section);
-  if(target.source){var all=document.querySelector('details.allsrc');if(all)all.open=true;el=document.getElementById('source-'+target.source)||all;}
-  if(target.law!==undefined){var laws=document.querySelectorAll('.lmap details'),others=document.querySelectorAll('.lother .lo');el=target.law<LAWMAP.length?laws[target.law]:others[target.law-LAWMAP.length];}
-  if(el){if(el.tagName==='DETAILS')el.open=true;el.setAttribute('tabindex','-1');el.focus({preventScroll:true});el.scrollIntoView({block:'start'});}
+  var sequence=++navigationSequence,target=state.pendingTarget,focusId=state.pendingFocus;
+  var toolFocus=document.activeElement&&document.activeElement.matches('.active-calculator')?document.activeElement:null;
+  state.pendingTarget=null;state.pendingFocus='';
+  function place(){
+    if(sequence!==navigationSequence)return;
+    if(target&&target.section){openSec(target.section);return;}
+    var el;
+    if(target&&target.source){var all=document.querySelector('details.allsrc');if(all)all.open=true;el=document.getElementById('source-'+target.source)||all;}
+    if(target&&target.law!==undefined){var laws=document.querySelectorAll('.lmap details'),others=document.querySelectorAll('.lother .lo');el=target.law<LAWMAP.length?laws[target.law]:others[target.law-LAWMAP.length];}
+    if(el){if(el.tagName==='DETAILS')el.open=true;el.setAttribute('tabindex','-1');el.focus({preventScroll:true});guideScrollTo(el);return;}
+    if(toolFocus&&toolFocus.isConnected){guideScrollTo(toolFocus);toolFocus.focus({preventScroll:true});return;}
+    window.scrollTo({top:0,left:0,behavior:'instant'});
+    var heading=(focusId&&document.getElementById(focusId))||main.querySelector('h2')||main;
+    heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
+  }
+  place();requestAnimationFrame(function(){requestAnimationFrame(place);});
 }
+
 function clearSearch(){resetHome();setTab('diseases');setPref('tab','diseases');if(location.hash!=='#diseases')history.replaceState(null,'','#diseases');renderDiseases();qEl.focus();var status=document.getElementById('search-status');if(status)status.textContent='Search cleared';}
 function refreshBrowse(focusSelector){
   var y=window.scrollY||0,openGroups=Array.from(document.querySelectorAll('.home-group[open]')).map(function(el){return el.getAttribute('data-group');});
@@ -2355,18 +2481,113 @@ function diseaseHTML(d){
   if(c.follow==="person"||c.follow==="coexposed"||c.follow==="measles")tools+='<button class="btn" type="button" data-tool="follow" data-for="'+d.id+'">Follow-up end</button>';
   if(["hepa","cholera","dysentery","knowlesi","measles","typhoid","malaria"].indexOf(c.end)>=0)tools+='<button class="btn" type="button" data-tool="end" data-for="'+d.id+'">Outbreak end</button>';
   if(c.closure)tools+='<button class="btn" type="button" data-tool="closure" data-for="'+d.id+'">Exclusion / closure</button>';
-  return '<button class="back" type="button" data-back="1"><- All diseases</button>'+
-    '<div class="dhead"><h2>'+esc(d.name)+'</h2><div class="sub">'+esc(d.bm)+'  /  '+esc(d.group)+'</div></div>'+
-    glanceHTML(d)+(d.reviewNote?'<p class="review-note">'+esc(d.reviewNote)+'</p>':'')+
-    '<div class="toolbar">'+tools+'</div>'+
-    '<div class="vizgrid"><div class="col">'+flowHTML(d)+'</div><div class="col">'+clockPanel(d)+extraPanel(d)+ctrlHTML(d)+'</div></div>'+
-    vectorPanelsHTML(d)+accHTML(d)+(d.checks&&d.checks.length?'<details class="acc" id="sec-checks"><summary><span class="num">11</span><span class="tt">Session action checklist</span><span class="meta">'+d.checks.length+' actions'+ic('chev','chev')+'</span></summary><div class="pkd-extension" style="padding:0 14px 14px"><p class="small muted">Session-only reminder; not a case record or evidence of approval.</p>'+d.checks.map(function(t,i){var key=d.id+'-'+i;return '<label class="check" style="margin:8px 0"><input type="checkbox" data-check="'+key+'" '+(PKDExt.state.checks[key]?'checked':'')+'>'+esc(t)+'</label>';}).join('')+'</div></details>':'');
+  return guideFrameHTML(d,tools);
 }
+
 function openSec(key){
-  var el=document.getElementById("sec-"+key);
-  if(!el)return;
-  el.open=true;state.openSec=key;
-  el.scrollIntoView({block:"start",behavior:"smooth"});
+  var el=document.getElementById('sec-'+key);if(!el)return;
+  if(document.querySelector('.guide-workspace')){
+    var panel=guidePanelForSection(key);
+    if(panel==='reference')guideView.reference=key;
+    if(panel==='vector')guideView.vector=key.slice(7);
+    showGuidePanel(panel,false,false);
+  }
+  if(el.tagName==='DETAILS')el.open=true;state.openSec=key;
+  el.setAttribute('tabindex','-1');el.focus({preventScroll:true});
+  guideScrollTo(document.getElementById('guide-navigation')||el);
+}
+
+/* Disease workspaces: retain the original guidance and calculators, show one task at a time. */
+var GUIDE_PANELS=[['overview','Overview','At a glance','grid'],['response','Response','Investigation and control','route'],['timing','Timing','Exposure and follow-up','clock'],['vector','Vector control','Surveillance and field methods','mosquito'],['reference','Reference','Guideline text and sources','book'],['calculators','Calculators','Disease-specific tools','calculator'],['checklist','Checklist','Session action checklist','clip']];
+var guideView={disease:null,panel:'overview',reference:'notify',vector:'surveillance'};
+function guidePanels(d){return GUIDE_PANELS.filter(function(p){return p[0]!=='vector'||d.id==='dengue';});}
+function guidePanelForSection(key){return key==='checks'?'checklist':key.indexOf('vector-')===0?'vector':'reference';}
+function guideHeading(title,description){return '<div class="guide-panel-heading"><h3>'+esc(title)+'</h3><p>'+esc(description)+'</p></div>';}
+function guideReferenceHTML(d){
+  return '<div class="guide-subselect"><label for="guide-reference-select">Read a guideline section</label><select id="guide-reference-select">'+SECTIONS.concat([['sources','Sources for this guide']]).map(function(s){return '<option value="'+s[0]+'">'+esc(s[1])+'</option>';}).join('')+'</select></div><div class="guide-reference-content">'+accHTML(d)+'</div>';
+}
+function guideVectorHTML(d){
+  return '<div class="guide-subselect"><label for="guide-vector-select">Choose a vector topic</label><select id="guide-vector-select">'+(PKD_DATA.vectorPanels||[]).map(function(p){return '<option value="'+p.id+'">'+esc(p.title)+'</option>';}).join('')+'</select></div><div class="guide-vector-content">'+vectorPanelsHTML(d)+'</div>';
+}
+function guideChecklistHTML(d){
+  return '<section class="guide-checklist" id="sec-checks"><p class="guide-session-note">Session-only reminder; not a case record or evidence of approval.</p><div class="guide-check-progress" aria-live="polite"><span id="guide-check-count"></span><progress id="guide-check-progress" max="'+d.checks.length+'" value="0" aria-label="Checklist completion"></progress></div><div class="pkd-extension">'+d.checks.map(function(t,i){var key=d.id+'-'+i;return '<label class="check guide-check"><input type="checkbox" data-check="'+key+'" '+(PKDExt.state.checks[key]?'checked':'')+'><span><small>Action '+(i+1)+'</small>'+esc(t)+'</span></label>';}).join('')+'</div></section>';
+}
+function updateGuideChecklist(){
+  var checks=Array.from(document.querySelectorAll('.guide-checklist [data-check]')),count=document.getElementById('guide-check-count'),progress=document.getElementById('guide-check-progress');
+  if(!count||!progress)return;var n=checks.filter(function(c){return c.checked;}).length;count.textContent=n+' of '+checks.length+' actions checked';progress.value=n;
+}
+function guideFrameHTML(d,tools){
+  var g=homeGroup(d.group),panels=guidePanels(d),extra=extraPanel(d);
+  if(guideView.disease!==d.id){guideView={disease:d.id,panel:'overview',reference:'notify',vector:'surveillance'};}
+  if(state.pendingTarget&&state.pendingTarget.section){var key=state.pendingTarget.section;guideView.panel=guidePanelForSection(key);if(guideView.panel==='reference')guideView.reference=key;if(guideView.panel==='vector')guideView.vector=key.slice(7);}
+  var overview=guideHeading('At a glance','Select a card for its full guidance and source.')+glanceHTML(d)+(d.reviewNote?'<details class="guide-review-note"><summary>Scope and source caveats</summary><p>'+esc(d.reviewNote)+'</p></details>':'')+
+    '<div class="guide-start-links"><button type="button" data-guide-panel="response">'+uiIcon('route')+'Investigation and response'+uiIcon('chev')+'</button><button type="button" data-guide-panel="timing">'+uiIcon('clock')+'Timing and exposure'+uiIcon('chev')+'</button><button type="button" data-guide-panel="calculators">'+uiIcon('calculator')+'Open disease calculators'+uiIcon('chev')+'</button></div>';
+  var response=guideHeading('Investigation and response','Follow the pathway. Open an action for its guideline text.')+'<div class="guide-response-grid"><div>'+flowHTML(d)+'</div><div>'+ctrlHTML(d)+(d.id==='dengue'?extra:'')+'</div></div>';
+  var timing=guideHeading('Timing and exposure','Read the time anchor and source before applying a date.')+(PKDExposure.available(d)?'<div class="guide-timing-action"><div><strong>Plot an exposure window</strong><p>Enter tarikh onset to generate the dated curve.</p></div><button class="btn primary" type="button" data-tool="exposure" data-for="'+d.id+'">'+ic('calendar')+'Open calculator</button></div>':'')+clockPanel(d)+(d.id==='dengue'?'':extra)+'<button class="btn guide-read-params" type="button" data-open="params">'+ic('book')+'Read incubation and spread guidance</button>';
+  var content={overview:overview,response:response,timing:timing,vector:d.id==='dengue'?guideHeading('Vector surveillance and control','Choose one topic to view its methods, interpretation and sources.')+guideVectorHTML(d):'',reference:guideHeading('Guideline reference','Choose a section to read the original statements, caveats and citations.')+guideReferenceHTML(d),calculators:guideHeading('Calculators and field tools','Choose a tool for '+d.name+'.')+'<div class="guide-tool-list">'+tools+'</div>',checklist:guideHeading('Session action checklist','Keep track of the actions you have reviewed during this session.')+guideChecklistHTML(d)};
+  var chooser='<label class="guide-disease-picker" for="guide-disease-select"><span>Switch disease</span><select id="guide-disease-select">'+HOME_GROUPS.map(function(group){return '<optgroup label="'+esc(group.label)+'">'+matchingDiseases(group.name).map(function(x){return '<option value="'+x.id+'"'+(x.id===d.id?' selected':'')+'>'+esc(x.name)+'</option>';}).join('')+'</optgroup>';}).join('')+'</select></label>';
+  return '<div class="guide-breadcrumb"><button class="back" type="button" data-category="'+HOME_GROUPS.indexOf(g)+'">'+uiIcon('back')+esc(g.label)+'</button>'+chooser+'</div>'+
+    '<header class="guide-heading"><span class="guide-disease-icon" aria-hidden="true">'+uiIcon(g.icon)+'</span><div><span class="guide-eyebrow">DISEASE FIELD GUIDE</span><h2 id="disease-title" tabindex="-1">'+esc(d.name)+'</h2><p lang="ms">'+esc(d.bm)+'</p></div><span class="guide-category-label">'+esc(g.label)+'</span></header>'+
+    '<div class="guide-navigation" id="guide-navigation"><div class="guide-tabs" role="tablist" aria-label="Disease guide sections">'+panels.map(function(p){return '<button type="button" role="tab" id="guide-tab-'+p[0]+'" data-guide-panel="'+p[0]+'" aria-controls="guide-pane-'+p[0]+'" aria-selected="'+(guideView.panel===p[0])+'" tabindex="'+(guideView.panel===p[0]?'0':'-1')+'">'+uiIcon(p[3])+esc(p[1])+'</button>';}).join('')+'</div><label class="guide-mobile-navigation" for="guide-section-select"><span>Section <small id="guide-section-position"></small></span><select id="guide-section-select">'+panels.map(function(p){return '<option value="'+p[0]+'">'+esc(p[1])+' - '+esc(p[2])+'</option>';}).join('')+'</select></label></div>'+
+    '<div class="guide-body">'+panels.map(function(p){return '<section class="guide-pane" id="guide-pane-'+p[0]+'" role="tabpanel" aria-label="'+esc(p[1])+'" tabindex="-1"'+(guideView.panel===p[0]?'':' hidden')+'>'+content[p[0]]+'</section>';}).join('')+'</div>'+
+    '<nav class="guide-step-navigation" aria-label="Move between guide sections"><button type="button" class="btn" id="guide-prev" data-guide-step="-1"></button><span id="guide-step-position"></span><button type="button" class="btn" id="guide-next" data-guide-step="1"></button></nav>';
+}
+function guideScrollTo(el){
+  if(!el)return;var header=document.querySelector('header.top'),offset=header&&getComputedStyle(header).position==='sticky'?header.getBoundingClientRect().height:0;
+  window.scrollTo({top:Math.max(0,window.scrollY+el.getBoundingClientRect().top-offset-10),left:0,behavior:'instant'});
+}
+function chooseGuideReference(key){
+  var root=document.querySelector('.guide-reference-content');if(!root)return;
+  var target=document.getElementById('sec-'+key);if(!target||!root.contains(target))return;
+  guideView.reference=key;root.querySelectorAll('details.acc').forEach(function(el){el.hidden=el!==target;el.open=el===target;});
+  document.getElementById('guide-reference-select').value=key;
+}
+function chooseGuideVector(key){
+  var root=document.querySelector('.guide-vector-content');if(!root)return;
+  var target=document.getElementById('sec-vector-'+key);if(!target)return;
+  guideView.vector=key;root.querySelectorAll('.vector-panel').forEach(function(el){el.hidden=el!==target;el.open=el===target;});
+  document.getElementById('guide-vector-select').value=key;
+}
+function showGuidePanel(key,move,focusPanel){
+  var root=document.querySelector('.guide-workspace'),d=byId(state.disease);if(!root||!d)return;
+  var panels=guidePanels(d),i=panels.findIndex(function(p){return p[0]===key;});if(i<0)return;
+  guideView.panel=key;
+  root.querySelectorAll('.guide-pane').forEach(function(el){el.hidden=el.id!=='guide-pane-'+key;});
+  root.querySelectorAll('.guide-tabs [role="tab"]').forEach(function(el){var selected=el.dataset.guidePanel===key;el.setAttribute('aria-selected',String(selected));el.tabIndex=selected?0:-1;});
+  document.getElementById('guide-section-select').value=key;
+  document.getElementById('guide-section-position').textContent=(i+1)+' of '+panels.length;
+  document.getElementById('guide-step-position').textContent=(i+1)+' / '+panels.length;
+  var prev=document.getElementById('guide-prev'),next=document.getElementById('guide-next');
+  prev.disabled=i===0;next.disabled=i===panels.length-1;
+  prev.innerHTML=uiIcon('back')+(i?'Previous: '+esc(panels[i-1][1]):'Previous');
+  next.innerHTML=(i<panels.length-1?'Next: '+esc(panels[i+1][1]):'Next')+uiIcon('chev');
+  chooseGuideReference(guideView.reference);chooseGuideVector(guideView.vector);updateGuideChecklist();drawCharts();
+  if(focusPanel)document.getElementById('guide-pane-'+key).focus({preventScroll:true});
+  if(move)guideScrollTo(document.getElementById('guide-navigation'));
+}
+function initGuideUI(){
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    if(b.dataset.guidePanel){showGuidePanel(b.dataset.guidePanel,true,b.getAttribute('role')!=='tab');return;}
+    if(b.dataset.guideStep){var panels=guidePanels(byId(state.disease)),i=panels.findIndex(function(p){return p[0]===guideView.panel;})+Number(b.dataset.guideStep);if(panels[i])showGuidePanel(panels[i][0],true,true);}
+  });
+  document.addEventListener('change',function(e){
+    var t=e.target;
+    if(t.id==='guide-section-select')showGuidePanel(t.value,true,false);
+    if(t.id==='guide-reference-select'){chooseGuideReference(t.value);guideScrollTo(document.getElementById('guide-navigation'));}
+    if(t.id==='guide-vector-select'){chooseGuideVector(t.value);guideScrollTo(document.getElementById('guide-navigation'));}
+    if(t.id==='guide-disease-select'&&byId(t.value)){resetHome();go(t.value);}
+    if(t.matches('.guide-checklist [data-check]'))updateGuideChecklist();
+  });
+  document.addEventListener('keydown',function(e){
+    var tab=e.target.closest('.guide-tabs [role="tab"]');if(!tab)return;
+    var tabs=Array.from(document.querySelectorAll('.guide-tabs [role="tab"]')),i=tabs.indexOf(tab),target;
+    if(e.key==='ArrowRight')target=tabs[(i+1)%tabs.length];else if(e.key==='ArrowLeft')target=tabs[(i+tabs.length-1)%tabs.length];else if(e.key==='Home')target=tabs[0];else if(e.key==='End')target=tabs[tabs.length-1];
+    if(target){e.preventDefault();showGuidePanel(target.dataset.guidePanel,false,false);target.focus({preventScroll:true});}
+  });
+  var printDetails=[];
+  window.addEventListener('beforeprint',function(){printDetails=Array.from(document.querySelectorAll('.guide-workspace details')).filter(function(el){return !el.open;});printDetails.forEach(function(el){el.open=true;});});
+  window.addEventListener('afterprint',function(){printDetails.forEach(function(el){el.open=false;});printDetails=[];});
 }
 
 /* ---------- Charts (SVG drawn at the container's width) ---------- */
@@ -2467,7 +2688,7 @@ function cyclesSVG(W){
 }
 function drawCharts(){
   document.querySelectorAll(".chart[data-chart]").forEach(function(el){
-    var W=Math.floor(el.clientWidth);if(W<200)W=Math.max(W,280);
+    if(!el.getClientRects().length)return;var W=Math.floor(el.clientWidth);if(W<200)W=Math.max(W,280);
     if(el.dataset.w==String(W))return;
     el.dataset.w=String(W);
     var k=el.dataset.chart;
@@ -3143,6 +3364,7 @@ function selectAgent(id){
 }
 initHomeUI();
 initSimulationUI();
+initGuideUI();
 document.addEventListener("click",function(e){
   var g=e.target.closest("g[data-agent]");if(g){selectAgent(g.getAttribute("data-agent"));return;}
   var fl=e.target.closest("[data-go]");if(fl){e.preventDefault();e.stopPropagation();go(fl.dataset.go);return;}
@@ -3184,7 +3406,7 @@ route();
 <noscript><p>Enable JavaScript for the interactive reference, calculators and POA.</p></noscript>
 <dialog class="feedback-dialog" id="feedback-dialog" aria-labelledby="feedback-title" aria-describedby="feedback-privacy">
  <div class="menu-heading"><div><h2 id="feedback-title">Your feedback matters</h2><p>Tell us how this field guide could work better.</p></div><button class="icon-button" type="button" data-feedback="close" aria-label="Close feedback" autofocus><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
- <p class="feedback-notice" id="feedback-privacy">Keep feedback about the website. Do not include patient information, case identifiers, meeting notes or internal records. You can copy or download your draft, or review it on GitHub before posting publicly. A GitHub account is required to post.</p>
+ <p class="feedback-notice" id="feedback-privacy">Keep feedback about the website. Do not include patient information, case identifiers, meeting notes or internal records. You can submit privately through Supabase without a GitHub account, or copy, download, or choose to publish a GitHub Issue.</p>
  <form id="feedback-form">
   <div class="feedback-fields">
    <label>Feedback type<select name="kind"><option>Suggestion</option><option>Problem or bug</option><option>Content needs review</option><option>Accessibility</option><option>General feedback</option></select></label>
@@ -3195,96 +3417,182 @@ route();
   <label>Device (optional)<select name="device"><option>Prefer not to say</option><option>Phone</option><option>Tablet / iPad</option><option>Laptop / desktop</option></select></label>
   <div class="feedback-actions"><button type="submit" class="btn primary">Preview feedback</button><button type="button" class="btn" data-feedback="reset">Clear form</button></div>
  </form>
- <section id="feedback-review" hidden aria-labelledby="feedback-review-title"><h3 id="feedback-review-title">Review your draft</h3><label class="sr-only" for="feedback-draft">Feedback draft</label><textarea id="feedback-draft" readonly rows="7"></textarea><div class="feedback-actions"><button type="button" class="btn" data-feedback="copy">Copy feedback</button><button type="button" class="btn" data-feedback="download">Download text</button></div><label class="feedback-confirm"><input id="feedback-public-ok" type="checkbox"><span>I have checked this draft. It contains no sensitive content and may be posted publicly on GitHub.</span></label><div class="feedback-actions"><a class="btn primary" id="feedback-github" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Open GitHub draft</a></div><p class="feedback-hint">Review and submit on GitHub. Opening the draft does not submit feedback. If Issues is unavailable, copy the draft and share it through your usual channel.</p></section>
+ <section id="feedback-review" hidden aria-labelledby="feedback-review-title">
+  <h3 id="feedback-review-title">Review your feedback</h3>
+  <label class="sr-only" for="feedback-draft">Feedback draft</label>
+  <textarea id="feedback-draft" readonly rows="7"></textarea>
+  <label class="feedback-confirm"><input id="feedback-private-ok" type="checkbox"><span>I confirm this feedback contains no patient or confidential information.</span></label>
+  <div class="feedback-actions"><button type="button" class="btn primary" id="feedback-send" data-feedback="send" disabled>Send feedback privately</button></div>
+  <p class="feedback-hint">Submissions are stored privately in the site maintainer's Supabase project. No GitHub account required.</p>
+  <details><summary>Alternative options: copy, download, or GitHub</summary>
+   <div class="feedback-actions"><button type="button" class="btn" data-feedback="copy">Copy feedback</button><button type="button" class="btn" data-feedback="download">Download text</button></div>
+   <label class="feedback-confirm"><input id="feedback-public-ok" type="checkbox"><span>I have checked this draft. It contains no sensitive content and may be posted publicly on GitHub.</span></label>
+   <div class="feedback-actions"><a class="btn" id="feedback-github" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Open GitHub draft</a></div>
+   <p class="feedback-hint">Opening a GitHub draft does not submit it automatically.</p>
+  </details>
+ </section>
  <p id="feedback-status" role="status" aria-live="polite"></p>
 </dialog>
 
 <script>
-/* PUBLIC RELEASE CONFIGURATION. No secret keys belong in this HTML.
-   feedbackRepository: GitHub owner/repository with Issues enabled.
-   hitsEndpoint: HTTPS counter endpoint owned by the site maintainer, or blank.
-   Counter contract: POST {pageId: random UUID} counts one page load; GET only reads.
-   Return {today: integer, overall: integer, day: 'YYYY-MM-DD', timezone: 'Asia/Kuala_Lumpur'}.
-   Compute the day on the server in MYT. Atomically increment today's and overall
-   counts, deduplicate pageId on retries, and allow this site's Origin using CORS.
-   Count full page loads only, not hash navigation or calculator interactions.
-   Return only aggregates. Never send form data, URLs, queries or POA contents.
-   See counter-setup.zip for a ready-to-deploy Cloudflare D1 implementation.
+/* PKD FIELD GUIDE SUPABASE BACKEND
+   Insert ONLY your project URL and sb_publishable_... key.
+   Never insert a sb_secret_... key or service_role into browser code.
 */
-const PKD_PUBLIC_CONFIG=Object.freeze({feedbackRepository:'drphismail/CD-Made-Easy',hitsEndpoint:''});
+const PKD_PUBLIC_CONFIG=Object.freeze({
+  feedbackRepository:'drphismail/CD-Made-Easy',
+  supabaseUrl:'https://poorhssyfmiwpbudwxzd.supabase.co',
+  supabasePublishableKey:'sb_publishable_x32VWyzlvlbNtsBYQKuW_g_7l6V65YF'
+});
 (function(){
 'use strict';
-const $=id=>document.getElementById(id),dialog=$('feedback-dialog'),form=$('feedback-form');
-let returnFocus=null,draftURL='';
-function setStatus(text){$('feedback-status').textContent=text;}
+const $=id=>document.getElementById(id), dialog=$('feedback-dialog'), form=$('feedback-form'), config=PKD_PUBLIC_CONFIG;
+const ready=/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(config.supabaseUrl)
+  && /^sb_publishable_[A-Za-z0-9_-]+$/.test(config.supabasePublishableKey)
+  && !config.supabasePublishableKey.includes('PASTE_');
+const api=ready?config.supabaseUrl.replace(/\/$/,'')+'/rest/v1':'';
+let returnFocus=null, draftURL='', feedbackPayload=null, feedbackId='', sending=false;
+function uuid(){
+  if(globalThis.crypto && crypto.randomUUID)return crypto.randomUUID();
+  if(globalThis.crypto && crypto.getRandomValues){
+    const n=crypto.getRandomValues(new Uint8Array(16));n[6]=(n[6]&15)|64;n[8]=(n[8]&63)|128;
+    const h=Array.from(n,x=>x.toString(16).padStart(2,'0')).join('');
+    return h.slice(0,8)+'-'+h.slice(8,12)+'-'+h.slice(12,16)+'-'+h.slice(16,20)+'-'+h.slice(20);
+  }
+  throw new Error('Secure random IDs are unavailable in this browser');
+}
+function setStatus(t){$('feedback-status').textContent=t;}
+async function request(path,{method='GET',body,prefer,signal}={}){
+  const headers={apikey:config.supabasePublishableKey,Accept:'application/json'};
+  if(body!==undefined)headers['Content-Type']='application/json';
+  if(prefer)headers.Prefer=prefer;
+  return fetch(api+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),
+    credentials:'omit',referrerPolicy:'no-referrer',cache:'no-store',signal});
+}
 function invalidateDraft(){
- $('feedback-length').textContent=String(form.elements.message.value.length);
- $('feedback-review').hidden=true;$('feedback-public-ok').checked=false;
- const link=$('feedback-github');link.removeAttribute('href');link.setAttribute('aria-disabled','true');link.tabIndex=-1;draftURL='';setStatus('');
+  $('feedback-length').textContent=String(form.elements.message.value.length);
+  $('feedback-review').hidden=true;$('feedback-private-ok').checked=false;
+  $('feedback-public-ok').checked=false;$('feedback-send').disabled=true;
+  const a=$('feedback-github');a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.tabIndex=-1;
+  feedbackPayload=null;feedbackId='';draftURL='';setStatus('');
 }
 document.addEventListener('click',async e=>{
- const button=e.target.closest('[data-feedback]');if(!button)return;
- const action=button.dataset.feedback;
- if(action==='open'){
-  returnFocus=button;const menu=document.getElementById('guide-menu');if(menu&&menu.open)menu.close();
-  if(!dialog.open)dialog.showModal();return;
- }
- if(action==='close'){dialog.close();return;}
- if(action==='reset'){form.reset();invalidateDraft();return;}
- const text=$('feedback-draft').value;if(!text)return;
- if(action==='copy'){
-  try{await navigator.clipboard.writeText(text);setStatus('Copied. Paste it into your preferred communication channel.');}
-  catch(err){$('feedback-draft').focus();$('feedback-draft').select();setStatus('Copy is unavailable in this browser. The draft is selected for manual copying.');}
- }
- if(action==='download'){
-  const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='PKD-Field-Guide-feedback.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus('Draft prepared for download. It has not been submitted.');
- }
+  const button=e.target.closest('[data-feedback]');if(!button)return;
+  const action=button.dataset.feedback;
+  if(action==='open'){
+    returnFocus=button;const menu=$('guide-menu');if(menu&&menu.open)menu.close();
+    if(!dialog.open)dialog.showModal();return;
+  }
+  if(action==='close'){if(!sending)dialog.close();return;}
+  if(action==='reset'){if(!sending){form.reset();invalidateDraft();}return;}
+  if(action==='send'){
+    if(sending||!feedbackPayload||!$('feedback-private-ok').checked)return;
+    if(!ready){setStatus('Supabase is not configured. Add your project URL and publishable key before submitting.');return;}
+    sending=true;button.disabled=true;button.textContent='Sending...';
+    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),12000);
+    try{
+      if(!feedbackId)feedbackId=uuid();
+      const response=await request('/pkd_feedback',{method:'POST',
+        body:{id:feedbackId,...feedbackPayload},prefer:'return=minimal',signal:ctrl.signal});
+      if(!response.ok&&response.status!==409)throw new Error('feedback POST '+response.status);
+      form.reset();invalidateDraft();
+      setStatus('Feedback submitted successfully and saved privately. Thank you.');
+    }catch(err){
+      setStatus('Submission could not be confirmed. Retry or copy your feedback using the alternative options.');
+    }finally{clearTimeout(timer);sending=false;button.textContent='Send feedback privately';
+      button.disabled=!$('feedback-private-ok').checked;}
+    return;
+  }
+  const draft=$('feedback-draft').value;if(!draft)return;
+  if(action==='copy'){
+    try{await navigator.clipboard.writeText(draft);setStatus('Copied. Paste it into your preferred channel.');}
+    catch(err){$('feedback-draft').focus();$('feedback-draft').select();setStatus('Draft selected for manual copying.');}
+  }
+  if(action==='download'){
+    const u=URL.createObjectURL(new Blob([draft],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');
+    a.href=u;a.download='PKD-Field-Guide-feedback.txt';a.click();
+    setTimeout(()=>URL.revokeObjectURL(u),1000);setStatus('Draft downloaded. It has not been submitted.');
+  }
 });
 dialog.addEventListener('close',()=>{if(returnFocus&&returnFocus.isConnected)returnFocus.focus();});
-dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});
+dialog.addEventListener('click',e=>{
+  if(e.target!==dialog||sending)return;const r=dialog.getBoundingClientRect();
+  if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();
+});
 form.addEventListener('input',invalidateDraft);form.addEventListener('change',invalidateDraft);
 form.addEventListener('submit',e=>{
- e.preventDefault();if(!form.reportValidity())return;
- const data=new FormData(form),message=String(data.get('message')||'').trim();
- if(message.length<10){setStatus('Please add at least 10 characters describing your feedback.');form.elements.message.focus();return;}
- const body=['PKD Field Guide feedback','Type: '+data.get('kind'),'Section: '+data.get('section'),'Ease of use: '+(data.get('rating')?data.get('rating')+'/5':'Not rated'),'Device: '+data.get('device'),'Build: 2026.10.21.2','','Feedback:',message].join('\n');
- $('feedback-draft').value=body;$('feedback-review').hidden=false;$('feedback-public-ok').checked=false;
- const repo=PKD_PUBLIC_CONFIG.feedbackRepository;
- draftURL=/^[\w.-]+\/[\w.-]+$/.test(repo)?'https://github.com/'+repo+'/issues/new?'+new URLSearchParams({title:'[Field guide] '+data.get('kind')+' - '+data.get('section'),body:body}).toString():'';
- if(draftURL.length>7500){draftURL='';setStatus('This draft is too long for a GitHub URL. Please copy or download it instead.');}
- else setStatus('Draft ready. Nothing has been submitted.');
- $('feedback-draft').focus();
+  e.preventDefault();if(!form.reportValidity())return;
+  const d=new FormData(form),message=String(d.get('message')||'').trim();
+  if(message.length<10){setStatus('Please write at least 10 characters.');form.elements.message.focus();return;}
+  const rating=d.get('rating');
+  feedbackPayload={kind:String(d.get('kind')),section:String(d.get('section')),
+    rating:rating?Number(rating):null,device:String(d.get('device')),message,app_build:'2026.10.21.3'};
+  const body=['PKD Field Guide feedback','Type: '+feedbackPayload.kind,'Section: '+feedbackPayload.section,
+    'Ease of use: '+(rating?rating+'/5':'Not rated'),'Device: '+feedbackPayload.device,
+    'Build: '+feedbackPayload.app_build,'','Feedback:',message].join('\n');
+  $('feedback-draft').value=body;$('feedback-review').hidden=false;
+  $('feedback-private-ok').checked=false;$('feedback-public-ok').checked=false;$('feedback-send').disabled=true;
+  feedbackId='';
+  const repo=config.feedbackRepository;
+  draftURL=/^[\w.-]+\/[\w.-]+$/.test(repo)?'https://github.com/'+repo+'/issues/new?'+new URLSearchParams({
+    title:'[Field guide] '+feedbackPayload.kind+' - '+feedbackPayload.section,body
+  }).toString():'';
+  if(draftURL.length>7500){draftURL='';setStatus('Public GitHub draft too long. Private feedback remains available.');}
+  else setStatus(ready?'Draft ready. Please review and confirm before sending.':'Draft ready. Supabase setup is required for private submission.');
+  $('feedback-draft').focus();
 });
+$('feedback-private-ok').addEventListener('change',e=>{$('feedback-send').disabled=!e.target.checked||sending;});
 $('feedback-public-ok').addEventListener('change',e=>{
- const link=$('feedback-github'),enabled=e.target.checked&&!!draftURL;
- link.setAttribute('aria-disabled',String(!enabled));link.tabIndex=enabled?0:-1;
- if(enabled)link.href=draftURL;else link.removeAttribute('href');
+  const a=$('feedback-github'),enabled=e.target.checked&&!!draftURL;
+  a.setAttribute('aria-disabled',String(!enabled));a.tabIndex=enabled?0:-1;
+  if(enabled)a.href=draftURL;else a.removeAttribute('href');
 });
-$('feedback-github').addEventListener('click',e=>{if(e.currentTarget.getAttribute('aria-disabled')==='true')e.preventDefault();else setStatus('GitHub will open for your review. This page cannot confirm submission.');});
-/* Aggregate counters deliberately have no localStorage fallback. */
-const config=PKD_PUBLIC_CONFIG,endpoint=config.hitsEndpoint;
-let counted=false,busy=false,pageId=globalThis.crypto&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
-function mytDay(){return new Date(Date.now()+8*3600000).toISOString().slice(0,10);}
+$('feedback-github').addEventListener('click',e=>{
+  if(e.currentTarget.getAttribute('aria-disabled')==='true')e.preventDefault();
+  else setStatus('GitHub will open for review. Submission is not confirmed here.');
+});
+
+/* One full page load = one generated UUID, distinct from internal navigation.
+   The database determines Malaysia calendar day and prevents duplicate IDs. */
+let counted=false,busy=false,pageId='';
+function mytDay(){
+  const d=new Date(Date.now()+8*3600000);return d.toISOString().slice(0,10);
+}
 async function updateHits(){
- if(!endpoint||busy)return;
- if(!/^https:\/\//.test(endpoint)){ $('hits-state').textContent='Unavailable';$('hits-note').textContent='The counter service needs a secure connection.';return; }
- if(location.protocol==='file:'||/^(localhost|127\.0\.0\.1|terminal\.local)$/.test(location.hostname)){$('hits-state').textContent='Preview';$('hits-note').textContent='Preview visits are excluded. Shared counts load on the published website.';return;}
- busy=true;const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),8000);
- try{
-  const response=await fetch(endpoint,{method:counted?'GET':'POST',headers:counted?{}:{'Content-Type':'application/json'},body:counted?undefined:JSON.stringify({pageId:pageId}),credentials:'omit',referrerPolicy:'no-referrer',cache:'no-store',signal:abort.signal});
-  if(!response.ok)throw new Error('counter unavailable');
-  const data=await response.json();
-  if(!Number.isSafeInteger(data.today)||!Number.isSafeInteger(data.overall)||data.today<0||data.overall<data.today||data.day!==mytDay()||data.timezone!=='Asia/Kuala_Lumpur')throw new Error('invalid counter response');
-  counted=true;const fmt=new Intl.NumberFormat('en-MY');$('hits-today').textContent=fmt.format(data.today);$('hits-overall').textContent=fmt.format(data.overall);$('hits-state').textContent='Connected';
-  $('hits-note').textContent='Page loads across devices since counting began. Today resets at midnight MYT. These are hits, not unique people.';
- }catch(err){$('hits-today').textContent='--';$('hits-overall').textContent='--';$('hits-state').textContent='Unavailable';$('hits-note').textContent='The shared counter could not be reached. Please check again later.';}
- finally{clearTimeout(timer);busy=false;}
+  if(busy)return;
+  if(!ready){$('hits-state').textContent='Setup needed';$('hits-note').textContent='Add your Supabase URL and publishable key.';return;}
+  if(location.protocol==='file:'||/^(localhost|127\.0\.0\.1|terminal\.local)$/.test(location.hostname)){
+    $('hits-state').textContent='Preview';$('hits-note').textContent='Local preview visits are excluded. Counting starts on the published website.';return;
+  }
+  busy=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),12000);
+  try{
+    if(!counted){
+      if(!pageId)pageId=uuid();
+      const posted=await request('/pkd_visit_events',{method:'POST',body:{id:pageId},
+        prefer:'return=minimal',signal:ctrl.signal});
+      if(!posted.ok&&posted.status!==409)throw new Error('hit POST '+posted.status);
+      counted=true;
+    }
+    const response=await request('/pkd_hit_totals?select=today,overall,day,timezone',{signal:ctrl.signal});
+    if(!response.ok)throw new Error('hits GET '+response.status);
+    const rows=await response.json(),data=Array.isArray(rows)?rows[0]:null;
+    if(!data||!Number.isSafeInteger(data.today)||!Number.isSafeInteger(data.overall)
+      ||data.today<0||data.overall<data.today||data.day!==mytDay()
+      ||data.timezone!=='Asia/Kuala_Lumpur')throw new Error('Invalid counter response');
+    const fmt=new Intl.NumberFormat('en-MY');
+    $('hits-today').textContent=fmt.format(data.today);$('hits-overall').textContent=fmt.format(data.overall);
+    $('hits-state').textContent='Connected';
+    $('hits-note').textContent='Full page loads across devices, not unique people. Today resets at midnight MYT.';
+  }catch(err){
+    $('hits-today').textContent='--';$('hits-overall').textContent='--';
+    $('hits-state').textContent='Unavailable';
+    $('hits-note').textContent='The counter could not be reached. Check the database setup, publishable key and browser network requests.';
+  }finally{clearTimeout(timer);busy=false;}
 }
 updateHits();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateHits();});
 setInterval(()=>{if(!document.hidden)updateHits();},60000);
 })();
-
 </script>
 </body>
 </html>
